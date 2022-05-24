@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/05/23/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>sql</title>
+    <url>/2022/05/24/sql/</url>
+    <content><![CDATA[<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p><strong>scrapy startproject queto</strong></p>
+<h2 id="创建爬虫"><a href="#创建爬虫" class="headerlink" title="创建爬虫"></a>创建爬虫</h2><p><strong>在spider目录下面建立queto_spider.py文件</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class QuetoSpider(scrapy.Spider):</span><br><span class="line"></span><br><span class="line">    name = &#x27;queto&#x27;</span><br><span class="line"></span><br><span class="line">    def start_requests(self):</span><br><span class="line">        urls = [</span><br><span class="line">            &#x27;https://quotes.toscrape.com/page/1/&#x27;,</span><br><span class="line">            &#x27;https://quotes.toscrape.com/page/2/&#x27;</span><br><span class="line">        ]</span><br><span class="line">        for url in urls:</span><br><span class="line">            yield scrapy.Request(url, callback=self.parse)</span><br><span class="line"></span><br><span class="line">    def parse(self, response, **kwargs):</span><br><span class="line">        page = response.url.split(&#x27;/&#x27;)[-2]</span><br><span class="line">        filename = &#x27;%s.html&#x27; % page</span><br><span class="line"></span><br><span class="line">        with open(filename, &#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(response.body)</span><br></pre></td></tr></table></figure>
+
+<h2 id="跳转到下一页-此处下一页的链接为-x2F-page-x2F-2-x2F"><a href="#跳转到下一页-此处下一页的链接为-x2F-page-x2F-2-x2F" class="headerlink" title="跳转到下一页(此处下一页的链接为 &#x2F;page&#x2F;2&#x2F;)"></a>跳转到下一页(此处下一页的链接为 &#x2F;page&#x2F;2&#x2F;)</h2><h3 id="构造新的链接"><a href="#构造新的链接" class="headerlink" title="构造新的链接"></a>构造新的链接</h3><ul>
+<li><strong>response.urljoin</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">if next_page is not None:</span><br><span class="line">    next_page = response.urljoin(next_page)</span><br><span class="line">    yield scrapy.Request(next_page, callback=self.parse)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>response.follow</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">next_url = response.xpath(&#x27;//li[@class=&quot;next&quot;]/a/@href&#x27;).get()</span><br><span class="line">if next_url is not None:</span><br><span class="line">    yield response.follow(next_url, callback=self.parse)</span><br></pre></td></tr></table></figure>
+
+<p><strong>完整项目代码</strong></p>
+<p><strong>yield中提取数据保存</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class QuetoSpider(scrapy.Spider):</span><br><span class="line"></span><br><span class="line">    name = &#x27;queto&#x27;</span><br><span class="line"></span><br><span class="line">    start_urls = [</span><br><span class="line">        &#x27;https://quotes.toscrape.com/page/1/&#x27;,</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    def parse(self, response, **kwargs):</span><br><span class="line">        for item in response.xpath(&#x27;//div[@class=&quot;quote&quot;]&#x27;):</span><br><span class="line">            yield &#123;</span><br><span class="line">                &#x27;text&#x27;: item.xpath(&#x27;//span/text()&#x27;).get(),</span><br><span class="line">                &#x27;author&#x27;: item.xpath(&#x27;//span/small/text()&#x27;).get(),</span><br><span class="line">                &#x27;tag&#x27;: item.xpath(&#x27;//div/a[@class=&quot;tag&quot;]/text()&#x27;).get(),</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        next_url = response.xpath(&#x27;//li[@class=&quot;next&quot;]/a/@href&#x27;).get()</span><br><span class="line">        if next_url is not None:</span><br><span class="line">            yield response.follow(next_url, callback=self.parse)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="执行爬虫命令"><a href="#执行爬虫命令" class="headerlink" title="执行爬虫命令"></a>执行爬虫命令</h2><p><strong>scrapy crawl queto</strong>， 此处crawl后面的名字与上面的name相互对应</p>
+<p><strong>scrapy crawl queto -o queto.jl</strong>， 保存为jl格式</p>
+<p><strong>scrapy crawl queto -o queto.json</strong>, 保存为json格式</p>
+<p><a href="https://www.shangyang.me/2017/06/29/scrapy-learning-1-tutorial/">参考链接</a></p>
+<p><a href="https://docs.scrapy.org/en/latest/intro/tutorial.html#creating-a-project">参考链接</a></p>
+]]></content>
+      <tags>
+        <tag>sql</tag>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+</search>
