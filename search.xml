@@ -19,8 +19,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>sql</title>
-    <url>/2022/05/24/sql/</url>
+    <title>scrapy</title>
+    <url>/2022/05/24/scrapy/</url>
     <content><![CDATA[<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p><strong>scrapy startproject queto</strong></p>
 <h2 id="创建爬虫"><a href="#创建爬虫" class="headerlink" title="创建爬虫"></a>创建爬虫</h2><p><strong>在spider目录下面建立queto_spider.py文件</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class QuetoSpider(scrapy.Spider):</span><br><span class="line"></span><br><span class="line">    name = &#x27;queto&#x27;</span><br><span class="line"></span><br><span class="line">    def start_requests(self):</span><br><span class="line">        urls = [</span><br><span class="line">            &#x27;https://quotes.toscrape.com/page/1/&#x27;,</span><br><span class="line">            &#x27;https://quotes.toscrape.com/page/2/&#x27;</span><br><span class="line">        ]</span><br><span class="line">        for url in urls:</span><br><span class="line">            yield scrapy.Request(url, callback=self.parse)</span><br><span class="line"></span><br><span class="line">    def parse(self, response, **kwargs):</span><br><span class="line">        page = response.url.split(&#x27;/&#x27;)[-2]</span><br><span class="line">        filename = &#x27;%s.html&#x27; % page</span><br><span class="line"></span><br><span class="line">        with open(filename, &#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(response.body)</span><br></pre></td></tr></table></figure>
@@ -46,8 +46,8 @@
 <p><a href="https://docs.scrapy.org/en/latest/intro/tutorial.html#creating-a-project">参考链接</a></p>
 ]]></content>
       <tags>
-        <tag>sql</tag>
         <tag>爬虫</tag>
+        <tag>scrapy</tag>
       </tags>
   </entry>
 </search>
