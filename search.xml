@@ -19,6 +19,70 @@
 ]]></content>
   </entry>
   <entry>
+    <title>mysql</title>
+    <url>/2022/05/25/mysql/</url>
+    <content><![CDATA[<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="建立-amp-amp-删除-amp-amp-使用数据库"><a href="#建立-amp-amp-删除-amp-amp-使用数据库" class="headerlink" title="建立&amp;&amp;删除&amp;&amp;使用数据库"></a>建立&amp;&amp;删除&amp;&amp;使用数据库</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">createdatabase xxx;</span><br><span class="line"></span><br><span class="line">dropdatabase xxx;</span><br><span class="line"></span><br><span class="line">use xxx;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建表-amp-amp-删除表"><a href="#创建表-amp-amp-删除表" class="headerlink" title="创建表&amp;&amp;删除表"></a>创建表&amp;&amp;删除表</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">CREATETABLE <span class="keyword">user</span>(</span><br><span class="line"></span><br><span class="line">id <span class="type">INT</span> UNSIGNED AUTO_INCREMENT,</span><br><span class="line"></span><br><span class="line">username <span class="type">VARCHAR</span>(<span class="number">100</span>) notnull,</span><br><span class="line"></span><br><span class="line">PRIMARYkey(id)</span><br><span class="line"></span><br><span class="line">)ENGINE<span class="operator">=</span>INNODB <span class="keyword">DEFAULT</span> charset<span class="operator">=</span>utf8;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">drop table; # 删除表和结构</span><br><span class="line"></span><br><span class="line">truncate table; # 删除所有数据，保存表结构</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">insertintotable (id, username) <span class="keyword">values</span> (<span class="number">1</span>,<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">delete from table where id=1;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> column_name,column_name</span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"></span><br><span class="line">[<span class="keyword">WHERE</span> Clause]</span><br><span class="line"></span><br><span class="line">[LIMIT N][ <span class="keyword">OFFSET</span> M]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="limit限制返回行数"><a href="#limit限制返回行数" class="headerlink" title="limit限制返回行数"></a>limit限制返回行数</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">select</span> device_id </span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"></span><br><span class="line">limit0,<span class="number">2</span>; #从<span class="number">0</span>开始，前面两个</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="不等于-lt-gt-x2F-x3D-，不是所以系统都可以用）"><a href="#不等于-lt-gt-x2F-x3D-，不是所以系统都可以用）" class="headerlink" title="不等于 &lt;&gt;&#x2F; (!&#x3D;，不是所以系统都可以用）"></a>不等于 &lt;&gt;&#x2F; (!&#x3D;，不是所以系统都可以用）</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">select</span> age,university</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> university<span class="operator">&lt;&gt;</span><span class="string">&#x27;复旦大学&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="为空-is-null"><a href="#为空-is-null" class="headerlink" title="为空 is null"></a>为空 is null</h2><h2 id="不为空-is-not-null-x2F-lt-gt-“”"><a href="#不为空-is-not-null-x2F-lt-gt-“”" class="headerlink" title="不为空 is not null&#x2F; &lt;&gt; “”"></a>不为空 is not null&#x2F; &lt;&gt; “”</h2><h2 id="update更新数据"><a href="#update更新数据" class="headerlink" title="update更新数据"></a>update更新数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> table_name <span class="keyword">SET</span> field1<span class="operator">=</span><span class="keyword">new</span><span class="operator">-</span>value1, field2<span class="operator">=</span><span class="keyword">new</span><span class="operator">-</span>value2</span><br><span class="line"></span><br><span class="line">[<span class="keyword">WHERE</span> Clause]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> username<span class="operator">=</span><span class="string">&#x27;alin&#x27;</span><span class="keyword">where</span> id<span class="operator">=</span><span class="number">6</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="like查找数据"><a href="#like查找数据" class="headerlink" title="like查找数据"></a>like查找数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> field1, field2,...fieldN </span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"></span><br><span class="line"><span class="keyword">WHERE</span> field1 <span class="keyword">LIKE</span> condition1 [<span class="keyword">AND</span> [<span class="keyword">OR</span>]] filed2 <span class="operator">=</span> <span class="string">&#x27;somevalue&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span>`<span class="keyword">user</span>`<span class="keyword">WHERE</span> username <span class="keyword">like</span><span class="string">&#x27;a%&#x27;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">&#x27;%a&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>以a结尾的数据</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;a%&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>以a开头的数据</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;%a%&#x27;</span>    <span class="operator">/</span><span class="operator">/</span>含有a的数据</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;_a_&#x27;</span>    <span class="operator">/</span><span class="operator">/</span>三位且中间字母是a的</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;_a&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>两位且结尾字母是a的</span><br><span class="line"></span><br><span class="line"><span class="string">&#x27;a_&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>两位且开头字母是a的</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="union操作符，将不同的select结果组合到一个结果集中，expresssion可以不同"><a href="#union操作符，将不同的select结果组合到一个结果集中，expresssion可以不同" class="headerlink" title="union操作符，将不同的select结果组合到一个结果集中，expresssion可以不同"></a>union操作符，将不同的select结果组合到一个结果集中，expresssion可以不同</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> expression1, expression2, ... expression_n</span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> tables</span><br><span class="line"></span><br><span class="line">[<span class="keyword">WHERE</span> conditions]</span><br><span class="line"></span><br><span class="line"><span class="keyword">UNION</span> [<span class="keyword">ALL</span> <span class="operator">|</span> <span class="keyword">DISTINCT</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> expression1, expression2, ... expression_n</span><br><span class="line"></span><br><span class="line"><span class="keyword">FROM</span> tables</span><br><span class="line"></span><br><span class="line">[<span class="keyword">WHERE</span> conditions];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> id <span class="keyword">from</span> book</span><br><span class="line"></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> username <span class="keyword">from</span> <span class="keyword">user</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="group-by：默认为asc升序"><a href="#group-by：默认为asc升序" class="headerlink" title="group by：默认为asc升序"></a>group by：默认为asc升序</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">SELECT field1, field2,...fieldN FROM table_name1, table_name2...</span><br><span class="line"></span><br><span class="line">ORDER BY field1 [ASC [DESC][默认 ASC]], [field2...] [ASC [DESC][默认 ASC]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SELECT id from user</span><br><span class="line"></span><br><span class="line">order by username desc;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="group-by分组统计"><a href="#group-by分组统计" class="headerlink" title="group by分组统计"></a>group by分组统计</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">SELECT column_name, function(column_name)</span><br><span class="line"></span><br><span class="line">FROM table_name</span><br><span class="line"></span><br><span class="line">WHERE column_name operator value</span><br><span class="line"></span><br><span class="line">GROUP BY column_name;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#分组求和，而不是整体求和</span><br><span class="line"></span><br><span class="line">SELECT Customer,OrderDate,SUM(OrderPrice)</span><br><span class="line"></span><br><span class="line">FROM Orders</span><br><span class="line"></span><br><span class="line">GROUP BY Customer,OrderDate</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="group-by-having"><a href="#group-by-having" class="headerlink" title="group by+having"></a>group by+having</h2><p>select 语句执行顺序大致是：</p>
+<p>where（数据查询） -&gt; group by（数据编组） -&gt; having（结果过滤） -&gt; order by（排序）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">SELECT emp_no, count(salary) t     #在工资表里查找员工编号、统计发工资的次数（取别名t）</span><br><span class="line"></span><br><span class="line">from salaries </span><br><span class="line"></span><br><span class="line">where creat_date between &#x27;2020-01-01&#x27; and &#x27;2020-12-31&#x27;</span><br><span class="line"></span><br><span class="line">group by emp_no        #通过员工编号编组</span><br><span class="line"></span><br><span class="line">HAVING t&gt;15       #查询发工资次数大于15次的</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h1><h2 id="InnoDB："><a href="#InnoDB：" class="headerlink" title="InnoDB："></a>InnoDB：</h2><h3 id="优点：提供良好的事务管理，崩溃修复能力和并发控制，3层即可控制百万级的数据，聚集索引"><a href="#优点：提供良好的事务管理，崩溃修复能力和并发控制，3层即可控制百万级的数据，聚集索引" class="headerlink" title="优点：提供良好的事务管理，崩溃修复能力和并发控制，3层即可控制百万级的数据，聚集索引"></a>优点：提供良好的事务管理，崩溃修复能力和并发控制，3层即可控制百万级的数据，聚集索引</h3><h3 id="缺点：读写能力较差，占用的数据空间大"><a href="#缺点：读写能力较差，占用的数据空间大" class="headerlink" title="缺点：读写能力较差，占用的数据空间大"></a>缺点：读写能力较差，占用的数据空间大</h3><p><img src="/mysql/image-20220525214038344.png"></p>
+<h2 id="MyISAM："><a href="#MyISAM：" class="headerlink" title="MyISAM："></a>MyISAM：</h2><h3 id="优点：插入速度快，内存占用低，-非聚集索引"><a href="#优点：插入速度快，内存占用低，-非聚集索引" class="headerlink" title="优点：插入速度快，内存占用低， 非聚集索引"></a>优点：插入速度快，内存占用低， 非聚集索引</h3><h3 id="缺点：不支持事务，数据分散存储为三个文件"><a href="#缺点：不支持事务，数据分散存储为三个文件" class="headerlink" title="缺点：不支持事务，数据分散存储为三个文件"></a>缺点：不支持事务，数据分散存储为三个文件</h3><p><img src="/mysql/image-20220525214101726.png"></p>
+<p><img src="/mysql/image-20220525214108389.png"></p>
+<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><h3 id="存取速度快，利用内存中的数据来建立表，安全性比较低。"><a href="#存取速度快，利用内存中的数据来建立表，安全性比较低。" class="headerlink" title="存取速度快，利用内存中的数据来建立表，安全性比较低。"></a>存取速度快，利用内存中的数据来建立表，安全性比较低。</h3><p><img src="/mysql/image-20220525214128074.png"></p>
+<p><img src="/mysql/image-20220525214134736.png"></p>
+<h2 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h2><p>主键索引：唯一、非空</p>
+<p>唯一索引：唯一、可为空</p>
+<p>普通索引：可以重复、为空</p>
+<p>全文索引：</p>
+<p>组合索引：组合</p>
+<h2 id="B树和B-树的区别"><a href="#B树和B-树的区别" class="headerlink" title="B树和B+树的区别"></a>B树和B+树的区别</h2><p>B+树只有叶子节点放置数据，而B树所有节点都放置数据</p>
+<h2 id="回表"><a href="#回表" class="headerlink" title="回表"></a>回表</h2><p>先去非聚集索引的找到ID，然后聚集索引查询对应的字段。（先非主键索引，然后主键索引）</p>
+<h2 id="覆盖索引（建立组合索引来实现）"><a href="#覆盖索引（建立组合索引来实现）" class="headerlink" title="覆盖索引（建立组合索引来实现）"></a>覆盖索引（建立组合索引来实现）</h2><p>使用覆盖索引，MySQL 只需要通过索引就可以查找和返回查询所需要的数据，而不必在使用索引处理数据之后再进行回表操作。</p>
+<h2 id="最左匹配原则"><a href="#最左匹配原则" class="headerlink" title="最左匹配原则"></a>最左匹配原则</h2><h1 id="SQL删除规则"><a href="#SQL删除规则" class="headerlink" title="SQL删除规则"></a>SQL删除规则</h1><p><img src="/../../../Python/%E9%9D%A2%E8%AF%95/image/sql/1647312386181.png"></p>
+<h2 id="cascade级联删除"><a href="#cascade级联删除" class="headerlink" title="cascade级联删除"></a>cascade级联删除</h2><p>解释：（主表被删除，字表的数据也会删除）</p>
+<p>父表中删除包含主键值的行的操作，该值由子表的现有行中的外键列引用。</p>
+<p>在级联删除中，删除父表中的记录时，同时删除子表中外键引用此主健的记录。</p>
+<p>例子：</p>
+<p>employee 表中有员工的dept_id 引用department表中dept_id( 同时为deptartment主键 )作为外键。</p>
+<p>当department表（父表）中一个部门被删除，employee表（子表）中引用这个部门的dept_id作为dept_id的记录也自动被删除。</p>
+<h2 id="protect"><a href="#protect" class="headerlink" title="protect"></a>protect</h2><p>不让删除，删除会抛出异常。</p>
+<h2 id="set-null"><a href="#set-null" class="headerlink" title="set_null"></a>set_null</h2><p>删除的时候，外键置为空值。</p>
+<h2 id="set-default"><a href="#set-default" class="headerlink" title="set_default"></a>set_default</h2><p>外键字段置为默认值。</p>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p>自定义值</p>
+]]></content>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>scrapy</title>
     <url>/2022/05/24/scrapy/</url>
     <content><![CDATA[<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p><strong>scrapy startproject queto</strong></p>
@@ -46,8 +110,8 @@
 <p><a href="https://docs.scrapy.org/en/latest/intro/tutorial.html#creating-a-project">参考链接</a></p>
 ]]></content>
       <tags>
-        <tag>爬虫</tag>
         <tag>scrapy</tag>
+        <tag>爬虫</tag>
       </tags>
   </entry>
 </search>
