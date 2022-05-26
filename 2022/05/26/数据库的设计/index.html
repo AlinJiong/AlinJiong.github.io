@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Tag: mysql |  Alin</title>
+      <title>数据库设计流程 |  Alin</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,81 +54,213 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-数据库的设计"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">#&nbspmysql</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2022" class="archive-year">2022</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="archive-article-date">
-  <time datetime="2022-05-26T03:21:12.000Z" itemprop="datePublished">05/26</time>
-</a>
+    <header class="article-header">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/"
-    >数据库设计流程</a> 
-</h2>
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  数据库设计流程
+</h1>
  
 
-    </header>
-    
-    
       
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="article-date">
+  <time datetime="2022-05-26T03:21:12.000Z" itemprop="datePublished">2022-05-26</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">501</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">1 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h1><h2 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h2><p>需求分析–&gt; 概念模型设计–&gt;逻辑模型设计–&gt;</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649938446040.png" alt="img"></p>
+<h2 id="ER图设计"><a href="#ER图设计" class="headerlink" title="ER图设计"></a>ER图设计</h2><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993338375.png"></p>
+<h3 id="局部ER模型设计"><a href="#局部ER模型设计" class="headerlink" title="局部ER模型设计"></a>局部ER模型设计</h3><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993355640.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993390245.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993543014.png" alt="img">借阅（<strong>BID,RID</strong>,借出日期，归还日期）</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993568799.png"></p>
+<p>若转换成如下形式，借阅信息实体必须有主键标识。</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649994147462.png"></p>
+<h2 id="ER图转换成关系模式的步骤"><a href="#ER图转换成关系模式的步骤" class="headerlink" title="ER图转换成关系模式的步骤"></a>ER图转换成关系模式的步骤</h2><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649949136864.png" alt="img"></p>
+<h3 id="一个实体类型转换成关系模式，标识符为主键"><a href="#一个实体类型转换成关系模式，标识符为主键" class="headerlink" title="一个实体类型转换成关系模式，标识符为主键"></a>一个实体类型转换成关系模式，标识符为主键</h3><p>系（<strong>系编号</strong> ，系名，电话）<br>教师 （__教工号__，姓名，性别，职称）<br>课程 （__课程号__，课程名，学分）</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649948416331.png" alt="img"></p>
+<h3 id="实体联系转换方法"><a href="#实体联系转换方法" class="headerlink" title="实体联系转换方法"></a>实体联系转换方法</h3><ul>
+<li>一对一，任意一方添加对方的主键，尽量避免空值</li>
+<li>一对多，n</li>
+<li>n方添加1的主键</li>
+<li>多对多，新增关系模式，主键为（m,n）的联合主键</li>
+</ul>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649991951493.png"></p>
+<p>系（<strong>系编号</strong> ，系名，电话，___系主任教工号___）<br>教师 （__教工号__，姓名，性别，职称, ___所在系编号____）<br>课程 （__课程号__，课程名，学分，___所在系编号___）<br>任教 (__教工号，课程号__，教材)</p>
+<h1 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h1><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650004976818.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005066736.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005096666.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005347317.png"></p>
+<p>根据实际情况</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005372799.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005329341.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650010404036.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650010432950.png"></p>
+<h1 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h1><ul>
+<li>__码__：表中可以唯一确定一个元组的某个属性（或者属性组），如果这样的码有不止一个，那么大家都叫候选码，我们从候选码中挑一个出来做老大，它就叫主码。</li>
+<li>__全码__：如果一个码包含了所有的属性，这个码就是全码。</li>
+<li>__主属性__：一个属性只要在任何一个候选码中出现过，这个属性就是主属性。</li>
+<li>__非主属性__：与上面相反，没有在任何候选码中出现过，这个属性就是非主属性。</li>
+<li>函数依赖</li>
+</ul>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650080153558.png"></p>
+<h2 id="第2范式"><a href="#第2范式" class="headerlink" title="第2范式"></a>第2范式</h2><p>在第1范式的基础上，消除非主属性对码的部分函数依赖，<br>非主属性完全依赖于码。</p>
+<h2 id="第3范式"><a href="#第3范式" class="headerlink" title="第3范式"></a>第3范式</h2><p>在第2范式的基础上，消除非主属性之间的传递函数依赖。</p>
+<h2 id="BC范式"><a href="#BC范式" class="headerlink" title="BC范式"></a>BC范式</h2><p>消除主属性对码的部分依赖和传递依赖。</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650077443689.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650079553861.png"></p>
+ 
+      <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.sabery.top/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" rel="tag">数据库设计</a></li></ul>
 
-    
+    </footer>
   </div>
-</article>
-      
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            操作符
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">计算机网络</div>
+      </a>
+    
+  </nav>
+
   
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/05/25/mysql/" class="archive-article-date">
-  <time datetime="2022-05-25T15:13:27.000Z" itemprop="datePublished">05/25</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/05/25/mysql/"
-    >mysql</a> 
-</h2>
+   
+    
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
  
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
-
-    
-  </div>
 </article>
-      
-      
-    </div>
-  </div>
-  
-  
 
-  
 </section>
       <footer class="footer">
   <div class="outer">
@@ -265,6 +397,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link

@@ -156,6 +156,437 @@
     
     
     <article
+  id="post-位运算异或"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96/"
+    >操作符</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96/" class="article-date">
+  <time datetime="2022-05-26T04:46:21.000Z" itemprop="datePublished">2022-05-26</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="异或（"><a href="#异或（" class="headerlink" title="异或（^)"></a>异或（^)</h1><h2 id="相同为0，不同为1"><a href="#相同为0，不同为1" class="headerlink" title="相同为0，不同为1"></a>相同为0，不同为1</h2><p>0^0&#x3D;0</p>
+<p>0^1&#x3D;1</p>
+<p>1^0&#x3D;1</p>
+<p>1^1&#x3D;0</p>
+<h2 id="运算法则"><a href="#运算法则" class="headerlink" title="运算法则"></a>运算法则</h2><p>X^X &#x3D; 0</p>
+<p>X^0&#x3D;X</p>
+<p>X^Y&#x3D;Y^X</p>
+<p>X^(Y^Z)&#x3D;(X^Y)^Z</p>
+<h2 id="实际运用"><a href="#实际运用" class="headerlink" title="实际运用"></a>实际运用</h2><h2 id="数据交换（X-Y-x3D-Y-X"><a href="#数据交换（X-Y-x3D-Y-X" class="headerlink" title="数据交换（X,Y&#x3D;Y,X)"></a>数据交换（X,Y&#x3D;Y,X)</h2><p>X, Y &#x3D; a, b</p>
+<p>X &#x3D; X^Y    ———-(a^b, a)</p>
+<p>Y &#x3D; X^Y    ———-(a^b, a^b^b)—————(a^b, a)</p>
+<p>X &#x3D; X^Y    ———-(a^b^a, a)     —————-(b, a)</p>
+<h1 id="与"><a href="#与" class="headerlink" title="与"></a>与</h1><p><img src="/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96//1647178337743.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%AC%A6/" rel="tag">操作符</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-数据库的设计"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/"
+    >数据库设计流程</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="article-date">
+  <time datetime="2022-05-26T03:21:12.000Z" itemprop="datePublished">2022-05-26</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h1><h2 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h2><p>需求分析–&gt; 概念模型设计–&gt;逻辑模型设计–&gt;</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649938446040.png" alt="img"></p>
+<h2 id="ER图设计"><a href="#ER图设计" class="headerlink" title="ER图设计"></a>ER图设计</h2><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993338375.png"></p>
+<h3 id="局部ER模型设计"><a href="#局部ER模型设计" class="headerlink" title="局部ER模型设计"></a>局部ER模型设计</h3><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993355640.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993390245.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993543014.png" alt="img">借阅（<strong>BID,RID</strong>,借出日期，归还日期）</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993568799.png"></p>
+<p>若转换成如下形式，借阅信息实体必须有主键标识。</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649994147462.png"></p>
+<h2 id="ER图转换成关系模式的步骤"><a href="#ER图转换成关系模式的步骤" class="headerlink" title="ER图转换成关系模式的步骤"></a>ER图转换成关系模式的步骤</h2><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649949136864.png" alt="img"></p>
+<h3 id="一个实体类型转换成关系模式，标识符为主键"><a href="#一个实体类型转换成关系模式，标识符为主键" class="headerlink" title="一个实体类型转换成关系模式，标识符为主键"></a>一个实体类型转换成关系模式，标识符为主键</h3><p>系（<strong>系编号</strong> ，系名，电话）<br>教师 （__教工号__，姓名，性别，职称）<br>课程 （__课程号__，课程名，学分）</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649948416331.png" alt="img"></p>
+<h3 id="实体联系转换方法"><a href="#实体联系转换方法" class="headerlink" title="实体联系转换方法"></a>实体联系转换方法</h3><ul>
+<li>一对一，任意一方添加对方的主键，尽量避免空值</li>
+<li>一对多，n</li>
+<li>n方添加1的主键</li>
+<li>多对多，新增关系模式，主键为（m,n）的联合主键</li>
+</ul>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649991951493.png"></p>
+<p>系（<strong>系编号</strong> ，系名，电话，___系主任教工号___）<br>教师 （__教工号__，姓名，性别，职称, ___所在系编号____）<br>课程 （__课程号__，课程名，学分，___所在系编号___）<br>任教 (__教工号，课程号__，教材)</p>
+<h1 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h1><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650004976818.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005066736.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005096666.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005347317.png"></p>
+<p>根据实际情况</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005372799.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005329341.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650010404036.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650010432950.png"></p>
+<h1 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h1><ul>
+<li>__码__：表中可以唯一确定一个元组的某个属性（或者属性组），如果这样的码有不止一个，那么大家都叫候选码，我们从候选码中挑一个出来做老大，它就叫主码。</li>
+<li>__全码__：如果一个码包含了所有的属性，这个码就是全码。</li>
+<li>__主属性__：一个属性只要在任何一个候选码中出现过，这个属性就是主属性。</li>
+<li>__非主属性__：与上面相反，没有在任何候选码中出现过，这个属性就是非主属性。</li>
+<li>函数依赖</li>
+</ul>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650080153558.png"></p>
+<h2 id="第2范式"><a href="#第2范式" class="headerlink" title="第2范式"></a>第2范式</h2><p>在第1范式的基础上，消除非主属性对码的部分函数依赖，<br>非主属性完全依赖于码。</p>
+<h2 id="第3范式"><a href="#第3范式" class="headerlink" title="第3范式"></a>第3范式</h2><p>在第2范式的基础上，消除非主属性之间的传递函数依赖。</p>
+<h2 id="BC范式"><a href="#BC范式" class="headerlink" title="BC范式"></a>BC范式</h2><p>消除主属性对码的部分依赖和传递依赖。</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650077443689.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650079553861.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" rel="tag">数据库设计</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-计算机网络"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+    >计算机网络</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="article-date">
+  <time datetime="2022-05-26T02:46:35.000Z" itemprop="datePublished">2022-05-26</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="TCP-和-UDP的区别"><a href="#TCP-和-UDP的区别" class="headerlink" title="TCP 和 UDP的区别"></a>TCP 和 UDP的区别</h2><ul>
+<li><p>TCP 面向连接，可靠传输，三次握手，四次挥手，面向字节流，有拥塞控制、流量控制</p>
+</li>
+<li><p>UDP 面向无连接，不可靠传输，面向报文，无拥塞控制、流量控制</p>
+<p><img src="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C//image-20220516113504600.png" alt="image-20220516113504600"></p>
+</li>
+</ul>
+<h2 id="浏览器输入url后，发生了什么"><a href="#浏览器输入url后，发生了什么" class="headerlink" title="浏览器输入url后，发生了什么"></a>浏览器输入url后，发生了什么</h2><ol>
+<li>DNS域名解析</li>
+<li>建立TCP链接</li>
+<li>发送HTTP请求</li>
+<li>服务器处理请求，返回响应结果</li>
+<li>关闭TCP连接</li>
+<li>浏览器渲染解析HTML</li>
+</ol>
+<h2 id="HTTP和HTTPS的区别"><a href="#HTTP和HTTPS的区别" class="headerlink" title="HTTP和HTTPS的区别"></a>HTTP和HTTPS的区别</h2><ul>
+<li>https需要ca申请ssl证书</li>
+<li>http是明文传输，而https是ssl加密传输，https比http安全</li>
+<li>http使用80端口，https使用443端口</li>
+</ul>
+<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>公钥加密，私钥解密</p>
+<p><img src="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C//image-20220519140620778.png" alt="image-20220519140620778"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-多进程和多线程"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/26/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
+    >多线程多进程</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/26/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="article-date">
+  <time datetime="2022-05-26T01:54:12.000Z" itemprop="datePublished">2022-05-26</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><ul>
+<li>多进程，计算密集型，如大量的数据计算，利用CPU的多核优势，有几个核开几个进程</li>
+<li>多线程，IO密集型，如文件读写，网络数据传输等</li>
+</ul>
+<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="t-start"><a href="#t-start" class="headerlink" title="t.start"></a>t.start</h2><p>当前线程开始执行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line">t = threading.Thread(target=task, args=_args)</span><br><span class="line">t.start()</span><br></pre></td></tr></table></figure>
+
+<h2 id="t-join"><a href="#t-join" class="headerlink" title="t.join()"></a>t.join()</h2><p>等待当前线程完成，再继续往下进行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line">t = threading.Thread(target=task, args=_args)</span><br><span class="line">t.start()</span><br><span class="line">t.join()</span><br></pre></td></tr></table></figure>
+
+<h2 id="daemon"><a href="#daemon" class="headerlink" title="daemon"></a>daemon</h2><ul>
+<li>当daemon为False时，父线程在运行完毕后，会等待所有子线程退出才结束程序。</li>
+<li>当daemon为True时，父线程在运行完毕后，子线程无论是否正在运行，都会伴随主线程一起退出。</li>
+</ul>
+<h2 id="自定义线程类"><a href="#自定义线程类" class="headerlink" title="自定义线程类"></a>自定义线程类</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">task</span>(<span class="params">args</span>):</span><br><span class="line">    name = threading.current_thread().getName()</span><br><span class="line">    <span class="built_in">print</span>(name)</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    t = threading.Thread(target=task, args=(<span class="number">11</span>,))</span><br><span class="line">    t.setName(<span class="string">&#x27;task-&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(i))</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure>
+
+<p>将要做的事写入到线程里面去,定义run方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread</span>(threading.Thread):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;执行线程&#x27;</span>, self._args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    t = MyThread(args=(i, ))</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure>
+
+<h2 id="线程安全，利用锁机制"><a href="#线程安全，利用锁机制" class="headerlink" title="线程安全，利用锁机制"></a>线程安全，利用锁机制</h2><ul>
+<li>Lock 只能单个加锁、解锁</li>
+<li>RLock 支持嵌套加锁、解锁</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#单个</span></span><br><span class="line">lock_object.acquire()</span><br><span class="line">lock_object.release()</span><br><span class="line"><span class="comment">#嵌套</span></span><br><span class="line">lock_object.acquire()</span><br><span class="line">lock_object.acquire()</span><br><span class="line"></span><br><span class="line">lock_object.release()</span><br><span class="line">lock_object.release()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line">lock_object = threading.RLock()</span><br><span class="line">data = []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">task</span>():</span><br><span class="line">    lock_object.acquire()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">        data.append(i)</span><br><span class="line">    lock_object.release()</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">len</span>(data))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">task1</span>():</span><br><span class="line">    <span class="comment"># with lock_object自动加锁，释放锁</span></span><br><span class="line">    <span class="keyword">with</span> lock_object:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">            data.append(i)</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">len</span>(data))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>):</span><br><span class="line">    t = threading.Thread(target=task)</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure>
+
+<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义一个准备作为线程任务的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">action</span>(<span class="params"><span class="built_in">max</span></span>):</span><br><span class="line">    my_sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">max</span>):</span><br><span class="line">        <span class="built_in">print</span>(threading.current_thread().name + <span class="string">&#x27;  &#x27;</span> + <span class="built_in">str</span>(i))</span><br><span class="line">        my_sum += i</span><br><span class="line">    <span class="keyword">return</span> my_sum</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个包含2条线程的线程池</span></span><br><span class="line"><span class="keyword">with</span> ThreadPoolExecutor(max_workers=<span class="number">2</span>) <span class="keyword">as</span> pool:</span><br><span class="line">    <span class="comment"># 向线程池提交一个task, 50会作为action()函数的参数</span></span><br><span class="line">    future1 = pool.submit(action, <span class="number">50</span>)</span><br><span class="line">    <span class="comment"># 向线程池再提交一个task, 100会作为action()函数的参数</span></span><br><span class="line">    future2 = pool.submit(action, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_result</span>(<span class="params">future</span>):</span><br><span class="line">        <span class="built_in">print</span>(future.result())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 为future1添加线程完成的回调函数</span></span><br><span class="line">    future1.add_done_callback(get_result)</span><br><span class="line">    <span class="comment"># 为future2添加线程完成的回调函数</span></span><br><span class="line">    future2.add_done_callback(get_result)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;--------------&#x27;</span>) </span><br></pre></td></tr></table></figure>
+
+<h2 id="单例模式（拓展"><a href="#单例模式（拓展" class="headerlink" title="单例模式（拓展)"></a>单例模式（拓展)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span>:</span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line">    lock = threading.RLock()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 多线程的情况下，会有问题，可能创建多个对象，需要加锁来控制</span></span><br><span class="line">        <span class="keyword">with</span> cls.lock:</span><br><span class="line">            <span class="keyword">if</span> cls.instance:</span><br><span class="line">                <span class="keyword">return</span> cls.instance</span><br><span class="line">            cls.instance = <span class="built_in">object</span>.__new__(cls, *args, **kwargs)</span><br><span class="line">            <span class="keyword">return</span> cls.instance</span><br></pre></td></tr></table></figure>
+
+<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><p>进程间相互隔离</p>
+<p>三大模式</p>
+<ul>
+<li>fork， 拷贝所有资源，支持文件对象&amp;&amp;锁的传参，[unix]</li>
+<li>spawn， run可以传递参数，不支持文件对象&amp;&amp;线程锁，[win, unix]，main代码块开始执行</li>
+<li>forkserver，同spawn</li>
+</ul>
+<h2 id="常用函数作用"><a href="#常用函数作用" class="headerlink" title="常用函数作用"></a>常用函数作用</h2><ul>
+<li>join（） 等待工作进程退出。必须打电话close()或 terminate()使用之前join()。</li>
+<li>close（） 防止任何更多的任务被提交到池中。 一旦完成所有任务，工作进程将退出。</li>
+<li>terminate（）立即停止工作进程而不完成未完成的工作。当池对象被垃圾收集时，terminate()将立即调用。</li>
+</ul>
+<p>示例代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">info</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;module name:&#x27;</span>, __name__)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;parent process:&#x27;</span>, os.getppid())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;process id:&#x27;</span>, os.getpid())</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">name</span>):</span><br><span class="line">    info()</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>, name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    info()</span><br><span class="line">    p = Process(target=f, args=(<span class="string">&#x27;bob&#x27;</span>,))</span><br><span class="line">    <span class="comment"># p.daemon = False</span></span><br><span class="line">    <span class="built_in">print</span>(p.daemon)</span><br><span class="line">    p.start()</span><br><span class="line">    p.join(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;name:&#x27;</span>, p.name)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;is_alive:&#x27;</span>, p.is_alive())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;exitcode:&#x27;</span>, p.exitcode)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">------------------------------------------------------------</span></span><br><span class="line"><span class="string">module name: __main__</span></span><br><span class="line"><span class="string">parent process: 1188</span></span><br><span class="line"><span class="string">process id: 13060</span></span><br><span class="line"><span class="string">False</span></span><br><span class="line"><span class="string">module name: __mp_main__</span></span><br><span class="line"><span class="string">parent process: 13060</span></span><br><span class="line"><span class="string">process id: 13424</span></span><br><span class="line"><span class="string">name: Process-1</span></span><br><span class="line"><span class="string">is_alive: True</span></span><br><span class="line"><span class="string">exitcode: None</span></span><br><span class="line"><span class="string">hello bob</span></span><br><span class="line"><span class="string">------------------------------------------------------------</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="进程池"><a href="#进程池" class="headerlink" title="进程池"></a>进程池</h2><p>apply一个一个执行，并没有实现并行操作，阻塞式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">p</span>):</span><br><span class="line">       <span class="built_in">print</span>(p)</span><br><span class="line">       time.sleep(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    pool = Pool(processes=<span class="number">10</span>)</span><br><span class="line">    <span class="keyword">for</span> i  <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">500</span>):</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        (&#x27;\n&#x27;</span></span><br><span class="line"><span class="string">         &#x27;	（1）遍历500个可迭代对象，往进程池放一个子进程\n&#x27;</span></span><br><span class="line"><span class="string">         &#x27;	（2）执行这个子进程，等子进程执行完毕，再往进程池放一个子进程，再执行。（同时只执行一个子进程）\n&#x27;</span></span><br><span class="line"><span class="string">         &#x27;	 for循环执行完毕，再执行print函数。\n&#x27;</span></span><br><span class="line"><span class="string">         &#x27;	&#x27;)</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        pool.apply(test, args=(i,))   <span class="comment">#维持执行的进程总数为10，当一个进程执行完后启动一个新进程.</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br></pre></td></tr></table></figure>
+
+<p>apply_async，实现异步操作，非阻塞式，实现并行</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">p</span>):</span><br><span class="line">       <span class="built_in">print</span>(p)</span><br><span class="line">       time.sleep(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    pool = Pool(processes=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span> i  <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">500</span>):</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">         （1）循环遍历，将500个子进程添加到进程池（相对父进程会阻塞）\n&#x27;</span></span><br><span class="line"><span class="string">         （2）每次执行2个子进程，等一个子进程执行完后，立马启动新的子进程。（相对父进程不阻塞）\n&#x27;</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        pool.apply_async(test, args=(i,))   <span class="comment">#维持执行的进程总数为10，当一个进程执行完后启动一个新进程.</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br></pre></td></tr></table></figure>
+
+<h2 id="多进程之间的数据共享"><a href="#多进程之间的数据共享" class="headerlink" title="多进程之间的数据共享"></a>多进程之间的数据共享</h2><h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><p>put存数据，get取数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process, Queue</span><br><span class="line"><span class="keyword">import</span> os, time, random</span><br><span class="line"><span class="comment"># 写数据进程执行的代码:</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_write</span>(<span class="params">q,urls</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Process(%s) is writing...&#x27;</span> % os.getpid())</span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">        q.put(url)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Put %s to queue...&#x27;</span> % url)</span><br><span class="line">        time.sleep(random.random())</span><br><span class="line"><span class="comment"># 读数据进程执行的代码:</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_read</span>(<span class="params">q</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Process(%s) is reading...&#x27;</span> % os.getpid())</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        url = q.get(<span class="literal">True</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Get %s from queue.&#x27;</span> % url)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 父进程创建Queue，并传给各个子进程：</span></span><br><span class="line">    q = Queue()</span><br><span class="line">    _writer1 = Process(target=_write, args=(q,[<span class="string">&#x27;url_1&#x27;</span>, <span class="string">&#x27;url_2&#x27;</span>, <span class="string">&#x27;url_3&#x27;</span>]))</span><br><span class="line">    _writer2 = Process(target=_write, args=(q,[<span class="string">&#x27;url_4&#x27;</span>,<span class="string">&#x27;url_5&#x27;</span>,<span class="string">&#x27;url_6&#x27;</span>]))</span><br><span class="line">    _reader = Process(target=_read, args=(q,))</span><br><span class="line">    <span class="comment"># 启动子进程_writer，写入:</span></span><br><span class="line">    _writer1.start()</span><br><span class="line">    _writer2.start()</span><br><span class="line">    <span class="comment"># 启动子进程_reader，读取:</span></span><br><span class="line">    _reader.start()</span><br><span class="line">    <span class="comment"># 等待_writer结束:</span></span><br><span class="line">    _writer1.join()</span><br><span class="line">    _writer2.join()</span><br><span class="line">    <span class="comment"># _reader进程里是死循环，无法等待其结束，只能强行终止:</span></span><br><span class="line">    _reader.terminate()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Pipe"><a href="#Pipe" class="headerlink" title="Pipe"></a>Pipe</h3><p>send 发数据，recv 收数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process, Pipe</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">talk</span>(<span class="params">pipe</span>):</span><br><span class="line">    pipe.send(<span class="built_in">dict</span>(name=<span class="string">&#x27;Bob&#x27;</span>, spam=<span class="number">42</span>))  <span class="comment"># 传输一个字典</span></span><br><span class="line">    reply = pipe.recv()  <span class="comment"># 接收传输的数据</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;talker got:&#x27;</span>, reply)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    (parentEnd, childEnd) = Pipe()  <span class="comment"># 创建两个 Pipe() 实例，也可以改成 conf1， conf2</span></span><br><span class="line">    child = Process(target=talk,</span><br><span class="line">                    args=(childEnd, ))  <span class="comment"># 创建一个 Process 进程，名称为 child</span></span><br><span class="line">    child.start()  <span class="comment"># 启动进程</span></span><br><span class="line">    <span class="built_in">print</span>(</span><br><span class="line">        <span class="string">&#x27;parent got:&#x27;</span>,</span><br><span class="line">        parentEnd.recv())  <span class="comment"># parentEnd 是一个 Pip() 管道，可以接收 child Process 进程传输的数据</span></span><br><span class="line">    parentEnd.send(&#123;x * <span class="number">2</span></span><br><span class="line">                    <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">&#x27;spam&#x27;</span></span><br><span class="line">                    &#125;)  <span class="comment"># parentEnd 是一个 Pip() 管道，可以使用 send 方法来传输数据</span></span><br><span class="line">    child.join()  <span class="comment"># 传输的数据被 talk 函数内的 pip 管道接收，并赋值给 reply</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;parent exit&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="数据共享"><a href="#数据共享" class="headerlink" title="数据共享"></a>数据共享</h2><ul>
+<li>Manager()返回的manager提供list, dict, Namespace, Lock, RLock, Semaphore, BoundedSemaphore, Condition, Event, Barrier, Queue, Value and Array类型的支持。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process, Manager</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">d, l</span>):</span><br><span class="line">    d[<span class="number">1</span>] = <span class="string">&#x27;1&#x27;</span></span><br><span class="line">    d[<span class="string">&#x27;2&#x27;</span>] = <span class="number">2</span></span><br><span class="line">    d[<span class="number">0.25</span>] = <span class="literal">None</span></span><br><span class="line">    l.reverse()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">with</span> Manager() <span class="keyword">as</span> manager:</span><br><span class="line">        d = manager.<span class="built_in">dict</span>()</span><br><span class="line">        l = manager.<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">        p = Process(target=f, args=(d, l))</span><br><span class="line">        p.start()</span><br><span class="line">        p.join()</span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(d)</span><br><span class="line">        <span class="built_in">print</span>(l)</span><br><span class="line">-------------------------------------------------------------</span><br><span class="line">&#123;<span class="number">1</span>: <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>: <span class="number">2</span>, <span class="number">0.25</span>: <span class="literal">None</span>&#125;</span><br><span class="line">[<span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A4%9A%E8%BF%9B%E7%A8%8B/" rel="tag">多线程多进程</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-celery"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/26/celery/"
+    >celery</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/26/celery/" class="article-date">
+  <time datetime="2022-05-26T01:46:27.000Z" itemprop="datePublished">2022-05-26</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="celery流程"><a href="#celery流程" class="headerlink" title="celery流程"></a>celery流程</h2><p>消息中间件（message broker）</p>
+<p>任务执行单元（worker）</p>
+<p>任务执行结果存储（task result store）<img src="/2022/05/26/celery//1653226700584.png" alt="img"></p>
+<h2 id="多目录异步任务"><a href="#多目录异步任务" class="headerlink" title="多目录异步任务"></a>多目录异步任务</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="/2022/05/26/celery//image-20220523094307264.png" alt="image-20220523094307264"></p>
+<p>celery.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"></span><br><span class="line">cel = Celery(<span class="string">&#x27;celery_demo&#x27;</span>,</span><br><span class="line">             broker=<span class="string">&#x27;redis://127.0.0.1:6379/1&#x27;</span>,  <span class="comment"># 创建任务</span></span><br><span class="line">             backend=<span class="string">&#x27;redis://127.0.0.1:6379/2&#x27;</span>,  <span class="comment"># 保存任务结果</span></span><br><span class="line">             include=[<span class="string">&#x27;celery_tasks.task01&#x27;</span>,</span><br><span class="line">                      <span class="string">&#x27;celery_tasks.task02&#x27;</span>, ],</span><br><span class="line">             )</span><br><span class="line"><span class="comment"># 时区</span></span><br><span class="line">cel.conf.timezone = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line"><span class="comment"># 使用utc</span></span><br><span class="line">cel.conf.enable_utc = <span class="literal">False</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>task01.py</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .celery <span class="keyword">import</span> cel</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@cel.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_mail</span>(<span class="params">name</span>):</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;向 %s发送邮件任务&quot;</span> % name</span><br></pre></td></tr></table></figure>
+
+<p>task02.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .celery <span class="keyword">import</span> cel</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@cel.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_msg</span>(<span class="params">name</span>):</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;向 %s发送短信任务&quot;</span> % name</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>produce_tasks.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">sys.path.append(<span class="string">&quot;..&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery_tasks.task01 <span class="keyword">import</span> send_mail</span><br><span class="line"></span><br><span class="line">res = send_mail.delay(<span class="string">&#x27;zhang&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>check_result.py</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery.result <span class="keyword">import</span> AsyncResult</span><br><span class="line"></span><br><span class="line">sys.path.append(<span class="string">&quot;..&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery_tasks.celery <span class="keyword">import</span> cel</span><br><span class="line"></span><br><span class="line">async_result = AsyncResult(<span class="built_in">id</span>=<span class="string">&quot;dc955c8b-bffb-436f-ae0f-deb8c528258a&quot;</span>, app=cel)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> async_result.successful():</span><br><span class="line">    res = async_result.get()</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> async_result.failed():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;执行失败&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> async_result.status == <span class="string">&quot;PENDING&quot;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;任务等待中被执行&#x27;</span>)</span><br><span class="line"><span class="keyword">elif</span> async_result.status == <span class="string">&quot;PETRY&quot;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;任务异常后正在被重试&#x27;</span>)</span><br><span class="line"><span class="keyword">elif</span> async_result.status == <span class="string">&#x27;STARTED&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;任务开始被执行&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>启动命令：先执行work，然后执行produce_tasks</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">celery -A celery_tasks worker -l info -P eventlet</span><br><span class="line">python produce_tasks.py</span><br></pre></td></tr></table></figure>
+
+<h2 id="多目录异步定时任务"><a href="#多目录异步定时任务" class="headerlink" title="多目录异步定时任务"></a>多目录异步定时任务</h2><h3 id="项目结构-1"><a href="#项目结构-1" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="/2022/05/26/celery//image-20220523094307264.png" alt="image-20220523094307264"></p>
+<p>单个定时任务</p>
+<p>produce_task.py</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">sys.path.append(<span class="string">&quot;..&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery_tasks.task01 <span class="keyword">import</span> send_mail</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime, timedelta</span><br><span class="line"></span><br><span class="line">ctime = datetime.now()  <span class="comment"># 获取当前时间</span></span><br><span class="line">utc_time = datetime.utcfromtimestamp(ctime.timestamp())  <span class="comment"># 时间转换为时间戳</span></span><br><span class="line">time_delay = timedelta(seconds=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">task_time = utc_time + time_delay</span><br><span class="line"></span><br><span class="line">res = send_mail.apply_async(args=[<span class="string">&#x27;zhang&#x27;</span>], eta=task_time)</span><br><span class="line"><span class="built_in">print</span>(res.<span class="built_in">id</span>)</span><br></pre></td></tr></table></figure>
+
+<p>多个定时任务</p>
+<p>celery_tasks.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> timedelta</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"><span class="keyword">from</span> celery.schedules <span class="keyword">import</span> crontab</span><br><span class="line"></span><br><span class="line">cel = Celery(<span class="string">&#x27;celery_demo&#x27;</span>,</span><br><span class="line">             broker=<span class="string">&#x27;redis://127.0.0.1:6379/1&#x27;</span>,  <span class="comment"># 创建任务</span></span><br><span class="line">             backend=<span class="string">&#x27;redis://127.0.0.1:6379/2&#x27;</span>,  <span class="comment"># 保存任务结果</span></span><br><span class="line">             include=[<span class="string">&#x27;celery_tasks.task01&#x27;</span>,</span><br><span class="line">                      <span class="string">&#x27;celery_tasks.task02&#x27;</span>, ],</span><br><span class="line">             )</span><br><span class="line"><span class="comment"># 时区</span></span><br><span class="line">cel.conf.timezone = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line"><span class="comment"># 使用utc</span></span><br><span class="line">cel.conf.enable_utc = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">cel.conf.beat_schedule = &#123;</span><br><span class="line">    <span class="string">&#x27;add-every-10-seconds&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;celery_tasks.task01.send_mail&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: timedelta(seconds=<span class="number">6</span>), <span class="comment"># 每6s增加一个任务</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (<span class="string">&#x27;zhang&#x27;</span>,)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;add-every-1-minutes&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;celery_tasks.task02.send_msg&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: crontab(minute=<span class="string">&#x27;*/1&#x27;</span>),  <span class="comment"># 每分钟发送一次</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (<span class="string">&#x27;zhang&#x27;</span>,)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>启动命令：先启动beat生成任务，然后work执行任务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">celery -A celery_tasks beat</span><br><span class="line">celery -A celery_tasks worker -l info -P eventlet</span><br></pre></td></tr></table></figure>
+
+<h2 id="Django与celery结合使用"><a href="#Django与celery结合使用" class="headerlink" title="Django与celery结合使用"></a>Django与celery结合使用</h2><p><img src="/2022/05/26/celery//image-20220523155250320.png" alt="image-20220523155250320"></p>
+<p>sms.tasks.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">sys.path.append(<span class="string">&quot;..&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mycelery.main <span class="keyword">import</span> app</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_mail</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;向 %s发送邮件任务&quot;</span> % name)</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;ok&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>config.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">broker_url = <span class="string">&#x27;redis://127.0.0.1:6379/14&#x27;</span></span><br><span class="line">result_backend = <span class="string">&#x27;redis://127.0.0.1:6379/15&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>main.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"></span><br><span class="line">app = Celery(<span class="string">&#x27;sms&#x27;</span>)</span><br><span class="line"></span><br><span class="line">os.environ.setdefault(<span class="string">&#x27;DJANGO_SETTINGS_MODULE&#x27;</span>, <span class="string">&#x27;django_celery.settings.dev&#x27;</span>)</span><br><span class="line"></span><br><span class="line">app.config_from_object(<span class="string">&#x27;mycelery.config&#x27;</span>)</span><br><span class="line"></span><br><span class="line">app.autodiscover_tasks([<span class="string">&quot;mycelery.sms&quot;</span>, ])</span><br></pre></td></tr></table></figure>
+
+<p>django views.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> mycelery.sms.tasks <span class="keyword">import</span> send_mail</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">celery</span>(<span class="params">request</span>):</span><br><span class="line">    send_mail(<span class="string">&#x27;zhang&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">&#x27;ok&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>urls.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&#x27;test/&#x27;</span>, views.celery),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>运行命令，进入mycelery根目录执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">celery -A mycelery.main worker -l info -P eventlet</span><br></pre></td></tr></table></figure>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/celery/" rel="tag">celery</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-mysql"
   class="article article-type-post"
   itemscope
