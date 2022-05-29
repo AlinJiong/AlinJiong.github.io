@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>操作符 |  Alin</title>
+      <title>rest_framework |  Alin</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -55,7 +55,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-位运算异或"
+  id="post-rest_framework"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -66,7 +66,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  操作符
+  rest_framework
 </h1>
  
 
@@ -74,15 +74,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96/" class="article-date">
-  <time datetime="2022-05-26T04:46:21.000Z" itemprop="datePublished">2022-05-26</time>
+      <a href="/2022/05/26/rest_framework/" class="article-date">
+  <time datetime="2022-05-26T03:51:22.000Z" itemprop="datePublished">2022-05-26</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">97</span>
+            <span class="post-count">332</span>
         </span>
     </span>
 
@@ -98,27 +98,60 @@
  
     </div>
       
-    <div class="tocbot"></div>
-
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="异或（"><a href="#异或（" class="headerlink" title="异或（^)"></a>异或（^)</h1><h2 id="相同为0，不同为1"><a href="#相同为0，不同为1" class="headerlink" title="相同为0，不同为1"></a>相同为0，不同为1</h2><p>0^0&#x3D;0</p>
-<p>0^1&#x3D;1</p>
-<p>1^0&#x3D;1</p>
-<p>1^1&#x3D;0</p>
-<h2 id="运算法则"><a href="#运算法则" class="headerlink" title="运算法则"></a>运算法则</h2><p>X^X &#x3D; 0</p>
-<p>X^0&#x3D;X</p>
-<p>X^Y&#x3D;Y^X</p>
-<p>X^(Y^Z)&#x3D;(X^Y)^Z</p>
-<h2 id="实际运用"><a href="#实际运用" class="headerlink" title="实际运用"></a>实际运用</h2><h2 id="数据交换（X-Y-x3D-Y-X"><a href="#数据交换（X-Y-x3D-Y-X" class="headerlink" title="数据交换（X,Y&#x3D;Y,X)"></a>数据交换（X,Y&#x3D;Y,X)</h2><p>X, Y &#x3D; a, b</p>
-<p>X &#x3D; X^Y    ———-(a^b, a)</p>
-<p>Y &#x3D; X^Y    ———-(a^b, a^b^b)—————(a^b, a)</p>
-<p>X &#x3D; X^Y    ———-(a^b^a, a)     —————-(b, a)</p>
-<h1 id="与"><a href="#与" class="headerlink" title="与"></a>与</h1><p><img src="/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96//1647178337743.png"></p>
+  <p>rest_framework 规范</p>
+<ul>
+<li><p>尽量使用https协议而不是http，保障数据安全</p>
+</li>
+<li><p>尽量将api部署在专用域名下，如果api没有进一步扩展，可以放在主域名下。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://api.example.com/">https://api.example.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://example.com/api/">https://example.com/api/</a></li>
+</ul>
+</li>
+<li><p>将api版本放入路径中</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://example.com/api/v1/">https://example.com/api/v1/</a></li>
+</ul>
+</li>
+<li><p>路径中，尽量使用资源对应的名词，而不是动词</p>
+</li>
+<li><p>请求方式区分不同的操作，get&#x2F;post&#x2F;put(patch)&#x2F;detelt&#x2F;head&#x2F;options</p>
+</li>
+<li><p>api应该提供参数，过滤返回的数据</p>
+</li>
+<li><p>返回数据中带状态码</p>
+<ul>
+<li>200 操作成功</li>
+<li>201 create 创建&#x2F;修改数据成功</li>
+<li>301 永久重定向</li>
+<li>302 临时重定向</li>
+<li>400 用户请求有误</li>
+<li>403 Forbidden用户被禁止访问</li>
+<li>404 Not Found 找不到请求的网页</li>
+<li>500 Internal server error 服务器内部错误</li>
+</ul>
+</li>
+<li><p>错误处理，状态码是4xx是，应返回错误信息</p>
+</li>
+<li><p>返回信息中添加链接，让用户可以不查看文档就可以知道下一步做什么</p>
+</li>
+<li><p>返回结果符合规范</p>
+<ul>
+<li>GET &#x2F;source 返回资源对象列表（数组）</li>
+<li>GET &#x2F;source&#x2F;num 返回单个资源对象</li>
+<li>POST 返回新生成的资源对象</li>
+<li>PUT &#x2F;source&#x2F;num 返回完整的资源对象</li>
+<li>PATCH &#x2F;source&#x2F;num 返回完整的资源对象</li>
+<li>DELETE &#x2F;source&#x2F;num 返回空文档</li>
+</ul>
+</li>
+</ul>
  
       <!-- reward -->
       
@@ -189,12 +222,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.sabery.top/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.sabery.top/2022/05/26/rest_framework/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%AC%A6/" rel="tag">操作符</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest-framework/" rel="tag">rest_framework</a></li></ul>
 
     </footer>
   </div>
@@ -202,19 +235,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/05/29/sql%E8%87%AA%E5%85%B3%E8%81%94/" class="article-nav-link">
+      <a href="/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            sql自关联
+            操作符
           
         </div>
       </a>
     
     
-      <a href="/2022/05/26/rest_framework/" class="article-nav-link">
+      <a href="/2022/05/26/restframe%20api/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">rest_framework</div>
+        <div class="article-nav-title">restframe api</div>
       </a>
     
   </nav>

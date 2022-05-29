@@ -61,6 +61,97 @@
       </tags>
   </entry>
   <entry>
+    <title>django开发笔记</title>
+    <url>/2022/05/29/django%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="一对多"><a href="#一对多" class="headerlink" title="一对多"></a>一对多</h2><p>models.ForeignKey(to&#x3D;’Category’, on_delete&#x3D;models.CASCADE)</p>
+<p>注意加上引号和on_delete</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> django.db <span class="keyword">import</span> models</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your models here.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Category</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    类别</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    name = models.CharField(verbose_name=<span class="string">&#x27;类别&#x27;</span>, max_length=<span class="number">32</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Article</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    文章</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    name = models.CharField(verbose_name=<span class="string">&#x27;标题&#x27;</span>, max_length=<span class="number">32</span>)</span><br><span class="line">    content = models.TextField(verbose_name=<span class="string">&#x27;内容&#x27;</span>)</span><br><span class="line">    category = models.ForeignKey(to=<span class="string">&#x27;Category&#x27;</span>, on_delete=models.CASCADE)</span><br></pre></td></tr></table></figure>
+
+<h2 id="POST请求-推荐使用request-data获取数据"><a href="#POST请求-推荐使用request-data获取数据" class="headerlink" title="POST请求,推荐使用request.data获取数据"></a>POST请求,推荐使用request.data获取数据</h2><p>原始做法，只能使用body、POST、GET</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">application/x-www-form-urlencoded</span><br><span class="line">使用request.POST.get</span><br><span class="line"></span><br><span class="line">application/json</span><br><span class="line">使用json.loads(request.body.decode(&#x27;utf8&#x27;))</span><br><span class="line"></span><br><span class="line">multipart/form-data</span><br><span class="line">使用request.POST.get</span><br></pre></td></tr></table></figure>
+
+<p>使用drf后</p>
+<h3 id="使用json格式上传，-request-data"><a href="#使用json格式上传，-request-data" class="headerlink" title="使用json格式上传， request.data"></a>使用json格式上传， request.data</h3><p><img src="/2022/05/29/django%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0//image-20220526172957047.png" alt="image-20220526172957047"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">print(request.body)</span><br><span class="line">print(request.POST)</span><br><span class="line">print(request.data)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">b&#x27;&#123;&quot;name&quot;:&quot;\xe5\xbc\xa0\xe4\xb8\x89&quot;,&quot;gender&quot;:1&#125;&#x27;</span><br><span class="line">&lt;QueryDict: &#123;&#125;&gt;</span><br><span class="line">&#123;&#x27;name&#x27;: &#x27;张三&#x27;, &#x27;gender&#x27;: 1&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="x-www-form-urlencoded格式，使用request-data-dict"><a href="#x-www-form-urlencoded格式，使用request-data-dict" class="headerlink" title="x-www-form-urlencoded格式，使用request.data.dict()"></a>x-www-form-urlencoded格式，使用request.data.dict()</h3><p><img src="/2022/05/29/django%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0//image-20220526172428116.png" alt="image-20220526172428116"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">b&#x27;name=%E5%BC%A0%E4%B8%89&amp;gender=1&#x27;</span><br><span class="line">&lt;QueryDict: &#123;&#x27;name&#x27;: [&#x27;张三&#x27;], &#x27;gender&#x27;: [&#x27;1&#x27;]&#125;&gt;</span><br><span class="line">&lt;QueryDict: &#123;&#x27;name&#x27;: [&#x27;张三&#x27;], &#x27;gender&#x27;: [&#x27;1&#x27;]&#125;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="url"><a href="#url" class="headerlink" title="url"></a>url</h2><p>re_path：?P<code>&lt;value&gt;</code>的意思就是命名一个名字为value的组，匹配规则符合后面的&#x2F;d+</p>
+<p>一定要使用 ^开头，$结尾，不然会出现未知的bug</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">re_path(r&#x27;^category/(?P&lt;pk&gt;\d+)/$&#x27;, CategoryView.as_view()),</span><br></pre></td></tr></table></figure>
+
+<h2 id="serializer"><a href="#serializer" class="headerlink" title="serializer"></a>serializer</h2><ul>
+<li>序列化</li>
+<li>验证数据</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NewCatagory</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        pk = kwargs.get(<span class="string">&#x27;pk&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> pk:</span><br><span class="line">            obj =models.Category.objects.<span class="built_in">filter</span>(pk=pk).first()</span><br><span class="line">            <span class="comment"># 序列化的数据，instance传入</span></span><br><span class="line">            ser = NewCatagorySerializer(instance=obj)</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            obj = models.Category.objects.<span class="built_in">all</span>()</span><br><span class="line">            ser = NewCatagorySerializer(instance=obj, many=<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">post</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 反序列化数据，data传入</span></span><br><span class="line">        ser = NewCatagorySerializer(data=request.data)</span><br><span class="line">        <span class="keyword">if</span> ser.is_valid():</span><br><span class="line">            ser.save()</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> Response(ser.errors)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">put</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        全部更新，全部字段都需要传</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        pk = kwargs.get(<span class="string">&#x27;pk&#x27;</span>)</span><br><span class="line">        obj = models.Category.objects.<span class="built_in">filter</span>(pk=pk).first()</span><br><span class="line">        <span class="comment"># 修改数据，两者均传入</span></span><br><span class="line">        ser = NewCatagorySerializer(instance=obj, data=request.data)</span><br><span class="line">        <span class="keyword">if</span> ser.is_valid():</span><br><span class="line">            ser.save()</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line">        <span class="keyword">return</span> Response(ser.errors)</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">patch</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        局部更新，partial=True</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        pk = kwargs.get(<span class="string">&#x27;pk&#x27;</span>)</span><br><span class="line">        obj = models.Category.objects.<span class="built_in">filter</span>(pk=pk).first()</span><br><span class="line">        <span class="comment"># 修改数据，两者均传入</span></span><br><span class="line">        ser = NewCatagorySerializer(instance=obj, data=request.data, partial=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">if</span> ser.is_valid():</span><br><span class="line">            ser.save()</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line">        <span class="keyword">return</span> Response(ser.errors)</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">delete</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        pk = kwargs.get(<span class="string">&#x27;pk&#x27;</span>)</span><br><span class="line">        models.Category.objects.<span class="built_in">filter</span>(pk=pk).delete()</span><br><span class="line">        <span class="keyword">return</span> Response(<span class="string">&quot;删除成功&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>serializer若想增加字段显示。</p>
+<ul>
+<li>使用get_xx_display，xx为原始model中的属性，显示其choice文本信息（普通用户）。</li>
+<li>使用属性的子属性。</li>
+<li>使用SerializerMethodField()，其中需要定义get_xx方法，其中obj为model应该返回的数据。</li>
+</ul>
+<p>depth默认为0，为1可以显示关联表的信息</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfo</span>(models.Model):</span><br><span class="line">    user_type_choice = (</span><br><span class="line">        (<span class="number">1</span>, <span class="string">&#x27;普通用户&#x27;</span>),</span><br><span class="line">        (<span class="number">2</span>, <span class="string">&#x27;VIP&#x27;</span>),</span><br><span class="line">        (<span class="number">3</span>, <span class="string">&#x27;SVIP&#x27;</span>),</span><br><span class="line">    )</span><br><span class="line">    user_type = models.IntegerField(choices=user_type_choice)</span><br><span class="line">    username = models.CharField(max_length=<span class="number">32</span>, unique=<span class="literal">True</span>)</span><br><span class="line">    password = models.CharField(max_length=<span class="number">64</span>)</span><br><span class="line">    group = models.ForeignKey(to=<span class="string">&#x27;UserGroup&#x27;</span>, on_delete=models.CASCADE)  <span class="comment"># 一对多</span></span><br><span class="line">    roles = models.ManyToManyField(to=<span class="string">&#x27;Role&#x27;</span>)  <span class="comment"># 多对多</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfoModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="built_in">type</span> = serializers.CharField(source=<span class="string">&#x27;get_user_type_display&#x27;</span>,required=<span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = UserInfo</span><br><span class="line">        fields = <span class="string">&#x27;__all__&#x27;</span></span><br><span class="line">        depth = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>多对多</p>
+<ul>
+<li>可以使用不同的serializer获取数据</li>
+<li>注意传入方式：多对多属性</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Category</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    类别</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    name = models.CharField(verbose_name=<span class="string">&#x27;类别&#x27;</span>, max_length=<span class="number">32</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Article</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    文章</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    name = models.CharField(verbose_name=<span class="string">&#x27;标题&#x27;</span>, max_length=<span class="number">32</span>)</span><br><span class="line">    content = models.TextField(verbose_name=<span class="string">&#x27;内容&#x27;</span>)</span><br><span class="line">    category = models.ForeignKey(to=<span class="string">&#x27;Category&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line">    tag = models.ManyToManyField(to=<span class="string">&#x27;Tag&#x27;</span>, verbose_name=<span class="string">&#x27;标签&#x27;</span>, blank=<span class="literal">True</span>, null=<span class="literal">True</span>, default=<span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Tag</span>(models.Model):</span><br><span class="line">    label = models.CharField(verbose_name=<span class="string">&#x27;标签&#x27;</span>, max_length=<span class="number">32</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ArticleSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    category_name = serializers.CharField(source=<span class="string">&#x27;category.name&#x27;</span>, required=<span class="literal">False</span>)</span><br><span class="line">    tag_name = serializers.SerializerMethodField(required=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.Article</span><br><span class="line">        fields = <span class="string">&#x27;__all__&#x27;</span></span><br><span class="line">        <span class="comment"># depth = 1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_tag_name</span>(<span class="params">self, row</span>):</span><br><span class="line">        tags = row.tag.<span class="built_in">all</span>()</span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> tag <span class="keyword">in</span> tags:</span><br><span class="line">            res.append(tag.label)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GetArticleSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.Article</span><br><span class="line">        fields = [<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;tag&#x27;</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Article</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        pk = kwargs.get(<span class="string">&#x27;pk&#x27;</span>)</span><br><span class="line">        <span class="keyword">if</span> pk:</span><br><span class="line">            obj = models.Article.objects.<span class="built_in">filter</span>(pk=pk).first()</span><br><span class="line">            <span class="comment"># 序列化的数据，instance传入</span></span><br><span class="line">            ser = GetArticleSerializer(instance=obj)</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            obj = models.Article.objects.<span class="built_in">all</span>()</span><br><span class="line">            ser = GetArticleSerializer(instance=obj, many=<span class="literal">True</span>)</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">post</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 反序列化数据，data传入</span></span><br><span class="line">        <span class="built_in">print</span>(request.data)</span><br><span class="line">        ser = ArticleSerializer(data=request.data)</span><br><span class="line">        <span class="keyword">if</span> ser.is_valid():</span><br><span class="line">            ser.save()</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> Response(ser.errors)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">put</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        全部更新，全部字段都需要传</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        pk = kwargs.get(<span class="string">&#x27;pk&#x27;</span>)</span><br><span class="line">        obj = models.Article.objects.<span class="built_in">filter</span>(pk=pk).first()</span><br><span class="line">        <span class="comment"># 修改数据，两者均传入</span></span><br><span class="line">        ser = ArticleSerializer(instance=obj, data=request.data)</span><br><span class="line">        <span class="keyword">if</span> ser.is_valid():</span><br><span class="line">            ser.save()</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line">        <span class="keyword">return</span> Response(ser.errors)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">patch</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        局部更新，partial=True</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        pk = kwargs.get(<span class="string">&#x27;pk&#x27;</span>)</span><br><span class="line">        obj = models.Article.objects.<span class="built_in">filter</span>(pk=pk).first()</span><br><span class="line">        <span class="comment"># 修改数据，两者均传入</span></span><br><span class="line">        ser = ArticleSerializer(instance=obj, data=request.data, partial=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">if</span> ser.is_valid():</span><br><span class="line">            ser.save()</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line">        <span class="keyword">return</span> Response(ser.errors)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">delete</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        pk = kwargs.get(<span class="string">&#x27;pk&#x27;</span>)</span><br><span class="line">        models.Article.objects.<span class="built_in">filter</span>(pk=pk).delete()</span><br><span class="line">        <span class="keyword">return</span> Response(<span class="string">&quot;删除成功&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>postman 传入方式</p>
+<p><img src="/2022/05/29/django%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0//image-20220528154725419.png" alt="image-20220528154725419"></p>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><p>主要使用page和offset</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework.pagination <span class="keyword">import</span> PageNumberPagination</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">GetArticleSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.Article</span><br><span class="line">        fields = <span class="string">&#x27;__all__&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PageArticle</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        queryset = models.Article.objects.<span class="built_in">all</span>()</span><br><span class="line">        pg = PageNumberPagination()</span><br><span class="line">        res = pg.paginate_queryset(queryset, request, self)</span><br><span class="line">        ser = GetArticleSerializer(instance=res, many=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">return</span> Response(ser.data)</span><br><span class="line"></span><br><span class="line"><span class="comment"># setting.py  </span></span><br><span class="line">REST_FRAMEWORK = &#123;</span><br><span class="line">    <span class="string">&#x27;DEFAULT_PAGINATION_CLASS&#x27;</span>: <span class="string">&#x27;rest_framework.pagination.PageNumberPagination&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;PAGE_SIZE&#x27;</span>: <span class="number">2</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="类继承潜规则"><a href="#类继承潜规则" class="headerlink" title="类继承潜规则"></a>类继承潜规则</h2><p>遇见父类有这种raise函数，例如抛出NotImplementedError异常，则需要继承类重写，实现该函数功能。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">paginate_queryset</span>(<span class="params">self, queryset, request, view=<span class="literal">None</span></span>):  <span class="comment"># pragma: no cover</span></span><br><span class="line">        <span class="keyword">raise</span> NotImplementedError(<span class="string">&#x27;paginate_queryset() must be implemented.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><h3 id="1、表结构设计"><a href="#1、表结构设计" class="headerlink" title="1、表结构设计"></a>1、表结构设计</h3><ul>
+<li>不会经常变化的值放在内存：choice形式，避免跨表查询，降低性能</li>
+<li>分表：如果表中的数据太多，可以选择水平分表。</li>
+<li>表自关联</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">呼啦圈表设计</span></span><br><span class="line"><span class="string">表：</span></span><br><span class="line"><span class="string">用户：用户名、密码</span></span><br><span class="line"><span class="string">评论: 时间、父评论（自关联）、归属文章：评论 1：n、评论者（用户）：评论 1：n</span></span><br><span class="line"><span class="string">文章: 作者（用户)：文章 1：n 、时间、分类、标题、内容、简介、评论数、浏览数</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfo</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;用户表&#x27;&#x27;&#x27;</span></span><br><span class="line">    username = models.CharField(verbose_name=<span class="string">&#x27;用户名&#x27;</span>, max_length=<span class="number">32</span>)</span><br><span class="line">    password = models.CharField(verbose_name=<span class="string">&quot;密码&quot;</span>, max_length=<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Article</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;文章表&#x27;</span></span><br><span class="line">    category_choices = (</span><br><span class="line">        (<span class="number">1</span>, <span class="string">&#x27;咨询&#x27;</span>),</span><br><span class="line">        (<span class="number">2</span>, <span class="string">&#x27;公司动态&#x27;</span>),</span><br><span class="line">        (<span class="number">3</span>, <span class="string">&#x27;分享&#x27;</span>),</span><br><span class="line">        (<span class="number">4</span>, <span class="string">&#x27;答疑&#x27;</span>),</span><br><span class="line">        (<span class="number">5</span>, <span class="string">&#x27;其他&#x27;</span>),</span><br><span class="line">    )</span><br><span class="line">    category = models.CharField(verbose_name=<span class="string">&#x27;分类&#x27;</span>, choices=category_choices)</span><br><span class="line">    title = models.CharField(verbose_name=<span class="string">&#x27;标题&#x27;</span>, max_length=<span class="number">255</span>)</span><br><span class="line">    image = models.CharField(verbose_name=<span class="string">&#x27;图片路径&#x27;</span>, max_length=<span class="number">128</span>)</span><br><span class="line">    summary = models.CharField(verbose_name=<span class="string">&#x27;简介&#x27;</span>, max_length=<span class="number">255</span>)</span><br><span class="line">    comment_count = models.IntegerField(verbose_name=<span class="string">&#x27;评论数&#x27;</span>, default=<span class="number">0</span>)</span><br><span class="line">    read_count = models.IntegerField(verbose_name=<span class="string">&#x27;阅读数&#x27;</span>, default=<span class="number">0</span>)</span><br><span class="line">    data = models.DateTimeField(verbose_name=<span class="string">&#x27;创建时间&#x27;</span>, auto_now_add=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    author = models.ForeignKey(</span><br><span class="line">        to=<span class="string">&#x27;UserInfo&#x27;</span>, verbose_name=<span class="string">&#x27;作者&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Comment</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;评论表&#x27;</span></span><br><span class="line">    content = models.TextField(verbose_name=<span class="string">&#x27;评论&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    article = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;文章&#x27;</span>, to=<span class="string">&#x27;Article&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line">    user = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;评论者&#x27;</span>, to=<span class="string">&#x27;UserInfo&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line">    parent = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;父评论&#x27;</span>, to=<span class="string">&#x27;self&#x27;</span>, null=<span class="literal">True</span>, blank=<span class="literal">True</span>, default=<span class="literal">None</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库分表、分区"><a href="#数据库分表、分区" class="headerlink" title="数据库分表、分区"></a>数据库分表、分区</h2><h3 id="水平分表"><a href="#水平分表" class="headerlink" title="水平分表"></a>水平分表</h3><p>不改变表结构，以行为单位对数据进行拆分。</p>
+<h4 id="1、什么是水平分表"><a href="#1、什么是水平分表" class="headerlink" title="1、什么是水平分表"></a>1、什么是水平分表</h4><p>水平分表就是指以行为单位对数据进行拆分，一般意义上的分库分表指的就是水平分表。<br>分表之后，所有表的结构都是一样的。</p>
+<h4 id="2、为什么要水平分表"><a href="#2、为什么要水平分表" class="headerlink" title="2、为什么要水平分表"></a>2、为什么要水平分表</h4><p>水平分表可以解决表中的数据量大的问题，如果一张表的数据太多，操作起来会很麻烦，所以分表存储数据。</p>
+<h4 id="3、-如何进行水平分表"><a href="#3、-如何进行水平分表" class="headerlink" title="3、 如何进行水平分表"></a>3、 如何进行水平分表</h4><p>一般可以有范围法和hash法来进行水平分表。<br>假设现在有30万行数据，需要对它们进行水平分表：<br>范围法很好理解，可以让第1-100000行数据存放在表1，第100001-200000行数据存放在表2，第200001-300000行数据存放在表3，就完成了水平分表。<br>hash法也不难理解，就是选择一个合适的hash函数，比如说使用取模操作(%)，把%3结果为0的数据存放在表1，结果为1的存放在表2，结果为2的存放在表3即可。</p>
+<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul>
+<li>不存在单表数据量过大</li>
+</ul>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>跨表join关联查询性能差</li>
+<li>数据扩展和维护起来麻烦</li>
+</ul>
+<h3 id="垂直分表"><a href="#垂直分表" class="headerlink" title="垂直分表"></a>垂直分表</h3><p>改变表结构，将列切分开成为不同表。</p>
+<p> <strong>垂直分表</strong>是基于数据库中的”列”进行，某个表字段较多，可以新建一张扩展表，将不经常用或字段长度较大的字段拆分出去到扩展表中。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<li>解耦，提高io效率</li>
+</ul>
+<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ul>
+<li>存在单表数据量过大的问题</li>
+<li>事务处理变得复杂</li>
+</ul>
+<p><img src="/2022/05/29/django%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0//image-20220529164420999.png" alt="image-20220529164420999"><img src="/2022/05/29/django%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0//image-20220529164425657.png" alt="image-20220529164425657"></p>
+]]></content>
+      <tags>
+        <tag>django</tag>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2022/05/23/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -138,7 +229,317 @@
 <h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p>自定义值</p>
 ]]></content>
       <tags>
-        <tag>mysql</tag>
+        <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python</title>
+    <url>/2022/05/29/python/</url>
+    <content><![CDATA[<h2 id="反射机制"><a href="#反射机制" class="headerlink" title="反射机制"></a>反射机制</h2><p>通过字符串的形式导入模块，利用字符串去寻找类的属性值，可以动态的增加和修改对象中的方法和属性。主要用到了setattr和getattr函数实现。</p>
+<p><img src="/2022/05/29/python//image-20220519142513564.png" alt="image-20220519142513564"></p>
+<h2 id="广度优先-amp-深度优先算法"><a href="#广度优先-amp-深度优先算法" class="headerlink" title="广度优先&amp;深度优先算法"></a>广度优先&amp;深度优先算法</h2><p>广度优先：一层一层往外扩展。 1、2、3、4、5 、6、7</p>
+<p>深度优先：一条路走到黑。1、2、4、5、3、6、7</p>
+<p><img src="/2022/05/29/python//image-20220519145022185.png" alt="image-20220519145022185"></p>
+<h2 id="redis可能出现的问题"><a href="#redis可能出现的问题" class="headerlink" title="redis可能出现的问题"></a>redis可能出现的问题</h2><p>参考链接[<a href="https://blog.csdn.net/a745233700/article/details/88088669]">https://blog.csdn.net/a745233700/article/details/88088669]</a></p>
+<ul>
+<li>缓存击穿：缓存的值过期或者没有缓存该值，需要向数据库重新发起查询请求。解决方案，重新将查询数据写入缓存。</li>
+<li>缓存穿透：缓存和数据库中均没有对应的key，大量请求导致高并发访问数据库。解决方案，将无效的key存为空值，或者使用过滤器，在查询数据库之前，让过滤器验证数据的合法性。</li>
+<li>缓存雪崩：如果缓在某一个时刻出现大规模的key失效，那么就会导致大量的请求打在了数据库上面。<br>    + 事前：使用不同的过期时间<br>      + 事中：加锁或者使用熔断机制<br>      + 事后：开启Redis持久化机制，尽快恢复缓存数据</li>
+</ul>
+<h2 id="Python中可变-amp-amp-不可变的数据类型"><a href="#Python中可变-amp-amp-不可变的数据类型" class="headerlink" title="Python中可变&amp;&amp;不可变的数据类型"></a>Python中可变&amp;&amp;不可变的数据类型</h2><p>可变与不可变是根据<strong>更改数据后，内存地址是否发生改变</strong>来判断的，内存地址改变则为不可变。</p>
+<p>可变：列表、字典</p>
+<p>不可变：数值（int、float、bool）、string（字符串）、tuple（元组）</p>
+<h2 id="Python列表相加"><a href="#Python列表相加" class="headerlink" title="Python列表相加"></a>Python列表相加</h2><p>list1 &#x3D; [1,2,3]</p>
+<p>list2 &#x3D; [4,5,6]</p>
+<ul>
+<li><p>]list1+list2</p>
+</li>
+<li><p>list1.extend(list2)</p>
+</li>
+<li><p>for i in list2:</p>
+<p>list1.append(i)</p>
+</li>
+</ul>
+<h2 id="try…except…else…finally"><a href="#try…except…else…finally" class="headerlink" title="try…except…else…finally"></a>try…except…else…finally</h2><p>有异常的话，执行try、except、finally</p>
+<p>无异常的话，执行try、else、finally</p>
+<h2 id="new-、init、call"><a href="#new-、init、call" class="headerlink" title="__new__、init、call"></a>__new__、init、call</h2><ul>
+<li>__ new __，返回初始化的object</li>
+<li>__ init __, 初始化对象</li>
+<li>__ call __, 对象当函数执行时，才会执行，比如</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;call&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">a = Student(<span class="string">&#x27;alin&#x27;</span>)</span><br><span class="line">a()</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">call</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p><a href="https://docs.python.org/zh-cn/3/library/re.html#regular-expression-syntax">参考链接</a></p>
+<p><a href="https://www.runoob.com/python/python-reg-expressions.html">参考链接</a></p>
+<table>
+<thead>
+<tr>
+<th>\d</th>
+<th align="left">[0-9]数字，匹配任何十进制数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\D</td>
+<td align="left">[^0-9]，匹配任何非十进制数字的字符</td>
+</tr>
+<tr>
+<td>\s</td>
+<td align="left">[ \t\n\r\f\v]，匹配任何Unicode空白字符</td>
+</tr>
+<tr>
+<td>\S</td>
+<td align="left">[ ^ \t\n\r\f\v]，匹配任何非空白字符</td>
+</tr>
+<tr>
+<td>\w</td>
+<td align="left">匹配字母数字及下划线</td>
+</tr>
+<tr>
+<td>\W</td>
+<td align="left">匹配非字母数字及下划线</td>
+</tr>
+<tr>
+<td>.*?</td>
+<td align="left">非贪婪</td>
+</tr>
+<tr>
+<td>*</td>
+<td align="left">对它前面的正则式匹配0到任意次重复， 尽量多的匹配字符串。 <code>ab*</code> 会匹配 <code>&#39;a&#39;</code>，<code>&#39;ab&#39;</code>，或者 <code>&#39;a&#39;</code> 后面跟随任意个 <code>&#39;b&#39;</code>。</td>
+</tr>
+<tr>
+<td>+</td>
+<td align="left">对它前面的正则式匹配1到任意次重复。 <code>ab+</code> 会匹配 <code>&#39;a&#39;</code> 后面跟随1个以上到任意个 <code>&#39;b&#39;</code>，它不会匹配 <code>&#39;a&#39;</code>。</td>
+</tr>
+<tr>
+<td>？</td>
+<td align="left">对它前面的正则式匹配0到1次重复。 <code>ab?</code> 会匹配 <code>&#39;a&#39;</code> 或者 <code>&#39;ab&#39;</code>。</td>
+</tr>
+</tbody></table>
+<ol>
+<li><strong>search：</strong> 查找任意位置的匹配项</li>
+<li><strong>match：</strong> 必须从字符串开头匹配</li>
+<li><strong>fullmatch：</strong> 整个字符串与正则完全匹配</li>
+<li><strong>sub</strong>:替换字符串 re.sub(pattern, ‘ ‘ , s)</li>
+<li><strong>spilt</strong>:re.spilt(pattern, s)</li>
+</ol>
+<p><img src="https://segmentfault.com/img/remote/1460000022242459/view" alt="preview"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment">#去除标签 &lt;p&gt;/&lt;div&gt;等</span></span><br><span class="line"></span><br><span class="line">s = <span class="string">&quot;&lt;div&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;岗位职责：&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;完成推荐算法、数据统计、接口、后台等服务器端相关工作&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;&lt;br&gt;&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;必备要求：&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;良好的自我驱动力和职业素养，工作积极主动、结果导向&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;&amp;nbsp;&lt;br&gt;&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;技术要求：&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;1、一年以上 Python 开发经验，掌握面向对象分析和设计，了解设计模式&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;2、掌握HTTP协议，熟悉MVC、MVVM等概念以及相关WEB开发框架&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;3、掌握关系数据库开发设计，掌握 SQL，熟练使用 MySQL/PostgreSQL 中的一种&lt;br&gt;&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;4、掌握NoSQL、MQ，熟练使用对应技术解决方案&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;5、熟悉 Javascript/CSS/HTML5，JQuery、React、Vue.js&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;&amp;nbsp;&lt;br&gt;&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;加分项：&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;p&gt;大数据，数理统计，机器学习，sklearn，高性能，大并发。&lt;/p&gt;\</span></span><br><span class="line"><span class="string">&lt;/div&gt; &quot;</span></span><br><span class="line"></span><br><span class="line">p = <span class="string">r&quot;&lt;/?\w+&gt;|&amp;nbsp;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(re.sub(p, <span class="string">&quot; &quot;</span>, s))</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">岗位职责：  </span><br><span class="line">完成推荐算法、数据统计、接口、后台等服务器端相关工作     </span><br><span class="line">必备要求：  良好的自我驱动力和职业素养，工作积极主动、结果导向      </span><br><span class="line">技术要求：  </span><br><span class="line"><span class="number">1</span>、一年以上 Python 开发经验，掌握面向对象分析和设计，了解设计模式  </span><br><span class="line"><span class="number">2</span>、掌握HTTP协议，熟悉MVC、MVVM等概念以及相关WEB开发框架  </span><br><span class="line"><span class="number">3</span>、掌握关系数据库开发设计，掌握 SQL，熟练使用 MySQL/PostgreSQL 中的一种   </span><br><span class="line"><span class="number">4</span>、掌握NoSQL、MQ，熟练使用对应技术解决方案  </span><br><span class="line"><span class="number">5</span>、熟悉 Javascript/CSS/HTML5，JQuery、React、Vue.js      </span><br><span class="line">加分项：  </span><br><span class="line">大数据，数理统计，机器学习，sklearn，高性能，大并发。</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">program = <span class="string">&quot;ywnds:C C++ Java Python&quot;</span></span><br><span class="line">re.split(<span class="string">r&#x27;:| &#x27;</span>, program) <span class="comment"># 冒号或者空格切分</span></span><br><span class="line">---</span><br><span class="line">[<span class="string">&#x27;ywnds&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;C++&#x27;</span>, <span class="string">&#x27;Java&#x27;</span>, <span class="string">&#x27;Python&#x27;</span>]</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="Xpath-语法"><a href="#Xpath-语法" class="headerlink" title="Xpath 语法"></a>Xpath 语法</h2><p><a href="https://www.w3school.com.cn/xpath/xpath_syntax.asp">参考链接</a></p>
+<p><a href="https://www.runoob.com/xpath/xpath-syntax.html">参考链接</a></p>
+<table>
+<thead>
+<tr>
+<th align="left">路径表达式</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">bookstore</td>
+<td align="left">选取 bookstore 元素的所有子节点。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;bookstore</td>
+<td align="left">选取根元素 bookstore。注释：假如路径起始于正斜杠( &#x2F; )，则此路径始终代表到某元素的绝对路径！</td>
+</tr>
+<tr>
+<td align="left">bookstore&#x2F;book</td>
+<td align="left">选取属于 bookstore 的子元素的所有 book 元素。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;&#x2F;book</td>
+<td align="left">选取所有 book 子元素，而不管它们在文档中的位置。</td>
+</tr>
+<tr>
+<td align="left">bookstore&#x2F;&#x2F;book</td>
+<td align="left">选择属于 bookstore 元素的后代的所有 book 元素，而不管它们位于 bookstore 之下的什么位置。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;&#x2F;@lang</td>
+<td align="left">选取名为 lang 的所有属性。</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="left">路径表达式</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&#x2F;bookstore&#x2F;book[1]</td>
+<td align="left">选取属于 bookstore 子元素的第一个 book 元素。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;bookstore&#x2F;book[last()]</td>
+<td align="left">选取属于 bookstore 子元素的最后一个 book 元素。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;bookstore&#x2F;book[last()-1]</td>
+<td align="left">选取属于 bookstore 子元素的倒数第二个 book 元素。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;bookstore&#x2F;book[position()&lt;3]</td>
+<td align="left">选取最前面的两个属于 bookstore 元素的子元素的 book 元素。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;&#x2F;title[@lang]</td>
+<td align="left">选取所有拥有名为 lang 的属性的 title 元素。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;&#x2F;title[@lang&#x3D;’eng’]</td>
+<td align="left">选取所有 title 元素，且这些元素拥有值为 eng 的 lang 属性。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;bookstore&#x2F;book[price&gt;35.00]</td>
+<td align="left">选取 bookstore 元素的所有 book 元素，且其中的 price 元素的值须大于 35.00。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;bookstore&#x2F;book[price&gt;35.00]&#x2F;&#x2F;title</td>
+<td align="left">选取 bookstore 元素中的 book 元素的所有 title 元素，且其中的 price 元素的值须大于 35.00。</td>
+</tr>
+</tbody></table>
+<h2 id="选取未知节点"><a href="#选取未知节点" class="headerlink" title="选取未知节点"></a>选取未知节点</h2><p>XPath 通配符可用来选取未知的 XML 元素。</p>
+<table>
+<thead>
+<tr>
+<th align="left">通配符</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">*</td>
+<td align="left">匹配任何元素节点。</td>
+</tr>
+<tr>
+<td align="left">@*</td>
+<td align="left">匹配任何属性节点。</td>
+</tr>
+<tr>
+<td align="left">node()</td>
+<td align="left">匹配任何类型的节点。</td>
+</tr>
+</tbody></table>
+<p>在下面的表格中，我们列出了一些路径表达式，以及这些表达式的结果：</p>
+<table>
+<thead>
+<tr>
+<th align="left">路径表达式</th>
+<th align="left">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&#x2F;bookstore&#x2F;*</td>
+<td align="left">选取 bookstore 元素的所有子元素。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;&#x2F;*</td>
+<td align="left">选取文档中的所有元素。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;&#x2F;title[@*]</td>
+<td align="left">选取所有带有属性的 title 元素。</td>
+</tr>
+<tr>
+<td align="left">&#x2F;&#x2F;*[@class&#x3D;’content’]</td>
+<td align="left">选取所有属性class为content的元素</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>rest_framework</title>
+    <url>/2022/05/26/rest_framework/</url>
+    <content><![CDATA[<p>rest_framework 规范</p>
+<ul>
+<li><p>尽量使用https协议而不是http，保障数据安全</p>
+</li>
+<li><p>尽量将api部署在专用域名下，如果api没有进一步扩展，可以放在主域名下。</p>
+<ul>
+<li><a href="https://api.example.com/">https://api.example.com/</a></li>
+<li><a href="https://example.com/api/">https://example.com/api/</a></li>
+</ul>
+</li>
+<li><p>将api版本放入路径中</p>
+<ul>
+<li><a href="https://example.com/api/v1/">https://example.com/api/v1/</a></li>
+</ul>
+</li>
+<li><p>路径中，尽量使用资源对应的名词，而不是动词</p>
+</li>
+<li><p>请求方式区分不同的操作，get&#x2F;post&#x2F;put(patch)&#x2F;detelt&#x2F;head&#x2F;options</p>
+</li>
+<li><p>api应该提供参数，过滤返回的数据</p>
+</li>
+<li><p>返回数据中带状态码</p>
+<ul>
+<li>200 操作成功</li>
+<li>201 create 创建&#x2F;修改数据成功</li>
+<li>301 永久重定向</li>
+<li>302 临时重定向</li>
+<li>400 用户请求有误</li>
+<li>403 Forbidden用户被禁止访问</li>
+<li>404 Not Found 找不到请求的网页</li>
+<li>500 Internal server error 服务器内部错误</li>
+</ul>
+</li>
+<li><p>错误处理，状态码是4xx是，应返回错误信息</p>
+</li>
+<li><p>返回信息中添加链接，让用户可以不查看文档就可以知道下一步做什么</p>
+</li>
+<li><p>返回结果符合规范</p>
+<ul>
+<li>GET &#x2F;source 返回资源对象列表（数组）</li>
+<li>GET &#x2F;source&#x2F;num 返回单个资源对象</li>
+<li>POST 返回新生成的资源对象</li>
+<li>PUT &#x2F;source&#x2F;num 返回完整的资源对象</li>
+<li>PATCH &#x2F;source&#x2F;num 返回完整的资源对象</li>
+<li>DELETE &#x2F;source&#x2F;num 返回空文档</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>rest_framework</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>restframe api</title>
+    <url>/2022/05/26/restframe%20api/</url>
+    <content><![CDATA[<h2 id="1-restful-api回顾"><a href="#1-restful-api回顾" class="headerlink" title="1.restful api回顾"></a>1.restful api回顾</h2><h3 id="1-1-APIView-（-可以-）-原始方案，没有serializer-save方法，需要手动保存"><a href="#1-1-APIView-（-可以-）-原始方案，没有serializer-save方法，需要手动保存" class="headerlink" title="1.1 APIView （ 可以 ） 原始方案，没有serializer.save方法，需要手动保存"></a>1.1 APIView （ 可以 ） 原始方案，没有serializer.save方法，需要手动保存</h3><h4 id="Serializer添加自定义验证"><a href="#Serializer添加自定义验证" class="headerlink" title="Serializer添加自定义验证"></a>Serializer添加自定义验证</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">phone_validator</span>(<span class="params">value</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> re.match(<span class="string">r&#x27;^(1[3|4|5|6|7|8|9])\d&#123;9&#125;$&#x27;</span>, value):</span><br><span class="line">        <span class="keyword">raise</span> ValidationError(<span class="string">&#x27;手机号格式错误&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PhoneSerializer</span>(serializers.Serializer):</span><br><span class="line">    phone = serializers.CharField(label=<span class="string">&#x27;手机号&#x27;</span>,</span><br><span class="line">                                  validators=[phone_validator, ])</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PhoneSerializer</span>(serializers.Serializer):</span><br><span class="line">    phone = serializers.CharField()</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">validate_phone</span>(<span class="params">self, value</span>):</span><br><span class="line">      <span class="keyword">if</span> <span class="keyword">not</span> re.match(<span class="string">r&#x27;^1([3|4|5|6|7|8|9])\d&#123;9&#125;$&#x27;</span>, value):</span><br><span class="line">          <span class="keyword">raise</span> ValidationError(<span class="string">&#x27;手机号格式错误&#x27;</span>)</span><br><span class="line">      <span class="keyword">return</span> value</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h4 id="ModelSerializer添加自定义验证"><a href="#ModelSerializer添加自定义验证" class="headerlink" title="ModelSerializer添加自定义验证"></a>ModelSerializer添加自定义验证</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">PhoneModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">validate_phone</span>(<span class="params">self, value</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> re.match(<span class="string">r&#x27;^1([3|4|5|6|7|8|9])\d&#123;9&#125;$&#x27;</span>, value):</span><br><span class="line">            <span class="keyword">raise</span> ValidationError(<span class="string">&#x27;手机号格式错误&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.UserInfo</span><br><span class="line">        fields = [<span class="string">&#x27;phone&#x27;</span>,]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework.response <span class="keyword">import</span> Response</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.UserInfo</span><br><span class="line">        fields = <span class="string">&quot;__all__&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self,request,*args,**kwargs</span>):</span><br><span class="line">        user_list = models.UserInfo.objects.<span class="built_in">all</span>()</span><br><span class="line">        ser = UserModelSerializer(instance=user_list,many=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">return</span> Response(ser.data)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">post</span>(<span class="params">self,request,*args,**kwargs</span>):</span><br><span class="line">        ser = UserModelSerializer(data=request.data)</span><br><span class="line">        <span class="keyword">if</span> ser.is_valid():</span><br><span class="line">            <span class="comment"># models.UserInfo.objects.create(**ser.validated_data)</span></span><br><span class="line">            ser.save(user_id=<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> Response(ser.data)</span><br><span class="line">        <span class="keyword">return</span> Response(ser.errors)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-ListAPIView，自带get函数"><a href="#1-2-ListAPIView，自带get函数" class="headerlink" title="1.2 ListAPIView，自带get函数"></a>1.2 ListAPIView，自带get函数</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ListAPIView,CreateAPIView,RetrieveAPIView,UpdateAPIView,DestroyAPIView</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.News</span><br><span class="line">        fields = <span class="string">&quot;__all__&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestView</span>(CreateAPIView,ListAPIView):</span><br><span class="line">    serializer_class = NewTestModelSerializer</span><br><span class="line">    queryset = models.News.objects.<span class="built_in">filter</span>(id__gt=<span class="number">4</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-1-用户传递某些值"><a href="#1-1-1-用户传递某些值" class="headerlink" title="1.1.1 用户传递某些值"></a>1.1.1 用户传递某些值</h4><p>传入数据为3个，数据库表为4个，重写perform_create函数，传入额外的参数即可。</p>
+<p>创建用户时，自己在后台生成一个UID。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.News</span><br><span class="line">        fields = <span class="string">&quot;__all__&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestView</span>(CreateAPIView,ListAPIView):</span><br><span class="line">    serializer_class = NewTestModelSerializer</span><br><span class="line">    queryset = models.News.objects.<span class="built_in">filter</span>(id__gt=<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">perform_create</span>(<span class="params">self, serializer</span>):</span><br><span class="line">        serializer.save(uid=<span class="built_in">str</span>(uuid.uuid4()))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-2-fields和exclude的区别？"><a href="#1-1-2-fields和exclude的区别？" class="headerlink" title="1.1.2 fields和exclude的区别？"></a>1.1.2 fields和exclude的区别？</h4><p>通过fields和exclude定制页面展示数据。</p>
+<p>需求：只显示用户表的id,name,age的数据，其他不显示。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.News</span><br><span class="line">        <span class="comment"># fields = [&quot;id&quot;,&quot;name&quot;,&#x27;age&#x27;]</span></span><br><span class="line">        <span class="comment"># fields = &quot;__all__&quot;</span></span><br><span class="line">        exclude = [<span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestView</span>(<span class="title class_ inherited__">ListAPIView</span>):</span><br><span class="line">    serializer_class = NewTestModelSerializer</span><br><span class="line">    queryset = models.User.objects.<span class="built_in">all</span>()</span><br><span class="line">  </span><br><span class="line">[</span><br><span class="line">    &#123;<span class="built_in">id</span>:<span class="number">1</span>,name:<span class="string">&#x27;xxx&#x27;</span>,age:<span class="number">18</span>&#125;,</span><br><span class="line">    &#123;<span class="built_in">id</span>:<span class="number">1</span>,name:<span class="string">&#x27;xxx&#x27;</span>,age:<span class="number">11</span>&#125;,</span><br><span class="line">    &#123;<span class="built_in">id</span>:<span class="number">1</span>,name:<span class="string">&#x27;xxx&#x27;</span>,age:<span class="number">99</span>&#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>需求：数据库有5个字段，显示7个字段。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    xx = serializers.CharField(source=<span class="string">&#x27;id&#x27;</span>)</span><br><span class="line">    <span class="comment"># 自定义数据，配合get_x1使用</span></span><br><span class="line">    x1 = serializers.SerializerMethodField() </span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.News</span><br><span class="line">        <span class="comment"># fields = &quot;__all__&quot;</span></span><br><span class="line">        <span class="comment"># fields = [&#x27;id&#x27;,&#x27;name&#x27;,&#x27;age&#x27;,&#x27;gender&#x27;,&#x27;phone&#x27;,&#x27;xx&#x27;,&#x27;x1&#x27;]</span></span><br><span class="line">        exclude = [<span class="string">&#x27;id&#x27;</span>,<span class="string">&#x27;name&#x27;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_x1</span>(<span class="params">self,obj</span>):</span><br><span class="line">        <span class="keyword">return</span> obj.<span class="built_in">id</span></span><br><span class="line">  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestView</span>(<span class="title class_ inherited__">ListAPIView</span>):</span><br><span class="line">    serializer_class = NewTestModelSerializer</span><br><span class="line">    queryset = models.User.objects.<span class="built_in">all</span>()</span><br><span class="line">  </span><br><span class="line">[</span><br><span class="line">    &#123;<span class="built_in">id</span>:<span class="number">1</span>,name:<span class="string">&#x27;xxx&#x27;</span>,age:<span class="number">18.</span>..   xx:<span class="number">1</span>,x1:<span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="built_in">id</span>:<span class="number">2</span>,name:<span class="string">&#x27;xxx&#x27;</span>,age:<span class="number">11.</span>..   xx:<span class="number">2</span>,x1:<span class="number">2</span>&#125;,</span><br><span class="line">    &#123;<span class="built_in">id</span>:<span class="number">3</span>,name:<span class="string">&#x27;xxx&#x27;</span>,age:<span class="number">99</span>,     xx:<span class="number">3</span>,x1:<span class="number">3</span>&#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-1-3-read-only"><a href="#1-1-3-read-only" class="headerlink" title="1.1.3 read_only"></a>1.1.3 read_only</h4><p>添加时不要，查看时候需要。</p>
+<p>需求：编写两个接口 添加（3字段）、获取列表（5个字段）</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="comment"># phone = serializers.CharField(source=&#x27;phone&#x27;,read_only=True)</span></span><br><span class="line">    <span class="comment"># email = serializers.CharField(source=&#x27;email&#x27;,read_only=True)</span></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.News</span><br><span class="line">        fields = <span class="string">&quot;__all__&quot;</span></span><br><span class="line">        read_only_fields = [<span class="string">&#x27;phone&#x27;</span>,<span class="string">&#x27;email&#x27;</span>,]</span><br><span class="line">      </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestView</span>(CreateAPIView, ListAPIView):</span><br><span class="line">    serializer_class = NewTestModelSerializer</span><br><span class="line">    queryset = models.User.objects.<span class="built_in">all</span>()</span><br><span class="line">  </span><br><span class="line">添加：</span><br><span class="line">	&#123;</span><br><span class="line">        name:<span class="string">&#x27;xx&#x27;</span>,</span><br><span class="line">        age:<span class="string">&#x27;19&#x27;</span>,</span><br><span class="line">        gender:<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">获取：</span><br><span class="line">	[</span><br><span class="line">        &#123;name:<span class="string">&#x27;xx&#x27;</span>,age:<span class="string">&#x27;xx&#x27;</span>,gender:<span class="string">&#x27;&#x27;</span>,phone:<span class="string">&#x27;xx&#x27;</span>,email:xxx&#125;</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-4-复杂需求"><a href="#1-3-4-复杂需求" class="headerlink" title="1.3.4 复杂需求"></a>1.3.4 复杂需求</h4><p>添加时用一个serializers、列表时用一个serializers</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestModelSerializer1</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.News</span><br><span class="line">        fields = <span class="string">&quot;__all__&quot;</span></span><br><span class="line">      </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestModelSerializer2</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.News</span><br><span class="line">        fields = <span class="string">&quot;__all__&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NewTestView</span>(CreateAPIView, ListAPIView):</span><br><span class="line">    queryset = models.User.objects.<span class="built_in">all</span>()</span><br><span class="line">  </span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">get_serializer_class</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> self.request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span> NewTestModelSerializer1</span><br><span class="line">        <span class="keyword">if</span> self.request.method == <span class="string">&#x27;GET&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span> NewTestModelSerializer2</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-5-serializers嵌套"><a href="#1-3-5-serializers嵌套" class="headerlink" title="1.3.5 serializers嵌套"></a>1.3.5 serializers嵌套</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CreateNewsTopicModelSerializer</span>(serializers.Serializer):</span><br><span class="line">    key = serializers.CharField()</span><br><span class="line">    cos_path = serializers.CharField()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CreateNewsModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    imageList = CreateNewsTopicModelSerializer(many=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.News</span><br><span class="line">        exclude = [<span class="string">&#x27;user&#x27;</span>, <span class="string">&#x27;viewer_count&#x27;</span>, <span class="string">&#x27;comment_count&#x27;</span>,<span class="string">&quot;favor_count&quot;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">create</span>(<span class="params">self, validated_data</span>):</span><br><span class="line">        <span class="comment"># 把imageList切走</span></span><br><span class="line">        image_list = validated_data.pop(<span class="string">&#x27;imageList&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建New表中的数据</span></span><br><span class="line">        news_object = models.News.objects.create(**validated_data)</span><br><span class="line"></span><br><span class="line">        data_list = models.NewsDetail.objects.bulk_create(</span><br><span class="line">            [models.NewsDetail(**info, news=news_object) <span class="keyword">for</span> info <span class="keyword">in</span> image_list]</span><br><span class="line">        )</span><br><span class="line">        news_object.imageList = data_list</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> news_object.topic:</span><br><span class="line">            news_object.topic.count += <span class="number">1</span></span><br><span class="line">            news_object.save()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> news_object</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NewsView</span>(<span class="title class_ inherited__">CreateAPIView</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    发布动态</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    serializer_class = CreateNewsModelSerializer</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">perform_create</span>(<span class="params">self, serializer</span>):</span><br><span class="line">        <span class="comment"># 只能保存：News表中的数据（）</span></span><br><span class="line">        <span class="comment"># 调用serializer对象的save（先调用create）</span></span><br><span class="line">        new_object = serializer.save(user_id=<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> new_object</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>restframe api</tag>
       </tags>
   </entry>
   <entry>
@@ -171,6 +572,20 @@
       <tags>
         <tag>scrapy</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sql自关联</title>
+    <url>/2022/05/29/sql%E8%87%AA%E5%85%B3%E8%81%94/</url>
+    <content><![CDATA[<p>所遇到的问题，多级评论如何存储。</p>
+<p><a href="https://blog.csdn.net/Fire_Sky_Ho/article/details/88080301">参考链接</a></p>
+<p><img src="/2022/05/29/sql%E8%87%AA%E5%85%B3%E8%81%94//1653789483757.png"></p>
+<p>解决方案，采用自关联解决。即parent保存一级评论的id属性。</p>
+<p><img src="/2022/05/29/sql%E8%87%AA%E5%85%B3%E8%81%94//1653790922453.png"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;呼啦圈表设计</span></span><br><span class="line"><span class="string">表：</span></span><br><span class="line"><span class="string">用户：用户名、密码</span></span><br><span class="line"><span class="string">评论: 时间、父评论（自关联）、归属文章：评论 1：n、评论者（用户）：评论 1：n</span></span><br><span class="line"><span class="string">文章: 作者（用户)：文章 1：n 、时间、分类、标题、内容、简介、评论数、浏览数</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfo</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;用户表&#x27;&#x27;&#x27;</span></span><br><span class="line">    username = models.CharField(verbose_name=<span class="string">&#x27;用户名&#x27;</span>, max_length=<span class="number">32</span>)</span><br><span class="line">    password = models.CharField(verbose_name=<span class="string">&quot;密码&quot;</span>, max_length=<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Article</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;文章表&#x27;</span></span><br><span class="line">    category_choices = (</span><br><span class="line">        (<span class="number">1</span>, <span class="string">&#x27;咨询&#x27;</span>),</span><br><span class="line">        (<span class="number">2</span>, <span class="string">&#x27;公司动态&#x27;</span>),</span><br><span class="line">        (<span class="number">3</span>, <span class="string">&#x27;分享&#x27;</span>),</span><br><span class="line">        (<span class="number">4</span>, <span class="string">&#x27;答疑&#x27;</span>),</span><br><span class="line">        (<span class="number">5</span>, <span class="string">&#x27;其他&#x27;</span>),</span><br><span class="line">    )</span><br><span class="line">    category = models.CharField(verbose_name=<span class="string">&#x27;分类&#x27;</span>, choices=category_choices)</span><br><span class="line">    title = models.CharField(verbose_name=<span class="string">&#x27;标题&#x27;</span>, max_length=<span class="number">255</span>)</span><br><span class="line">    image = models.CharField(verbose_name=<span class="string">&#x27;图片路径&#x27;</span>, max_length=<span class="number">128</span>)</span><br><span class="line">    summary = models.CharField(verbose_name=<span class="string">&#x27;简介&#x27;</span>, max_length=<span class="number">255</span>)</span><br><span class="line">    comment_count = models.IntegerField(verbose_name=<span class="string">&#x27;评论数&#x27;</span>, default=<span class="number">0</span>)</span><br><span class="line">    read_count = models.IntegerField(verbose_name=<span class="string">&#x27;阅读数&#x27;</span>, default=<span class="number">0</span>)</span><br><span class="line">    data = models.DateTimeField(verbose_name=<span class="string">&#x27;创建时间&#x27;</span>, auto_now_add=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    author = models.ForeignKey(</span><br><span class="line">        to=<span class="string">&#x27;UserInfo&#x27;</span>, verbose_name=<span class="string">&#x27;作者&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Comment</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;评论表&#x27;</span></span><br><span class="line">    content = models.TextField(verbose_name=<span class="string">&#x27;评论&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    article = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;文章&#x27;</span>, to=<span class="string">&#x27;Article&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line">    user = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;评论者&#x27;</span>, to=<span class="string">&#x27;UserInfo&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line">    parent = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;父评论&#x27;</span>, to=<span class="string">&#x27;self&#x27;</span>, null=<span class="literal">True</span>, blank=<span class="literal">True</span>, default=<span class="literal">None</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
@@ -265,36 +680,6 @@
       </tags>
   </entry>
   <entry>
-    <title>计算机网络</title>
-    <url>/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h2 id="TCP-和-UDP的区别"><a href="#TCP-和-UDP的区别" class="headerlink" title="TCP 和 UDP的区别"></a>TCP 和 UDP的区别</h2><ul>
-<li><p>TCP 面向连接，可靠传输，三次握手，四次挥手，面向字节流，有拥塞控制、流量控制</p>
-</li>
-<li><p>UDP 面向无连接，不可靠传输，面向报文，无拥塞控制、流量控制</p>
-<p><img src="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C//image-20220516113504600.png" alt="image-20220516113504600"></p>
-</li>
-</ul>
-<h2 id="浏览器输入url后，发生了什么"><a href="#浏览器输入url后，发生了什么" class="headerlink" title="浏览器输入url后，发生了什么"></a>浏览器输入url后，发生了什么</h2><ol>
-<li>DNS域名解析</li>
-<li>建立TCP链接</li>
-<li>发送HTTP请求</li>
-<li>服务器处理请求，返回响应结果</li>
-<li>关闭TCP连接</li>
-<li>浏览器渲染解析HTML</li>
-</ol>
-<h2 id="HTTP和HTTPS的区别"><a href="#HTTP和HTTPS的区别" class="headerlink" title="HTTP和HTTPS的区别"></a>HTTP和HTTPS的区别</h2><ul>
-<li>https需要ca申请ssl证书</li>
-<li>http是明文传输，而https是ssl加密传输，https比http安全</li>
-<li>http使用80端口，https使用443端口</li>
-</ul>
-<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>公钥加密，私钥解密</p>
-<p><img src="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C//image-20220519140620778.png" alt="image-20220519140620778"></p>
-]]></content>
-      <tags>
-        <tag>计网</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据库设计流程</title>
     <url>/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/</url>
     <content><![CDATA[<h1 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h1><h2 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h2><p>需求分析–&gt; 概念模型设计–&gt;逻辑模型设计–&gt;</p>
@@ -341,8 +726,38 @@
 <p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650079553861.png"></p>
 ]]></content>
       <tags>
-        <tag>mysql</tag>
+        <tag>sql</tag>
         <tag>数据库设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络</title>
+    <url>/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h2 id="TCP-和-UDP的区别"><a href="#TCP-和-UDP的区别" class="headerlink" title="TCP 和 UDP的区别"></a>TCP 和 UDP的区别</h2><ul>
+<li><p>TCP 面向连接，可靠传输，三次握手，四次挥手，面向字节流，有拥塞控制、流量控制</p>
+</li>
+<li><p>UDP 面向无连接，不可靠传输，面向报文，无拥塞控制、流量控制</p>
+<p><img src="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C//image-20220516113504600.png" alt="image-20220516113504600"></p>
+</li>
+</ul>
+<h2 id="浏览器输入url后，发生了什么"><a href="#浏览器输入url后，发生了什么" class="headerlink" title="浏览器输入url后，发生了什么"></a>浏览器输入url后，发生了什么</h2><ol>
+<li>DNS域名解析</li>
+<li>建立TCP链接</li>
+<li>发送HTTP请求</li>
+<li>服务器处理请求，返回响应结果</li>
+<li>关闭TCP连接</li>
+<li>浏览器渲染解析HTML</li>
+</ol>
+<h2 id="HTTP和HTTPS的区别"><a href="#HTTP和HTTPS的区别" class="headerlink" title="HTTP和HTTPS的区别"></a>HTTP和HTTPS的区别</h2><ul>
+<li>https需要ca申请ssl证书</li>
+<li>http是明文传输，而https是ssl加密传输，https比http安全</li>
+<li>http使用80端口，https使用443端口</li>
+</ul>
+<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>公钥加密，私钥解密</p>
+<p><img src="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C//image-20220519140620778.png" alt="image-20220519140620778"></p>
+]]></content>
+      <tags>
+        <tag>计网</tag>
       </tags>
   </entry>
 </search>
