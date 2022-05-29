@@ -82,7 +82,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">166</span>
+            <span class="post-count">397</span>
         </span>
     </span>
 
@@ -113,6 +113,14 @@
 <p><img src="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C//image-20220516113504600.png" alt="image-20220516113504600"></p>
 </li>
 </ul>
+<h2 id="UDP如何实现可靠传输？"><a href="#UDP如何实现可靠传输？" class="headerlink" title="UDP如何实现可靠传输？"></a>UDP如何实现可靠传输？</h2><p>1、服务器端给数据包添加序号，客户端接收数据返回信息。   2、超时重传。</p>
+<p>最简单的方式是在应用层模仿传输层TCP的可靠性传输。下面不考虑拥塞处理，可靠UDP的简单设计。</p>
+<ul>
+<li>1、添加seq&#x2F;ack机制，确保数据发送到对端</li>
+<li>2、添加发送和接收缓冲区，主要是用户超时重传。</li>
+<li>3、添加超时重传机制。</li>
+</ul>
+<p>详细说明：送端发送数据时，生成一个随机seq&#x3D;x，然后每一片按照数据大小分配seq。数据到达接收端后接收端放入缓存，并发送一个ack&#x3D;x的包，表示对方已经收到了数据。发送端收到了ack包后，删除缓冲区对应的数据。时间到后，定时任务检查是否需要重传数据。</p>
 <h2 id="浏览器输入url后，发生了什么"><a href="#浏览器输入url后，发生了什么" class="headerlink" title="浏览器输入url后，发生了什么"></a>浏览器输入url后，发生了什么</h2><ol>
 <li>DNS域名解析</li>
 <li>建立TCP链接</li>

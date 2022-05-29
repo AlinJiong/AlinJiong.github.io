@@ -82,7 +82,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">714</span>
+            <span class="post-count">937</span>
         </span>
     </span>
 
@@ -91,7 +91,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">3 min</span>
+            <span class="post-count">4 min</span>
         </span>
     </span>
 </div>
@@ -106,7 +106,11 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="celery流程"><a href="#celery流程" class="headerlink" title="celery流程"></a>celery流程</h2><p>消息中间件（message broker）</p>
+  <h2 id="celery介绍（分布式消息任务队列）"><a href="#celery介绍（分布式消息任务队列）" class="headerlink" title="celery介绍（分布式消息任务队列）"></a>celery介绍（分布式消息任务队列）</h2><p>Celery 是一款非常简单、灵活、可靠的分布式系统，可用于处理大量消息，并且提供了一整套操作此系统的一系列工具。</p>
+<h2 id="什么是任务队列"><a href="#什么是任务队列" class="headerlink" title="什么是任务队列"></a>什么是任务队列</h2><p>任务队列一般用于线程或计算机之间分配工作的一种机制。</p>
+<p>任务队列的输入是一个称为任务的工作单元，有专门的职程（Worker）进行不断的监视任务队列，进行执行新的任务工作。</p>
+<p>Celery 通过消息机制进行通信，通常使用中间人（Broker）作为客户端和职程（Worker）调节。启动一个任务，客户端向消息队列发送一条消息，然后中间人（Broker）将消息传递给一个职程（Worker），最后由职程（Worker）进行执行中间人（Broker）分配的任务。</p>
+<h2 id="celery流程"><a href="#celery流程" class="headerlink" title="celery流程"></a>celery流程</h2><p>消息中间件（message broker）</p>
 <p>任务执行单元（worker）</p>
 <p>任务执行结果存储（task result store）<img src="/2022/05/26/celery//1653226700584.png" alt="img"></p>
 <h2 id="多目录异步任务"><a href="#多目录异步任务" class="headerlink" title="多目录异步任务"></a>多目录异步任务</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="/2022/05/26/celery//image-20220523094307264.png" alt="image-20220523094307264"></p>

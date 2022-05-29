@@ -82,7 +82,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.9k</span>
+            <span class="post-count">1.8k</span>
         </span>
     </span>
 
@@ -111,11 +111,22 @@
 <h2 id="广度优先-amp-深度优先算法"><a href="#广度优先-amp-深度优先算法" class="headerlink" title="广度优先&amp;深度优先算法"></a>广度优先&amp;深度优先算法</h2><p>广度优先：一层一层往外扩展。 1、2、3、4、5 、6、7</p>
 <p>深度优先：一条路走到黑。1、2、4、5、3、6、7</p>
 <p><img src="/2022/05/29/python//image-20220519145022185.png" alt="image-20220519145022185"></p>
-<h2 id="redis可能出现的问题"><a href="#redis可能出现的问题" class="headerlink" title="redis可能出现的问题"></a>redis可能出现的问题</h2><p>参考链接[<a target="_blank" rel="noopener" href="https://blog.csdn.net/a745233700/article/details/88088669]">https://blog.csdn.net/a745233700/article/details/88088669]</a></p>
+<h2 id="redis可能出现的问题"><a href="#redis可能出现的问题" class="headerlink" title="redis可能出现的问题"></a>redis可能出现的问题</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/a745233700/article/details/88088669">参考链接</a></p>
 <ul>
-<li>缓存击穿：缓存的值过期或者没有缓存该值，需要向数据库重新发起查询请求。解决方案，重新将查询数据写入缓存。</li>
-<li>缓存穿透：缓存和数据库中均没有对应的key，大量请求导致高并发访问数据库。解决方案，将无效的key存为空值，或者使用过滤器，在查询数据库之前，让过滤器验证数据的合法性。</li>
-<li>缓存雪崩：如果缓在某一个时刻出现大规模的key失效，那么就会导致大量的请求打在了数据库上面。<br>    + 事前：使用不同的过期时间<br>      + 事中：加锁或者使用熔断机制<br>      + 事后：开启Redis持久化机制，尽快恢复缓存数据</li>
+<li><p>缓存击穿：缓存的值过期或者没有缓存该值，需要向数据库重新发起查询请求。解决方案，重新将查询数据写入缓存。</p>
+</li>
+<li><p>缓存穿透：缓存和数据库中均没有对应的key，大量请求导致高并发访问数据库。解决方案，将无效的key存为空值，或者使用过滤器，在查询数据库之前，让过滤器验证数据的合法性。</p>
+</li>
+<li><p>缓存雪崩：如果缓在某一个时刻出现大规模的key失效，那么就会导致大量的请求打在了数据库上面。</p>
+<ul>
+<li><p>事前：使用不同的过期时间</p>
+<ul>
+<li>事中：加锁或者使用熔断机制</li>
+<li>事后：开启Redis持久化机制，尽快恢复缓存数据</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="Python中可变-amp-amp-不可变的数据类型"><a href="#Python中可变-amp-amp-不可变的数据类型" class="headerlink" title="Python中可变&amp;&amp;不可变的数据类型"></a>Python中可变&amp;&amp;不可变的数据类型</h2><p>可变与不可变是根据<strong>更改数据后，内存地址是否发生改变</strong>来判断的，内存地址改变则为不可变。</p>
 <p>可变：列表、字典</p>
