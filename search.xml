@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>choices</title>
+    <url>/2022/05/30/choices/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">gender_choice = [</span><br><span class="line">     (<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">     (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line"> ]</span><br><span class="line"></span><br><span class="line"> gender = models.SmallIntegerField(verbose_name=<span class="string">&#x27;性别&#x27;</span>, choices=gender_choice)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="字段用法"><a href="#字段用法" class="headerlink" title="字段用法"></a>字段用法</h2><p>元组第一个数据的是用来存储在数据库中，第二个数据是用来显示的，取出显示字段的函数为</p>
+<p>get_xxx_display。</p>
+<p>若没有对应的元组，则按存储字段来显示。</p>
+]]></content>
+      <categories>
+        <category>django</category>
+      </categories>
+      <tags>
+        <tag>choices</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python装饰器</title>
     <url>/2022/05/30/Python%E8%A3%85%E9%A5%B0%E5%99%A8/</url>
     <content><![CDATA[<h2 id="property"><a href="#property" class="headerlink" title="@property"></a>@property</h2><p>将方法变成属性使用</p>
@@ -81,22 +97,6 @@
 ]]></content>
       <tags>
         <tag>celery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>choices</title>
-    <url>/2022/05/30/choices/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">gender_choice = [</span><br><span class="line">     (<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">     (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line"> ]</span><br><span class="line"></span><br><span class="line"> gender = models.SmallIntegerField(verbose_name=<span class="string">&#x27;性别&#x27;</span>, choices=gender_choice)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="字段用法"><a href="#字段用法" class="headerlink" title="字段用法"></a>字段用法</h2><p>元组第一个数据的是用来存储在数据库中，第二个数据是用来显示的，取出显示字段的函数为</p>
-<p>get_xxx_display。</p>
-<p>若没有对应的元组，则按存储字段来显示。</p>
-]]></content>
-      <categories>
-        <category>django</category>
-      </categories>
-      <tags>
-        <tag>choices</tag>
       </tags>
   </entry>
   <entry>
@@ -258,7 +258,7 @@
 
 <h2 id="创建表-amp-amp-删除表"><a href="#创建表-amp-amp-删除表" class="headerlink" title="创建表&amp;&amp;删除表"></a>创建表&amp;&amp;删除表</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">user</span>(</span><br><span class="line">id <span class="type">INT</span> UNSIGNED AUTO_INCREMENT,</span><br><span class="line">username <span class="type">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line"><span class="keyword">PRIMARY</span> key(id)</span><br><span class="line">)ENGINE<span class="operator">=</span>INNODB <span class="keyword">DEFAULT</span> charset<span class="operator">=</span>utf8;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">drop table; # 删除表和结构</span><br><span class="line">truncate table; # 删除所有数据，保存表结构</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span>; # 删除表和结构</span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span>; # 删除所有数据，保存表结构</span><br></pre></td></tr></table></figure>
 
 <h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">table</span> (id, username) <span class="keyword">values</span> (<span class="number">1</span>,<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
@@ -290,7 +290,9 @@
 
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> a.bookname, a.pushlishTime, b.usename</span><br><span class="line"><span class="keyword">from</span> Books a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> Author b</span><br><span class="line"><span class="keyword">on</span> a.uid <span class="operator">=</span> b.id</span><br><span class="line"><span class="keyword">where</span> DATEDIFF(a.updateTime, NOW())<span class="operator">&lt;=</span><span class="number">0</span> <span class="keyword">and</span> DATEDIFF(a.updateTime, NOW())<span class="operator">&gt;</span><span class="number">-7</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> a.likes</span><br></pre></td></tr></table></figure>
 
-<h1 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h1><h2 id="InnoDB："><a href="#InnoDB：" class="headerlink" title="InnoDB："></a>InnoDB：</h2><p>优点：提供良好的事务管理，崩溃修复能力和并发控制，3 层即可控制百万级的数据，聚集索引</p>
+<h1 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h1><h2 id="InnoDB："><a href="#InnoDB：" class="headerlink" title="InnoDB："></a>InnoDB：</h2><ul>
+<li><input disabled type="checkbox"> </li>
+</ul>
 <h3 id="缺点：读写能力较差，占用的数据空间大"><a href="#缺点：读写能力较差，占用的数据空间大" class="headerlink" title="缺点：读写能力较差，占用的数据空间大"></a>缺点：读写能力较差，占用的数据空间大</h3><p><img src="/2022/05/25/mysql//image-20220525235957544.png" alt="image-20220525235957544"></p>
 <h2 id="MyISAM："><a href="#MyISAM：" class="headerlink" title="MyISAM："></a>MyISAM：</h2><h3 id="优点：插入速度快，内存占用低，-非聚集索引"><a href="#优点：插入速度快，内存占用低，-非聚集索引" class="headerlink" title="优点：插入速度快，内存占用低， 非聚集索引"></a>优点：插入速度快，内存占用低， 非聚集索引</h3><h3 id="缺点：不支持事务，数据分散存储为三个文件"><a href="#缺点：不支持事务，数据分散存储为三个文件" class="headerlink" title="缺点：不支持事务，数据分散存储为三个文件"></a>缺点：不支持事务，数据分散存储为三个文件</h3><p><img src="/2022/05/25/mysql//image-20220525231552462.png" alt="image-20220525231552462"></p>
 <p><img src="/2022/05/25/mysql//image-20220525231604086.png" alt="image-20220525231604086"></p>
@@ -318,6 +320,108 @@
 ]]></content>
       <tags>
         <tag>sql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>redis</title>
+    <url>/2022/05/30/redis/</url>
+    <content><![CDATA[<h1 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h1><p><img src="/2022/05/30/redis//1644755852532.png" alt="img"></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="备份conf文件，并修改权限为redis用户和redis用户组"><a href="#备份conf文件，并修改权限为redis用户和redis用户组" class="headerlink" title="备份conf文件，并修改权限为redis用户和redis用户组"></a>备份conf文件，并修改权限为redis用户和redis用户组</h3><p><img src="/2022/05/30/redis//1644756290543.png"></p>
+<h3 id="conf文件第500行，去掉注释，添加密码"><a href="#conf文件第500行，去掉注释，添加密码" class="headerlink" title="conf文件第500行，去掉注释，添加密码"></a>conf文件第500行，去掉注释，添加密码</h3><p><img src="/2022/05/30/redis//1644757538697.png" alt="img"></p>
+<p>通过密码连接redis后，输入ping验证返回pong才为连接成功！</p>
+<p><img src="/2022/05/30/redis//1644757884539.png" alt="img"></p>
+<p><img src="/2022/05/30/redis//1644757984964.png" alt="img"></p>
+<h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><h2 id="redis命令："><a href="#redis命令：" class="headerlink" title="redis命令："></a>redis命令：</h2><p><img src="/2022/05/30/redis//1644812992612.png" alt="img"></p>
+<p><img src="/2022/05/30/redis//1644813042338.png"></p>
+<p><img src="/2022/05/30/redis//1644813124017.png"></p>
+<p><img src="/2022/05/30/redis//1644813183997.png"></p>
+<h1 id="字符串1"><a href="#字符串1" class="headerlink" title="字符串1"></a>字符串1</h1><p><img src="/2022/05/30/redis//1644813353215.png"></p>
+<h2 id="设置参数"><a href="#设置参数" class="headerlink" title="设置参数"></a>设置参数</h2><p><img src="/2022/05/30/redis//1644813660462.png" alt="img"></p>
+<h2 id="获取key"><a href="#获取key" class="headerlink" title="获取key"></a>获取key</h2><p><img src="/2022/05/30/redis//1644819831236.png" alt="img"></p>
+<p><img src="/2022/05/30/redis//1644819822754.png"></p>
+<h2 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h2><p><img src="/2022/05/30/redis//1644820728709.png"></p>
+<p><img src="/2022/05/30/redis//1644820733978.png"></p>
+<h2 id="数值操作"><a href="#数值操作" class="headerlink" title="数值操作"></a>数值操作</h2><p>incrby默认key为0</p>
+<p><img src="/2022/05/30/redis//1644999905406.png" alt="img"></p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645000061220.png"></p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p><img src="/2022/05/30/redis//1645000389374.png"></p>
+<p>1、keys *</p>
+<p>2、set trill:username user001, get trill:username</p>
+<p>3、strlen trill:username</p>
+<p>4、mset trill:username xx</p>
+<p>5、exists trill:username</p>
+<p>6、incrby fans 10</p>
+<p>7、incr fans 2次</p>
+<p>8、decrby fans 3</p>
+<p>9、decr fans 1次</p>
+<p>10、flushdb</p>
+<p>11、flushall</p>
+<h1 id="字符串2"><a href="#字符串2" class="headerlink" title="字符串2"></a>字符串2</h1><p>ex命令只有在字符串中才存在，若想其他key也支持，需要手动指定</p>
+<p><img src="/2022/05/30/redis//1645002714084.png"></p>
+<h2 id="ttl-key（检查过期时间，-persist-key过期变为不过期）"><a href="#ttl-key（检查过期时间，-persist-key过期变为不过期）" class="headerlink" title="ttl key（检查过期时间， persist key过期变为不过期）"></a>ttl key（检查过期时间， persist key过期变为不过期）</h2><p><img src="/2022/05/30/redis//1645002896436.png"></p>
+<h2 id="惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）"><a href="#惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）" class="headerlink" title="惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）"></a>惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）</h2><p><img src="/2022/05/30/redis//1645015457811.png"></p>
+<h2 id="定期删除，随机采样删除数据库中的数据"><a href="#定期删除，随机采样删除数据库中的数据" class="headerlink" title="定期删除，随机采样删除数据库中的数据"></a>定期删除，随机采样删除数据库中的数据</h2><p><img src="/2022/05/30/redis//1645016084355.png"></p>
+<p><img src="/2022/05/30/redis//1645015924165.png"></p>
+<h2 id="主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）"><a href="#主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）" class="headerlink" title="主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）"></a>主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）</h2><p><img src="/2022/05/30/redis//1645016832585.png"></p>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645017622788.png"></p>
+<p><img src="/2022/05/30/redis//1645018488072.png"></p>
+<p><img src="/2022/05/30/redis//1645017694612.png" alt="img"></p>
+<p><img src="/2022/05/30/redis//1645020756449.png"></p>
+<p><img src="/2022/05/30/redis//1645020952979.png"></p>
+<p><img src="/2022/05/30/redis//1645021160696.png"></p>
+<p><img src="/2022/05/30/redis//1645021252577.png"></p>
+<p><img src="/2022/05/30/redis//1645022325024.png"></p>
+<h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h2><p><img src="/2022/05/30/redis//1645024743629.png" alt="img"></p>
+<p>1、keys *</p>
+<p>2、RPUSH spider 1 2</p>
+<p>3、lrange spider 0 -1</p>
+<p>4、llen spider</p>
+<p>5、lset spider 0 01</p>
+<p>6、linsert spider after 04 02</p>
+<p>7、rpop spider</p>
+<p>8、lrem spider 0 02</p>
+<p>9、ltrim spider 0 2</p>
+<h1 id="pyredis操作"><a href="#pyredis操作" class="headerlink" title="pyredis操作"></a>pyredis操作</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><img src="/2022/05/30/redis//1645161722169.png"></p>
+<h2 id="代码中使用方法"><a href="#代码中使用方法" class="headerlink" title="代码中使用方法"></a>代码中使用方法</h2><p><img src="/2022/05/30/redis//1645161776289.png"></p>
+<h1 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h1><p><img src="/2022/05/30/redis//1645171869946.png" alt="img"></p>
+<p><img src="/2022/05/30/redis//1645171935518.png"></p>
+<h2 id="常用命令-1"><a href="#常用命令-1" class="headerlink" title="常用命令"></a>常用命令</h2><p>setbit，key不存在时，全部默认初始化为0，长度为 8 的倍数。</p>
+<p> <img src="/2022/05/30/redis//1645172436427.png"></p>
+<p><img src="/2022/05/30/redis//1645172595105.png"></p>
+<h2 id="字节索引，-8位为一个字节，前8位为0，接着8为为1，以此类推"><a href="#字节索引，-8位为一个字节，前8位为0，接着8为为1，以此类推" class="headerlink" title="字节索引， 8位为一个字节，前8位为0，接着8为为1，以此类推"></a>字节索引， 8位为一个字节，前8位为0，接着8为为1，以此类推</h2><p><img src="/2022/05/30/redis//1645172650634.png"></p>
+<p><img src="/2022/05/30/redis//1645172868091.png"></p>
+<p><img src="/2022/05/30/redis//1645172895802.png"></p>
+<p><img src="/2022/05/30/redis//1645172968966.png"></p>
+<h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><p><img src="/2022/05/30/redis//1645189817987.png"></p>
+<h2 id="特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。"><a href="#特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。" class="headerlink" title="特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。"></a>特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。</h2><p>缺点是过期只能将所有的保存信息进行过期操作，而不能对单个信息进行过期操作。+</p>
+<p><img src="/2022/05/30/redis//1645241753956.png" alt="img"></p>
+<h2 id="常用命令-2"><a href="#常用命令-2" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645242100281.png"></p>
+<p><img src="/2022/05/30/redis//1645242121991.png"></p>
+<p><img src="/2022/05/30/redis//1645242396590.png"></p>
+<p><img src="/2022/05/30/redis//1645242261452.png" alt="img"></p>
+<h2 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645242547812.png"></p>
+<p><img src="/2022/05/30/redis//1645242586733.png"></p>
+<h2 id="Python中hash算法处理过程"><a href="#Python中hash算法处理过程" class="headerlink" title="Python中hash算法处理过程"></a>Python中hash算法处理过程</h2><p><img src="/2022/05/30/redis//1645275342085.png"></p>
+<h2 id="redis中hash算法处理流程"><a href="#redis中hash算法处理流程" class="headerlink" title="redis中hash算法处理流程"></a>redis中hash算法处理流程</h2><p>位置重复时，采用多重链表来解决</p>
+<p><img src="/2022/05/30/redis//1645275652961.png"></p>
+<h1 id="集合（无序，去重）"><a href="#集合（无序，去重）" class="headerlink" title="集合（无序，去重）"></a>集合（无序，去重）</h1><h2 id="常用命令-3"><a href="#常用命令-3" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645275970650.png"></p>
+<p><img src="/2022/05/30/redis//1645276039575.png"></p>
+<p>8、将元素从一个集合转移到另一个集合</p>
+<p>9、差集依照左边为标准</p>
+<p><img src="/2022/05/30/redis//1645276712258.png" alt="img">‘<img src="/2022/05/30/redis//1645276849544.png"></p>
+<h2 id="应用场景-2"><a href="#应用场景-2" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645276951590.png"></p>
+<h2 id="底层实现（A、纯数字-intset-B、有字符串-hashtable）"><a href="#底层实现（A、纯数字-intset-B、有字符串-hashtable）" class="headerlink" title="底层实现（A、纯数字 intset  B、有字符串 hashtable）"></a>底层实现（A、纯数字 intset  B、有字符串 hashtable）</h2><p><img src="/2022/05/30/redis//1645277321431.png"></p>
+<h1 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h1><p><img src="/2022/05/30/redis//1645278974341.png"></p>
+<h2 id="常用命令-4"><a href="#常用命令-4" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645279080388.png"></p>
+<p><img src="/2022/05/30/redis//1645280110323.png"></p>
+<p><img src="/2022/05/30/redis//1645280515092.png"></p>
+<p><img src="/2022/05/30/redis//1645280594502.png"></p>
+<p>weight操作时，先根据权重转换集合对应的值，然后在进行聚合运算</p>
+<p><img src="/2022/05/30/redis//1645281523322.png"></p>
+<h2 id="应用场景-3"><a href="#应用场景-3" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645282127518.png" alt="img"></p>
+]]></content>
+      <tags>
+        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -552,108 +656,6 @@
         <tag>re</tag>
         <tag>xpath</tag>
         <tag>反射机制</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>redis</title>
-    <url>/2022/05/30/redis/</url>
-    <content><![CDATA[<h1 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h1><p><img src="/2022/05/30/redis//1644755852532.png" alt="img"></p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="备份conf文件，并修改权限为redis用户和redis用户组"><a href="#备份conf文件，并修改权限为redis用户和redis用户组" class="headerlink" title="备份conf文件，并修改权限为redis用户和redis用户组"></a>备份conf文件，并修改权限为redis用户和redis用户组</h3><p><img src="/2022/05/30/redis//1644756290543.png"></p>
-<h3 id="conf文件第500行，去掉注释，添加密码"><a href="#conf文件第500行，去掉注释，添加密码" class="headerlink" title="conf文件第500行，去掉注释，添加密码"></a>conf文件第500行，去掉注释，添加密码</h3><p><img src="/2022/05/30/redis//1644757538697.png" alt="img"></p>
-<p>通过密码连接redis后，输入ping验证返回pong才为连接成功！</p>
-<p><img src="/2022/05/30/redis//1644757884539.png" alt="img"></p>
-<p><img src="/2022/05/30/redis//1644757984964.png" alt="img"></p>
-<h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><h2 id="redis命令："><a href="#redis命令：" class="headerlink" title="redis命令："></a>redis命令：</h2><p><img src="/2022/05/30/redis//1644812992612.png" alt="img"></p>
-<p><img src="/2022/05/30/redis//1644813042338.png"></p>
-<p><img src="/2022/05/30/redis//1644813124017.png"></p>
-<p><img src="/2022/05/30/redis//1644813183997.png"></p>
-<h1 id="字符串1"><a href="#字符串1" class="headerlink" title="字符串1"></a>字符串1</h1><p><img src="/2022/05/30/redis//1644813353215.png"></p>
-<h2 id="设置参数"><a href="#设置参数" class="headerlink" title="设置参数"></a>设置参数</h2><p><img src="/2022/05/30/redis//1644813660462.png" alt="img"></p>
-<h2 id="获取key"><a href="#获取key" class="headerlink" title="获取key"></a>获取key</h2><p><img src="/2022/05/30/redis//1644819831236.png" alt="img"></p>
-<p><img src="/2022/05/30/redis//1644819822754.png"></p>
-<h2 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h2><p><img src="/2022/05/30/redis//1644820728709.png"></p>
-<p><img src="/2022/05/30/redis//1644820733978.png"></p>
-<h2 id="数值操作"><a href="#数值操作" class="headerlink" title="数值操作"></a>数值操作</h2><p>incrby默认key为0</p>
-<p><img src="/2022/05/30/redis//1644999905406.png" alt="img"></p>
-<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645000061220.png"></p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p><img src="/2022/05/30/redis//1645000389374.png"></p>
-<p>1、keys *</p>
-<p>2、set trill:username user001, get trill:username</p>
-<p>3、strlen trill:username</p>
-<p>4、mset trill:username xx</p>
-<p>5、exists trill:username</p>
-<p>6、incrby fans 10</p>
-<p>7、incr fans 2次</p>
-<p>8、decrby fans 3</p>
-<p>9、decr fans 1次</p>
-<p>10、flushdb</p>
-<p>11、flushall</p>
-<h1 id="字符串2"><a href="#字符串2" class="headerlink" title="字符串2"></a>字符串2</h1><p>ex命令只有在字符串中才存在，若想其他key也支持，需要手动指定</p>
-<p><img src="/2022/05/30/redis//1645002714084.png"></p>
-<h2 id="ttl-key（检查过期时间，-persist-key过期变为不过期）"><a href="#ttl-key（检查过期时间，-persist-key过期变为不过期）" class="headerlink" title="ttl key（检查过期时间， persist key过期变为不过期）"></a>ttl key（检查过期时间， persist key过期变为不过期）</h2><p><img src="/2022/05/30/redis//1645002896436.png"></p>
-<h2 id="惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）"><a href="#惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）" class="headerlink" title="惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）"></a>惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）</h2><p><img src="/2022/05/30/redis//1645015457811.png"></p>
-<h2 id="定期删除，随机采样删除数据库中的数据"><a href="#定期删除，随机采样删除数据库中的数据" class="headerlink" title="定期删除，随机采样删除数据库中的数据"></a>定期删除，随机采样删除数据库中的数据</h2><p><img src="/2022/05/30/redis//1645016084355.png"></p>
-<p><img src="/2022/05/30/redis//1645015924165.png"></p>
-<h2 id="主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）"><a href="#主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）" class="headerlink" title="主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）"></a>主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）</h2><p><img src="/2022/05/30/redis//1645016832585.png"></p>
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645017622788.png"></p>
-<p><img src="/2022/05/30/redis//1645018488072.png"></p>
-<p><img src="/2022/05/30/redis//1645017694612.png" alt="img"></p>
-<p><img src="/2022/05/30/redis//1645020756449.png"></p>
-<p><img src="/2022/05/30/redis//1645020952979.png"></p>
-<p><img src="/2022/05/30/redis//1645021160696.png"></p>
-<p><img src="/2022/05/30/redis//1645021252577.png"></p>
-<p><img src="/2022/05/30/redis//1645022325024.png"></p>
-<h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h2><p><img src="/2022/05/30/redis//1645024743629.png" alt="img"></p>
-<p>1、keys *</p>
-<p>2、RPUSH spider 1 2</p>
-<p>3、lrange spider 0 -1</p>
-<p>4、llen spider</p>
-<p>5、lset spider 0 01</p>
-<p>6、linsert spider after 04 02</p>
-<p>7、rpop spider</p>
-<p>8、lrem spider 0 02</p>
-<p>9、ltrim spider 0 2</p>
-<h1 id="pyredis操作"><a href="#pyredis操作" class="headerlink" title="pyredis操作"></a>pyredis操作</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><img src="/2022/05/30/redis//1645161722169.png"></p>
-<h2 id="代码中使用方法"><a href="#代码中使用方法" class="headerlink" title="代码中使用方法"></a>代码中使用方法</h2><p><img src="/2022/05/30/redis//1645161776289.png"></p>
-<h1 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h1><p><img src="/2022/05/30/redis//1645171869946.png" alt="img"></p>
-<p><img src="/2022/05/30/redis//1645171935518.png"></p>
-<h2 id="常用命令-1"><a href="#常用命令-1" class="headerlink" title="常用命令"></a>常用命令</h2><p>setbit，key不存在时，全部默认初始化为0，长度为 8 的倍数。</p>
-<p> <img src="/2022/05/30/redis//1645172436427.png"></p>
-<p><img src="/2022/05/30/redis//1645172595105.png"></p>
-<h2 id="字节索引，-8位为一个字节，前8位为0，接着8为为1，以此类推"><a href="#字节索引，-8位为一个字节，前8位为0，接着8为为1，以此类推" class="headerlink" title="字节索引， 8位为一个字节，前8位为0，接着8为为1，以此类推"></a>字节索引， 8位为一个字节，前8位为0，接着8为为1，以此类推</h2><p><img src="/2022/05/30/redis//1645172650634.png"></p>
-<p><img src="/2022/05/30/redis//1645172868091.png"></p>
-<p><img src="/2022/05/30/redis//1645172895802.png"></p>
-<p><img src="/2022/05/30/redis//1645172968966.png"></p>
-<h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><p><img src="/2022/05/30/redis//1645189817987.png"></p>
-<h2 id="特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。"><a href="#特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。" class="headerlink" title="特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。"></a>特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。</h2><p>缺点是过期只能将所有的保存信息进行过期操作，而不能对单个信息进行过期操作。+</p>
-<p><img src="/2022/05/30/redis//1645241753956.png" alt="img"></p>
-<h2 id="常用命令-2"><a href="#常用命令-2" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645242100281.png"></p>
-<p><img src="/2022/05/30/redis//1645242121991.png"></p>
-<p><img src="/2022/05/30/redis//1645242396590.png"></p>
-<p><img src="/2022/05/30/redis//1645242261452.png" alt="img"></p>
-<h2 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645242547812.png"></p>
-<p><img src="/2022/05/30/redis//1645242586733.png"></p>
-<h2 id="Python中hash算法处理过程"><a href="#Python中hash算法处理过程" class="headerlink" title="Python中hash算法处理过程"></a>Python中hash算法处理过程</h2><p><img src="/2022/05/30/redis//1645275342085.png"></p>
-<h2 id="redis中hash算法处理流程"><a href="#redis中hash算法处理流程" class="headerlink" title="redis中hash算法处理流程"></a>redis中hash算法处理流程</h2><p>位置重复时，采用多重链表来解决</p>
-<p><img src="/2022/05/30/redis//1645275652961.png"></p>
-<h1 id="集合（无序，去重）"><a href="#集合（无序，去重）" class="headerlink" title="集合（无序，去重）"></a>集合（无序，去重）</h1><h2 id="常用命令-3"><a href="#常用命令-3" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645275970650.png"></p>
-<p><img src="/2022/05/30/redis//1645276039575.png"></p>
-<p>8、将元素从一个集合转移到另一个集合</p>
-<p>9、差集依照左边为标准</p>
-<p><img src="/2022/05/30/redis//1645276712258.png" alt="img">‘<img src="/2022/05/30/redis//1645276849544.png"></p>
-<h2 id="应用场景-2"><a href="#应用场景-2" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645276951590.png"></p>
-<h2 id="底层实现（A、纯数字-intset-B、有字符串-hashtable）"><a href="#底层实现（A、纯数字-intset-B、有字符串-hashtable）" class="headerlink" title="底层实现（A、纯数字 intset  B、有字符串 hashtable）"></a>底层实现（A、纯数字 intset  B、有字符串 hashtable）</h2><p><img src="/2022/05/30/redis//1645277321431.png"></p>
-<h1 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h1><p><img src="/2022/05/30/redis//1645278974341.png"></p>
-<h2 id="常用命令-4"><a href="#常用命令-4" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645279080388.png"></p>
-<p><img src="/2022/05/30/redis//1645280110323.png"></p>
-<p><img src="/2022/05/30/redis//1645280515092.png"></p>
-<p><img src="/2022/05/30/redis//1645280594502.png"></p>
-<p>weight操作时，先根据权重转换集合对应的值，然后在进行聚合运算</p>
-<p><img src="/2022/05/30/redis//1645281523322.png"></p>
-<h2 id="应用场景-3"><a href="#应用场景-3" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645282127518.png" alt="img"></p>
-]]></content>
-      <tags>
-        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -920,44 +922,6 @@
       </tags>
   </entry>
   <entry>
-    <title>sql自关联</title>
-    <url>/2022/05/29/sql%E8%87%AA%E5%85%B3%E8%81%94/</url>
-    <content><![CDATA[<p>所遇到的问题，多级评论如何存储。</p>
-<p><a href="https://blog.csdn.net/Fire_Sky_Ho/article/details/88080301">参考链接</a></p>
-<p><img src="/2022/05/29/sql%E8%87%AA%E5%85%B3%E8%81%94//1653789483757.png"></p>
-<p>解决方案，采用自关联解决。即parent保存一级评论的id属性。</p>
-<p><img src="/2022/05/29/sql%E8%87%AA%E5%85%B3%E8%81%94//1653790922453.png"></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;呼啦圈表设计</span></span><br><span class="line"><span class="string">表：</span></span><br><span class="line"><span class="string">用户：用户名、密码</span></span><br><span class="line"><span class="string">评论: 时间、父评论（自关联）、归属文章：评论 1：n、评论者（用户）：评论 1：n</span></span><br><span class="line"><span class="string">文章: 作者（用户)：文章 1：n 、时间、分类、标题、内容、简介、评论数、浏览数</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfo</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;用户表&#x27;&#x27;&#x27;</span></span><br><span class="line">    username = models.CharField(verbose_name=<span class="string">&#x27;用户名&#x27;</span>, max_length=<span class="number">32</span>)</span><br><span class="line">    password = models.CharField(verbose_name=<span class="string">&quot;密码&quot;</span>, max_length=<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Article</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;文章表&#x27;</span></span><br><span class="line">    category_choices = (</span><br><span class="line">        (<span class="number">1</span>, <span class="string">&#x27;咨询&#x27;</span>),</span><br><span class="line">        (<span class="number">2</span>, <span class="string">&#x27;公司动态&#x27;</span>),</span><br><span class="line">        (<span class="number">3</span>, <span class="string">&#x27;分享&#x27;</span>),</span><br><span class="line">        (<span class="number">4</span>, <span class="string">&#x27;答疑&#x27;</span>),</span><br><span class="line">        (<span class="number">5</span>, <span class="string">&#x27;其他&#x27;</span>),</span><br><span class="line">    )</span><br><span class="line">    category = models.CharField(verbose_name=<span class="string">&#x27;分类&#x27;</span>, choices=category_choices)</span><br><span class="line">    title = models.CharField(verbose_name=<span class="string">&#x27;标题&#x27;</span>, max_length=<span class="number">255</span>)</span><br><span class="line">    image = models.CharField(verbose_name=<span class="string">&#x27;图片路径&#x27;</span>, max_length=<span class="number">128</span>)</span><br><span class="line">    summary = models.CharField(verbose_name=<span class="string">&#x27;简介&#x27;</span>, max_length=<span class="number">255</span>)</span><br><span class="line">    comment_count = models.IntegerField(verbose_name=<span class="string">&#x27;评论数&#x27;</span>, default=<span class="number">0</span>)</span><br><span class="line">    read_count = models.IntegerField(verbose_name=<span class="string">&#x27;阅读数&#x27;</span>, default=<span class="number">0</span>)</span><br><span class="line">    data = models.DateTimeField(verbose_name=<span class="string">&#x27;创建时间&#x27;</span>, auto_now_add=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    author = models.ForeignKey(</span><br><span class="line">        to=<span class="string">&#x27;UserInfo&#x27;</span>, verbose_name=<span class="string">&#x27;作者&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Comment</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;评论表&#x27;</span></span><br><span class="line">    content = models.TextField(verbose_name=<span class="string">&#x27;评论&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    article = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;文章&#x27;</span>, to=<span class="string">&#x27;Article&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line">    user = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;评论者&#x27;</span>, to=<span class="string">&#x27;UserInfo&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line">    parent = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;父评论&#x27;</span>, to=<span class="string">&#x27;self&#x27;</span>, null=<span class="literal">True</span>, blank=<span class="literal">True</span>, default=<span class="literal">None</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>django</category>
-      </categories>
-      <tags>
-        <tag>sql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>操作符</title>
-    <url>/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96/</url>
-    <content><![CDATA[<h1 id="异或（"><a href="#异或（" class="headerlink" title="异或（^)"></a>异或（^)</h1><h2 id="相同为0，不同为1"><a href="#相同为0，不同为1" class="headerlink" title="相同为0，不同为1"></a>相同为0，不同为1</h2><p>0^0&#x3D;0</p>
-<p>0^1&#x3D;1</p>
-<p>1^0&#x3D;1</p>
-<p>1^1&#x3D;0</p>
-<h2 id="运算法则"><a href="#运算法则" class="headerlink" title="运算法则"></a>运算法则</h2><p>X^X &#x3D; 0</p>
-<p>X^0&#x3D;X</p>
-<p>X^Y&#x3D;Y^X</p>
-<p>X^(Y^Z)&#x3D;(X^Y)^Z</p>
-<h2 id="实际运用"><a href="#实际运用" class="headerlink" title="实际运用"></a>实际运用</h2><h2 id="数据交换（X-Y-x3D-Y-X"><a href="#数据交换（X-Y-x3D-Y-X" class="headerlink" title="数据交换（X,Y&#x3D;Y,X)"></a>数据交换（X,Y&#x3D;Y,X)</h2><p>X, Y &#x3D; a, b</p>
-<p>X &#x3D; X^Y    ———-(a^b, a)</p>
-<p>Y &#x3D; X^Y    ———-(a^b, a^b^b)—————(a^b, a)</p>
-<p>X &#x3D; X^Y    ———-(a^b^a, a)     —————-(b, a)</p>
-<h1 id="与"><a href="#与" class="headerlink" title="与"></a>与</h1><p><img src="/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96//1647178337743.png"></p>
-]]></content>
-      <tags>
-        <tag>操作符</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>1+9r刷机笔记</title>
     <url>/2022/07/06/%E5%88%B7%E6%9C%BA/</url>
     <content><![CDATA[<h2 id="准备工作，color-os线刷至氧os"><a href="#准备工作，color-os线刷至氧os" class="headerlink" title="准备工作，color os线刷至氧os"></a>准备工作，color os线刷至氧os</h2><p>教程<br><a href="https://www.hkepc.com/forum/viewthread.php?fid=168&amp;tid=2620340&amp;page=1">https://www.hkepc.com/forum/viewthread.php?fid=168&amp;tid=2620340&amp;page=1</a></p>
@@ -990,6 +954,27 @@
 ]]></content>
       <tags>
         <tag>刷机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>操作符</title>
+    <url>/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96/</url>
+    <content><![CDATA[<h1 id="异或（"><a href="#异或（" class="headerlink" title="异或（^)"></a>异或（^)</h1><h2 id="相同为0，不同为1"><a href="#相同为0，不同为1" class="headerlink" title="相同为0，不同为1"></a>相同为0，不同为1</h2><p>0^0&#x3D;0</p>
+<p>0^1&#x3D;1</p>
+<p>1^0&#x3D;1</p>
+<p>1^1&#x3D;0</p>
+<h2 id="运算法则"><a href="#运算法则" class="headerlink" title="运算法则"></a>运算法则</h2><p>X^X &#x3D; 0</p>
+<p>X^0&#x3D;X</p>
+<p>X^Y&#x3D;Y^X</p>
+<p>X^(Y^Z)&#x3D;(X^Y)^Z</p>
+<h2 id="实际运用"><a href="#实际运用" class="headerlink" title="实际运用"></a>实际运用</h2><h2 id="数据交换（X-Y-x3D-Y-X"><a href="#数据交换（X-Y-x3D-Y-X" class="headerlink" title="数据交换（X,Y&#x3D;Y,X)"></a>数据交换（X,Y&#x3D;Y,X)</h2><p>X, Y &#x3D; a, b</p>
+<p>X &#x3D; X^Y    ———-(a^b, a)</p>
+<p>Y &#x3D; X^Y    ———-(a^b, a^b^b)—————(a^b, a)</p>
+<p>X &#x3D; X^Y    ———-(a^b^a, a)     —————-(b, a)</p>
+<h1 id="与"><a href="#与" class="headerlink" title="与"></a>与</h1><p><img src="/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96//1647178337743.png"></p>
+]]></content>
+      <tags>
+        <tag>操作符</tag>
       </tags>
   </entry>
   <entry>
@@ -1111,6 +1096,23 @@
       <tags>
         <tag>sql</tag>
         <tag>数据库设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>sql自关联</title>
+    <url>/2022/05/29/sql%E8%87%AA%E5%85%B3%E8%81%94/</url>
+    <content><![CDATA[<p>所遇到的问题，多级评论如何存储。</p>
+<p><a href="https://blog.csdn.net/Fire_Sky_Ho/article/details/88080301">参考链接</a></p>
+<p><img src="/2022/05/29/sql%E8%87%AA%E5%85%B3%E8%81%94//1653789483757.png"></p>
+<p>解决方案，采用自关联解决。即parent保存一级评论的id属性。</p>
+<p><img src="/2022/05/29/sql%E8%87%AA%E5%85%B3%E8%81%94//1653790922453.png"></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;呼啦圈表设计</span></span><br><span class="line"><span class="string">表：</span></span><br><span class="line"><span class="string">用户：用户名、密码</span></span><br><span class="line"><span class="string">评论: 时间、父评论（自关联）、归属文章：评论 1：n、评论者（用户）：评论 1：n</span></span><br><span class="line"><span class="string">文章: 作者（用户)：文章 1：n 、时间、分类、标题、内容、简介、评论数、浏览数</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfo</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;用户表&#x27;&#x27;&#x27;</span></span><br><span class="line">    username = models.CharField(verbose_name=<span class="string">&#x27;用户名&#x27;</span>, max_length=<span class="number">32</span>)</span><br><span class="line">    password = models.CharField(verbose_name=<span class="string">&quot;密码&quot;</span>, max_length=<span class="number">64</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Article</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;文章表&#x27;</span></span><br><span class="line">    category_choices = (</span><br><span class="line">        (<span class="number">1</span>, <span class="string">&#x27;咨询&#x27;</span>),</span><br><span class="line">        (<span class="number">2</span>, <span class="string">&#x27;公司动态&#x27;</span>),</span><br><span class="line">        (<span class="number">3</span>, <span class="string">&#x27;分享&#x27;</span>),</span><br><span class="line">        (<span class="number">4</span>, <span class="string">&#x27;答疑&#x27;</span>),</span><br><span class="line">        (<span class="number">5</span>, <span class="string">&#x27;其他&#x27;</span>),</span><br><span class="line">    )</span><br><span class="line">    category = models.CharField(verbose_name=<span class="string">&#x27;分类&#x27;</span>, choices=category_choices)</span><br><span class="line">    title = models.CharField(verbose_name=<span class="string">&#x27;标题&#x27;</span>, max_length=<span class="number">255</span>)</span><br><span class="line">    image = models.CharField(verbose_name=<span class="string">&#x27;图片路径&#x27;</span>, max_length=<span class="number">128</span>)</span><br><span class="line">    summary = models.CharField(verbose_name=<span class="string">&#x27;简介&#x27;</span>, max_length=<span class="number">255</span>)</span><br><span class="line">    comment_count = models.IntegerField(verbose_name=<span class="string">&#x27;评论数&#x27;</span>, default=<span class="number">0</span>)</span><br><span class="line">    read_count = models.IntegerField(verbose_name=<span class="string">&#x27;阅读数&#x27;</span>, default=<span class="number">0</span>)</span><br><span class="line">    data = models.DateTimeField(verbose_name=<span class="string">&#x27;创建时间&#x27;</span>, auto_now_add=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    author = models.ForeignKey(</span><br><span class="line">        to=<span class="string">&#x27;UserInfo&#x27;</span>, verbose_name=<span class="string">&#x27;作者&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Comment</span>(models.Model):</span><br><span class="line">    <span class="string">&#x27;评论表&#x27;</span></span><br><span class="line">    content = models.TextField(verbose_name=<span class="string">&#x27;评论&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    article = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;文章&#x27;</span>, to=<span class="string">&#x27;Article&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line">    user = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;评论者&#x27;</span>, to=<span class="string">&#x27;UserInfo&#x27;</span>, on_delete=models.CASCADE)</span><br><span class="line">    parent = models.ForeignKey(</span><br><span class="line">        verbose_name=<span class="string">&#x27;父评论&#x27;</span>, to=<span class="string">&#x27;self&#x27;</span>, null=<span class="literal">True</span>, blank=<span class="literal">True</span>, default=<span class="literal">None</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>django</category>
+      </categories>
+      <tags>
+        <tag>sql</tag>
       </tags>
   </entry>
   <entry>

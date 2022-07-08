@@ -284,6 +284,63 @@
 
     
     <article
+  id="post-choices"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/30/choices/"
+    >choices</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/30/choices/" class="article-date">
+  <time datetime="2022-05-29T16:09:10.000Z" itemprop="datePublished">2022-05-30</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/django/">django</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gender_choice = [</span><br><span class="line">     (<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">     (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line"> ]</span><br><span class="line"></span><br><span class="line"> gender = models.SmallIntegerField(verbose_name=<span class="string">&#x27;性别&#x27;</span>, choices=gender_choice)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="字段用法"><a href="#字段用法" class="headerlink" title="字段用法"></a>字段用法</h2><p>元组第一个数据的是用来存储在数据库中，第二个数据是用来显示的，取出显示字段的函数为</p>
+<p>get_xxx_display。</p>
+<p>若没有对应的元组，则按存储字段来显示。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/choices/" rel="tag">choices</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-Python装饰器"
   class="article article-type-post"
   itemscope
@@ -333,63 +390,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python%E8%A3%85%E9%A5%B0%E5%99%A8/" rel="tag">Python装饰器</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-choices"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/05/30/choices/"
-    >choices</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/05/30/choices/" class="article-date">
-  <time datetime="2022-05-29T16:09:10.000Z" itemprop="datePublished">2022-05-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/django/">django</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gender_choice = [</span><br><span class="line">     (<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">     (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line"> ]</span><br><span class="line"></span><br><span class="line"> gender = models.SmallIntegerField(verbose_name=<span class="string">&#x27;性别&#x27;</span>, choices=gender_choice)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="字段用法"><a href="#字段用法" class="headerlink" title="字段用法"></a>字段用法</h2><p>元组第一个数据的是用来存储在数据库中，第二个数据是用来显示的，取出显示字段的函数为</p>
-<p>get_xxx_display。</p>
-<p>若没有对应的元组，则按存储字段来显示。</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/choices/" rel="tag">choices</a></li></ul>
 
     </footer>
   </div>
