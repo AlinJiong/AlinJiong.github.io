@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>choices |  Alin</title>
+      <title>操作系统 |  Alin</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -55,7 +55,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-choices"
+  id="post-操作系统"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -66,7 +66,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  choices
+  操作系统
 </h1>
  
 
@@ -74,19 +74,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/05/30/choices/" class="article-date">
-  <time datetime="2022-05-29T16:09:10.000Z" itemprop="datePublished">2022-05-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/django/">django</a>
-  </div>
-  
+      <a href="/2022/07/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="article-date">
+  <time datetime="2022-07-08T14:16:00.000Z" itemprop="datePublished">2022-07-08</time>
+</a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">80</span>
+            <span class="post-count">406</span>
         </span>
     </span>
 
@@ -110,11 +106,38 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gender_choice = [</span><br><span class="line">     (<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">     (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line"> ]</span><br><span class="line"></span><br><span class="line"> gender = models.SmallIntegerField(verbose_name=<span class="string">&#x27;性别&#x27;</span>, choices=gender_choice)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="字段用法"><a href="#字段用法" class="headerlink" title="字段用法"></a>字段用法</h2><p>元组第一个数据的是用来存储在数据库中，第二个数据是用来显示的，取出显示字段的函数为</p>
-<p>get_xxx_display。</p>
-<p>若没有对应的元组，则按存储字段来显示。</p>
+  <h2 id="进程和线程的区别？"><a href="#进程和线程的区别？" class="headerlink" title="进程和线程的区别？"></a>进程和线程的区别？</h2><ul>
+<li>进程是资源管理的基本单位，线程是程序执行的基本单位。</li>
+<li>进程是拥有资源的一个独立单位，线程不拥有系统资源，但是可以访问隶属于进程的资源。</li>
+</ul>
+<h2 id="线程和协程的区别？"><a href="#线程和协程的区别？" class="headerlink" title="线程和协程的区别？"></a>线程和协程的区别？</h2><ul>
+<li>线程和进程是同步机制，而协程是异步机制。</li>
+<li>线程调度靠系统内核管理，协程由用户控制。</li>
+<li>协程的执行效率比线程高。</li>
+</ul>
+<p><img src="/2022/07/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F//1657209578801.png" alt="1657209578801"></p>
+<h2 id="进程间通信方式有哪些？"><a href="#进程间通信方式有哪些？" class="headerlink" title="进程间通信方式有哪些？"></a>进程间通信方式有哪些？</h2><ul>
+<li>信号量：信号量是一个<strong>计数器</strong> ，可以用来控制多个进程对共享资源的访问。</li>
+<li>信号：一个进程可以向另外一个进程或者另外一组进程发送信号消息，通知目标进程执行特定的代码。</li>
+<li>socket</li>
+<li>共享内存</li>
+<li>管道</li>
+<li>消息队列</li>
+</ul>
+<h2 id="线程同步的方式有哪些？"><a href="#线程同步的方式有哪些？" class="headerlink" title="线程同步的方式有哪些？"></a>线程同步的方式有哪些？</h2><ul>
+<li>互斥量：采用互斥对象机制，只有拥有互斥对象的线程才有访问公共资源的权限。因为互斥对象只有一个，所以可以保证公共资源不会被多个线程同时访问。</li>
+</ul>
+<ul>
+<li>信号量：它允许同一时刻多个线程访问同一资源，但是需要控制同一时刻访问此资源的最大线程数量。</li>
+<li>事件（信号）：通过通知操作的方式来保持多线程同步，还可以方便的实现多线程优先级的比较操作。</li>
+</ul>
+<h2 id="调度算法？"><a href="#调度算法？" class="headerlink" title="调度算法？"></a>调度算法？</h2><ul>
+<li>先来先服务</li>
+<li>最短作业优先</li>
+<li>最短剩余时间优先</li>
+<li>时间片轮询</li>
+<li>优先级调度</li>
+</ul>
  
       <!-- reward -->
       
@@ -185,12 +208,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.sabery.top/2022/05/30/choices/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.sabery.top/2022/07/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/choices/" rel="tag">choices</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag">操作系统</a></li></ul>
 
     </footer>
   </div>
@@ -198,19 +221,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/05/30/Python%E8%A3%85%E9%A5%B0%E5%99%A8/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Python装饰器
-          
-        </div>
-      </a>
     
-    
-      <a href="/2022/05/30/cookies%E5%92%8Csession%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-nav-link">
+      <a href="/2022/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">cookies和session的使用</div>
+        <div class="article-nav-title">计算机网络</div>
       </a>
     
   </nav>

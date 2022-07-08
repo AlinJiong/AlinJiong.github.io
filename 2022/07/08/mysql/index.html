@@ -74,15 +74,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/05/25/mysql/" class="article-date">
-  <time datetime="2022-05-25T15:13:27.000Z" itemprop="datePublished">2022-05-25</time>
+      <a href="/2022/07/08/mysql/" class="article-date">
+  <time datetime="2022-07-08T14:13:27.000Z" itemprop="datePublished">2022-07-08</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1k</span>
+            <span class="post-count">1.6k</span>
         </span>
     </span>
 
@@ -91,7 +91,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">4 min</span>
+            <span class="post-count">7 min</span>
         </span>
     </span>
 </div>
@@ -142,14 +142,11 @@
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> a.bookname, a.pushlishTime, b.usename</span><br><span class="line"><span class="keyword">from</span> Books a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> Author b</span><br><span class="line"><span class="keyword">on</span> a.uid <span class="operator">=</span> b.id</span><br><span class="line"><span class="keyword">where</span> DATEDIFF(a.updateTime, NOW())<span class="operator">&lt;=</span><span class="number">0</span> <span class="keyword">and</span> DATEDIFF(a.updateTime, NOW())<span class="operator">&gt;</span><span class="number">-7</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> a.likes</span><br></pre></td></tr></table></figure>
 
-<h1 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h1><h2 id="InnoDB："><a href="#InnoDB：" class="headerlink" title="InnoDB："></a>InnoDB：</h2><ul>
-<li><input disabled type="checkbox"> </li>
-</ul>
-<h3 id="缺点：读写能力较差，占用的数据空间大"><a href="#缺点：读写能力较差，占用的数据空间大" class="headerlink" title="缺点：读写能力较差，占用的数据空间大"></a>缺点：读写能力较差，占用的数据空间大</h3><p><img src="/2022/05/25/mysql//image-20220525235957544.png" alt="image-20220525235957544"></p>
-<h2 id="MyISAM："><a href="#MyISAM：" class="headerlink" title="MyISAM："></a>MyISAM：</h2><h3 id="优点：插入速度快，内存占用低，-非聚集索引"><a href="#优点：插入速度快，内存占用低，-非聚集索引" class="headerlink" title="优点：插入速度快，内存占用低， 非聚集索引"></a>优点：插入速度快，内存占用低， 非聚集索引</h3><h3 id="缺点：不支持事务，数据分散存储为三个文件"><a href="#缺点：不支持事务，数据分散存储为三个文件" class="headerlink" title="缺点：不支持事务，数据分散存储为三个文件"></a>缺点：不支持事务，数据分散存储为三个文件</h3><p><img src="/2022/05/25/mysql//image-20220525231552462.png" alt="image-20220525231552462"></p>
-<p><img src="/2022/05/25/mysql//image-20220525231604086.png" alt="image-20220525231604086"></p>
-<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><h3 id="存取速度快，利用内存中的数据来建立表，安全性比较低。"><a href="#存取速度快，利用内存中的数据来建立表，安全性比较低。" class="headerlink" title="存取速度快，利用内存中的数据来建立表，安全性比较低。"></a>存取速度快，利用内存中的数据来建立表，安全性比较低。</h3><p><img src="/2022/05/25/mysql//image-20220525231623029.png" alt="image-20220525231623029"></p>
-<p><img src="/2022/05/25/mysql//image-20220525231630286.png" alt="image-20220525231630286"></p>
+<h1 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h1><h2 id="InnoDB："><a href="#InnoDB：" class="headerlink" title="InnoDB："></a>InnoDB：</h2><h3 id="优点：提供良好的事务管理，崩溃修复能力和并发控制，3-层即可控制百万级的数据，聚集索引"><a href="#优点：提供良好的事务管理，崩溃修复能力和并发控制，3-层即可控制百万级的数据，聚集索引" class="headerlink" title="优点：提供良好的事务管理，崩溃修复能力和并发控制，3 层即可控制百万级的数据，聚集索引"></a>优点：提供良好的事务管理，崩溃修复能力和并发控制，3 层即可控制百万级的数据，聚集索引</h3><h3 id="缺点：读写能力较差，占用的数据空间大"><a href="#缺点：读写能力较差，占用的数据空间大" class="headerlink" title="缺点：读写能力较差，占用的数据空间大"></a>缺点：读写能力较差，占用的数据空间大</h3><p><img src="/2022/07/08/mysql//image-20220525235957544.png" alt="image-20220525235957544"></p>
+<h2 id="MyISAM："><a href="#MyISAM：" class="headerlink" title="MyISAM："></a>MyISAM：</h2><h3 id="优点：插入速度快，内存占用低，-非聚集索引"><a href="#优点：插入速度快，内存占用低，-非聚集索引" class="headerlink" title="优点：插入速度快，内存占用低， 非聚集索引"></a>优点：插入速度快，内存占用低， 非聚集索引</h3><h3 id="缺点：不支持事务，数据分散存储为三个文件"><a href="#缺点：不支持事务，数据分散存储为三个文件" class="headerlink" title="缺点：不支持事务，数据分散存储为三个文件"></a>缺点：不支持事务，数据分散存储为三个文件</h3><p><img src="/2022/07/08/mysql//image-20220525231552462.png" alt="image-20220525231552462"></p>
+<p><img src="/2022/07/08/mysql//image-20220525231604086.png" alt="image-20220525231604086"></p>
+<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><h3 id="存取速度快，利用内存中的数据来建立表，安全性比较低。"><a href="#存取速度快，利用内存中的数据来建立表，安全性比较低。" class="headerlink" title="存取速度快，利用内存中的数据来建立表，安全性比较低。"></a>存取速度快，利用内存中的数据来建立表，安全性比较低。</h3><p><img src="/2022/07/08/mysql//image-20220525231623029.png" alt="image-20220525231623029"></p>
+<p><img src="/2022/07/08/mysql//image-20220525231630286.png" alt="image-20220525231630286"></p>
 <h2 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h2><p>主键索引：唯一、非空</p>
 <p>唯一索引：唯一、可为空</p>
 <p>普通索引：可以重复、为空</p>
@@ -158,7 +155,7 @@
 <h2 id="B-树和-B-树的区别"><a href="#B-树和-B-树的区别" class="headerlink" title="B 树和 B+树的区别"></a>B 树和 B+树的区别</h2><p>B+树只有叶子节点放置数据，而 B 树所有节点都放置数据</p>
 <h2 id="回表"><a href="#回表" class="headerlink" title="回表"></a>回表</h2><p>先去非聚集索引的找到 ID，然后聚集索引查询对应的字段。（先非主键索引，然后主键索引）</p>
 <h2 id="覆盖索引（建立组合索引来实现）"><a href="#覆盖索引（建立组合索引来实现）" class="headerlink" title="覆盖索引（建立组合索引来实现）"></a>覆盖索引（建立组合索引来实现）</h2><p>使用覆盖索引，MySQL 只需要通过索引就可以查找和返回查询所需要的数据，而不必在使用索引处理数据之后再进行回表操作。</p>
-<h2 id="最左匹配原则"><a href="#最左匹配原则" class="headerlink" title="最左匹配原则"></a>最左匹配原则</h2><h1 id="SQL-删除规则"><a href="#SQL-删除规则" class="headerlink" title="SQL 删除规则"></a>SQL 删除规则</h1><p><img src="/2022/05/25/mysql//image-20220526000006280.png" alt="image-20220526000006280"></p>
+<h2 id="最左匹配原则"><a href="#最左匹配原则" class="headerlink" title="最左匹配原则"></a>最左匹配原则</h2><h1 id="SQL-删除规则"><a href="#SQL-删除规则" class="headerlink" title="SQL 删除规则"></a>SQL 删除规则</h1><p><img src="/2022/07/08/mysql//image-20220526000006280.png" alt="image-20220526000006280"></p>
 <h2 id="cascade-级联删除"><a href="#cascade-级联删除" class="headerlink" title="cascade 级联删除"></a>cascade 级联删除</h2><p>解释：（主表被删除，字表的数据也会删除）</p>
 <p>父表中删除包含主键值的行的操作，该值由子表的现有行中的外键列引用。</p>
 <p>在级联删除中，删除父表中的记录时，同时删除子表中外键引用此主健的记录。</p>
@@ -169,6 +166,47 @@
 <h2 id="set-null"><a href="#set-null" class="headerlink" title="set_null"></a>set_null</h2><p>删除的时候，外键置为空值。</p>
 <h2 id="set-default"><a href="#set-default" class="headerlink" title="set_default"></a>set_default</h2><p>外键字段置为默认值。</p>
 <h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p>自定义值</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="1-1-Description"><a href="#1-1-Description" class="headerlink" title="1.1 Description"></a>1.1 Description</h3><p>salary</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">| id | name | sex | salary |</span><br><span class="line">|----|------|-----|--------|</span><br><span class="line">| 1  | A    | m   | 2500   |</span><br><span class="line">| 2  | B    | f   | 1500   |</span><br><span class="line">| 3  | C    | m   | 5500   |</span><br><span class="line">| 4  | D    | f   | 500    |</span><br></pre></td></tr></table></figure>
+
+<p>只用一个 SQL 查询，将 sex 字段反转。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">| id | name | sex | salary |</span><br><span class="line">|----|------|-----|--------|</span><br><span class="line">| 1  | A    | f   | 2500   |</span><br><span class="line">| 2  | B    | m   | 1500   |</span><br><span class="line">| 3  | C    | f   | 5500   |</span><br><span class="line">| 4  | D    | m   | 500    |</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>两个相等的数异或的结果为 0，而 0 与任何一个数异或的结果为这个数。</p>
+<p>sex  字段只有两个取值：’f’ 和 ‘m’，并且有以下规律：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x27;f&#x27; ^ (&#x27;m&#x27; ^ &#x27;f&#x27;) = &#x27;m&#x27; ^ (&#x27;f&#x27; ^ &#x27;f&#x27;) = &#x27;m&#x27;</span><br><span class="line">&#x27;m&#x27; ^ (&#x27;m&#x27; ^ &#x27;f&#x27;) = &#x27;f&#x27; ^ (&#x27;m&#x27; ^ &#x27;m&#x27;) = &#x27;f&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>因此将 sex 字段和 ‘m’ ^ ‘f’ 进行异或操作，最后就能反转 sex 字段。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> salary</span><br><span class="line"><span class="keyword">SET</span> sex <span class="operator">=</span> <span class="type">CHAR</span>(ASCII(sex) <span class="operator">^</span> ASCII(<span class="string">&#x27;m&#x27;</span>) <span class="operator">^</span> ASCII(<span class="string">&#x27;f&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-Description"><a href="#1-2-Description" class="headerlink" title="1.2 Description"></a>1.2 Description</h3><p>邮件地址表：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">+----+---------+</span><br><span class="line">| Id | Email   |</span><br><span class="line">+----+---------+</span><br><span class="line">| 1  | john@example.com |</span><br><span class="line">| 2  | bob@example.com |</span><br><span class="line">| 3  | john@example.com |</span><br><span class="line">+----+---------+</span><br></pre></td></tr></table></figure>
+
+<p>删除重复的邮件地址：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+----+------------------+</span><br><span class="line">| Id | Email            |</span><br><span class="line">+----+------------------+</span><br><span class="line">| 1  | john@example.com |</span><br><span class="line">| 2  | bob@example.com  |</span><br><span class="line">+----+------------------+</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p>只保留相同 Email 中 Id 最小的那一个，然后删除其它的。</p>
+<p>连接查询：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> p1</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Person p1,</span><br><span class="line">    Person p2</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    p1.Email <span class="operator">=</span> p2.Email</span><br><span class="line">    <span class="keyword">AND</span> p1.Id <span class="operator">&gt;</span> p2.Id</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-Description"><a href="#1-3-Description" class="headerlink" title="1.3 Description"></a>1.3 Description</h3><p>Employee 表：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+----+-------+--------+-----------+</span><br><span class="line">| Id | Name  | Salary | ManagerId |</span><br><span class="line">+----+-------+--------+-----------+</span><br><span class="line">| 1  | Joe   | 70000  | 3         |</span><br><span class="line">| 2  | Henry | 80000  | 4         |</span><br><span class="line">| 3  | Sam   | 60000  | NULL      |</span><br><span class="line">| 4  | Max   | 90000  | NULL      |</span><br><span class="line">+----+-------+--------+-----------+</span><br></pre></td></tr></table></figure>
+
+<p>查找薪资大于其经理薪资的员工信息。</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    E1.NAME <span class="keyword">AS</span> Employee</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Employee E1</span><br><span class="line">    <span class="keyword">INNER</span> <span class="keyword">JOIN</span> Employee E2</span><br><span class="line">    <span class="keyword">ON</span> E1.ManagerId <span class="operator">=</span> E2.Id</span><br><span class="line">    <span class="keyword">AND</span> E1.Salary <span class="operator">&gt;</span> E2.Salary;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-Description"><a href="#1-4-Description" class="headerlink" title="1.4 Description"></a>1.4 Description</h3><p>Employee 表：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| Id | Name  | Salary | DepartmentId |</span><br><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| 1  | Joe   | 70000  | 1            |</span><br><span class="line">| 2  | Henry | 80000  | 2            |</span><br><span class="line">| 3  | Sam   | 60000  | 2            |</span><br><span class="line">| 4  | Max   | 90000  | 1            |</span><br><span class="line">+----+-------+--------+--------------+</span><br></pre></td></tr></table></figure>
+
+<p>Department 表：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+----+----------+</span><br><span class="line">| Id | Name     |</span><br><span class="line">+----+----------+</span><br><span class="line">| 1  | IT       |</span><br><span class="line">| 2  | Sales    |</span><br><span class="line">+----+----------+</span><br></pre></td></tr></table></figure>
+
+<p>查找一个 Department 中收入最高者的信息：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+------------+----------+--------+</span><br><span class="line">| Department | Employee | Salary |</span><br><span class="line">+------------+----------+--------+</span><br><span class="line">| IT         | Max      | 90000  |</span><br><span class="line">| Sales      | Henry    | 80000  |</span><br><span class="line">+------------+----------+--------+</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><p>创建一个临时表，包含了部门员工的最大薪资。可以对部门进行分组，然后使用 MAX() 汇总函数取得最大薪资。</p>
+<p>之后使用连接找到一个部门中薪资等于临时表中最大薪资的员工。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    D.NAME Department,</span><br><span class="line">    E.NAME Employee,</span><br><span class="line">    E.Salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Employee E,</span><br><span class="line">    Department D,</span><br><span class="line">    ( <span class="keyword">SELECT</span> DepartmentId, <span class="built_in">MAX</span>( Salary ) Salary </span><br><span class="line">     <span class="keyword">FROM</span> Employee </span><br><span class="line">     <span class="keyword">GROUP</span> <span class="keyword">BY</span> DepartmentId ) M</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    E.DepartmentId <span class="operator">=</span> D.Id</span><br><span class="line">    <span class="keyword">AND</span> E.DepartmentId <span class="operator">=</span> M.DepartmentId</span><br><span class="line">    <span class="keyword">AND</span> E.Salary <span class="operator">=</span> M.Salary;</span><br></pre></td></tr></table></figure>
  
       <!-- reward -->
       
@@ -239,7 +277,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.sabery.top/2022/05/25/mysql/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.sabery.top/2022/07/08/mysql/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -252,19 +290,19 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/05/26/celery/" class="article-nav-link">
+      <a href="/2022/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            celery
+            计算机网络
           
         </div>
       </a>
     
     
-      <a href="/2022/05/24/scrapy/" class="article-nav-link">
+      <a href="/2022/07/06/clash/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">scrapy</div>
+        <div class="article-nav-title">clash给手机分享热点</div>
       </a>
     
   </nav>

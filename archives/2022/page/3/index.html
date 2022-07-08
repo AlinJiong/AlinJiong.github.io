@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>计算机网络 |  Alin</title>
+      <title>Archives: 2022 |  Alin</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,201 +54,57 @@
       
     <main class="content on">
       <section class="outer">
-  <article
-  id="post-计算机网络"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
+  
+  
+  <article class="articles">
     
-    <header class="article-header">
+    
+    <h1 class="page-type-title">2022</h1>
+    
+    
+  
+  
+  
+  
+  
+  
+  <div class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="/archives/2022" class="archive-year">2022</a>
+    </div>
+    <div class="archives">
+      
+      <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2022/05/23/hello-world/" class="archive-article-date">
+  <time datetime="2022-05-23T15:23:47.279Z" itemprop="datePublished">05/23</time>
+</a>
        
-<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  计算机网络
-</h1>
+<h2 itemprop="name">
+  <a class="archive-article-title" href="/2022/05/23/hello-world/"
+    >Hello World</a> 
+</h2>
  
 
-      
     </header>
-     
-    <div class="article-meta">
-      <a href="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="article-date">
-  <time datetime="2022-05-26T02:46:35.000Z" itemprop="datePublished">2022-05-26</time>
-</a>   
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">397</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">1 min</span>
-        </span>
-    </span>
-</div>
- 
-    </div>
-      
-    <div class="tocbot"></div>
-
-
-
-
-  
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="TCP-和-UDP的区别"><a href="#TCP-和-UDP的区别" class="headerlink" title="TCP 和 UDP的区别"></a>TCP 和 UDP的区别</h2><ul>
-<li><p>TCP 面向连接，可靠传输，三次握手，四次挥手，面向字节流，有拥塞控制、流量控制</p>
-</li>
-<li><p>UDP 面向无连接，不可靠传输，面向报文，无拥塞控制、流量控制</p>
-<p><img src="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C//image-20220516113504600.png" alt="image-20220516113504600"></p>
-</li>
-</ul>
-<h2 id="UDP如何实现可靠传输？"><a href="#UDP如何实现可靠传输？" class="headerlink" title="UDP如何实现可靠传输？"></a>UDP如何实现可靠传输？</h2><p>1、服务器端给数据包添加序号，客户端接收数据返回信息。   2、超时重传。</p>
-<p>最简单的方式是在应用层模仿传输层TCP的可靠性传输。下面不考虑拥塞处理，可靠UDP的简单设计。</p>
-<ul>
-<li>1、添加seq&#x2F;ack机制，确保数据发送到对端</li>
-<li>2、添加发送和接收缓冲区，主要是用户超时重传。</li>
-<li>3、添加超时重传机制。</li>
-</ul>
-<p>详细说明：送端发送数据时，生成一个随机seq&#x3D;x，然后每一片按照数据大小分配seq。数据到达接收端后接收端放入缓存，并发送一个ack&#x3D;x的包，表示对方已经收到了数据。发送端收到了ack包后，删除缓冲区对应的数据。时间到后，定时任务检查是否需要重传数据。</p>
-<h2 id="浏览器输入url后，发生了什么"><a href="#浏览器输入url后，发生了什么" class="headerlink" title="浏览器输入url后，发生了什么"></a>浏览器输入url后，发生了什么</h2><ol>
-<li>DNS域名解析</li>
-<li>建立TCP链接</li>
-<li>发送HTTP请求</li>
-<li>服务器处理请求，返回响应结果</li>
-<li>关闭TCP连接</li>
-<li>浏览器渲染解析HTML</li>
-</ol>
-<h2 id="HTTP和HTTPS的区别"><a href="#HTTP和HTTPS的区别" class="headerlink" title="HTTP和HTTPS的区别"></a>HTTP和HTTPS的区别</h2><ul>
-<li>https需要ca申请ssl证书</li>
-<li>http是明文传输，而https是ssl加密传输，https比http安全</li>
-<li>http使用80端口，https使用443端口</li>
-</ul>
-<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>公钥加密，私钥解密</p>
-<p><img src="/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C//image-20220519140620778.png" alt="image-20220519140620778"></p>
- 
-      <!-- reward -->
-      
-      <div id="reword-out">
-        <div id="reward-btn">
-          Donate
-        </div>
-      </div>
-      
-    </div>
     
-
-    <!-- copyright -->
     
-    <div class="declare">
-      <ul class="post-copyright">
-        <li>
-          <i class="ri-copyright-line"></i>
-          <strong>Copyright： </strong>
-          
-          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
-          
-        </li>
-      </ul>
-    </div>
-    
-    <footer class="article-footer">
-       
-<div class="share-btn">
-      <span class="share-sns share-outer">
-        <i class="ri-share-forward-line"></i>
-        分享
-      </span>
-      <div class="share-wrap">
-        <i class="arrow"></i>
-        <div class="share-icons">
-          
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="ri-weibo-fill"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="ri-wechat-fill"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="ri-qq-fill"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="ri-douban-line"></i>
-          </a>
-          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a> -->
-          
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="ri-facebook-circle-fill"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="ri-twitter-fill"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="ri-google-fill"></i>
-          </a>
-        </div>
-      </div>
-</div>
-
-<div class="wx-share-modal">
-    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.sabery.top/2022/05/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%BD%91/" rel="tag">计网</a></li></ul>
-
-    </footer>
   </div>
-
-   
-  <nav class="article-nav">
-    
-      <a href="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            数据库设计流程
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2022/05/26/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">多线程多进程</div>
-      </a>
-    
-  </nav>
+</article>
+      
+      
+    </div>
+  </div>
+  
+  
 
   
-   
+  <nav class="page-nav">
     
-    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
-    <div id="twikoo" class="twikoo"></div>
-    <script>
-        twikoo.init({
-            envId: ""
-        })
-    </script>
- 
-</article>
-
+    <a class="extend prev" rel="prev" href="/archives/2022/page/2/">上一页</a><a class="page-number" href="/archives/2022/">1</a><a class="page-number" href="/archives/2022/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+  
 </section>
       <footer class="footer">
   <div class="outer">
@@ -385,22 +241,6 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
- 
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  tocbot.init({
-    tocSelector: ".tocbot",
-    contentSelector: ".article-entry",
-    headingSelector: "h1, h2, h3, h4, h5, h6",
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: "main",
-    positionFixedSelector: ".tocbot",
-    positionFixedClass: "is-position-fixed",
-    fixedSidebarOffset: "auto",
-  });
-</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
