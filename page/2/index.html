@@ -156,6 +156,429 @@
     
     
     <article
+  id="post-choices"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/30/choices/"
+    >choices</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/30/choices/" class="article-date">
+  <time datetime="2022-05-29T16:09:10.000Z" itemprop="datePublished">2022-05-30</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/django/">django</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gender_choice = [</span><br><span class="line">     (<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">     (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line"> ]</span><br><span class="line"></span><br><span class="line"> gender = models.SmallIntegerField(verbose_name=<span class="string">&#x27;性别&#x27;</span>, choices=gender_choice)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="字段用法"><a href="#字段用法" class="headerlink" title="字段用法"></a>字段用法</h2><p>元组第一个数据的是用来存储在数据库中，第二个数据是用来显示的，取出显示字段的函数为</p>
+<p>get_xxx_display。</p>
+<p>若没有对应的元组，则按存储字段来显示。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/choices/" rel="tag">choices</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-cookies和session的使用"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/30/cookies%E5%92%8Csession%E7%9A%84%E4%BD%BF%E7%94%A8/"
+    >cookies和session的使用</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/30/cookies%E5%92%8Csession%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time datetime="2022-05-29T16:09:10.000Z" itemprop="datePublished">2022-05-30</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/django/">django</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><h2 id="cookie的设置"><a href="#cookie的设置" class="headerlink" title="cookie的设置"></a>cookie的设置</h2><p><img src="/2022/05/30/cookies%E5%92%8Csession%E7%9A%84%E4%BD%BF%E7%94%A8//1636380721512.png"></p>
+<h2 id="cookie的获取和删除"><a href="#cookie的获取和删除" class="headerlink" title="cookie的获取和删除"></a>cookie的获取和删除</h2><p><img src="/2022/05/30/cookies%E5%92%8Csession%E7%9A%84%E4%BD%BF%E7%94%A8//1636380640224.png" alt="img"></p>
+<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><h2 id="session开启的初始配置"><a href="#session开启的初始配置" class="headerlink" title="session开启的初始配置"></a>session开启的初始配置</h2><p><img src="/2022/05/30/cookies%E5%92%8Csession%E7%9A%84%E4%BD%BF%E7%94%A8//1636381889990.png"><img src="/2022/05/30/cookies%E5%92%8Csession%E7%9A%84%E4%BD%BF%E7%94%A8//1636382085181.png"></p>
+<p><img src="/2022/05/30/cookies%E5%92%8Csession%E7%9A%84%E4%BD%BF%E7%94%A8//1636382413875.png"></p>
+<p><img src="/2022/05/30/cookies%E5%92%8Csession%E7%9A%84%E4%BD%BF%E7%94%A8//1636424092444.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookies/" rel="tag">cookies</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session/" rel="tag">session</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-redis"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/30/redis/"
+    >redis</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/30/redis/" class="article-date">
+  <time datetime="2022-05-29T16:09:10.000Z" itemprop="datePublished">2022-05-30</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h1><p><img src="/2022/05/30/redis//1644755852532.png" alt="img"></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="备份conf文件，并修改权限为redis用户和redis用户组"><a href="#备份conf文件，并修改权限为redis用户和redis用户组" class="headerlink" title="备份conf文件，并修改权限为redis用户和redis用户组"></a>备份conf文件，并修改权限为redis用户和redis用户组</h3><p><img src="/2022/05/30/redis//1644756290543.png"></p>
+<h3 id="conf文件第500行，去掉注释，添加密码"><a href="#conf文件第500行，去掉注释，添加密码" class="headerlink" title="conf文件第500行，去掉注释，添加密码"></a>conf文件第500行，去掉注释，添加密码</h3><p><img src="/2022/05/30/redis//1644757538697.png" alt="img"></p>
+<p>通过密码连接redis后，输入ping验证返回pong才为连接成功！</p>
+<p><img src="/2022/05/30/redis//1644757884539.png" alt="img"></p>
+<p><img src="/2022/05/30/redis//1644757984964.png" alt="img"></p>
+<h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><h2 id="redis命令："><a href="#redis命令：" class="headerlink" title="redis命令："></a>redis命令：</h2><p><img src="/2022/05/30/redis//1644812992612.png" alt="img"></p>
+<p><img src="/2022/05/30/redis//1644813042338.png"></p>
+<p><img src="/2022/05/30/redis//1644813124017.png"></p>
+<p><img src="/2022/05/30/redis//1644813183997.png"></p>
+<h1 id="字符串1"><a href="#字符串1" class="headerlink" title="字符串1"></a>字符串1</h1><p><img src="/2022/05/30/redis//1644813353215.png"></p>
+<h2 id="设置参数"><a href="#设置参数" class="headerlink" title="设置参数"></a>设置参数</h2><p><img src="/2022/05/30/redis//1644813660462.png" alt="img"></p>
+<h2 id="获取key"><a href="#获取key" class="headerlink" title="获取key"></a>获取key</h2><p><img src="/2022/05/30/redis//1644819831236.png" alt="img"></p>
+<p><img src="/2022/05/30/redis//1644819822754.png"></p>
+<h2 id="批量操作"><a href="#批量操作" class="headerlink" title="批量操作"></a>批量操作</h2><p><img src="/2022/05/30/redis//1644820728709.png"></p>
+<p><img src="/2022/05/30/redis//1644820733978.png"></p>
+<h2 id="数值操作"><a href="#数值操作" class="headerlink" title="数值操作"></a>数值操作</h2><p>incrby默认key为0</p>
+<p><img src="/2022/05/30/redis//1644999905406.png" alt="img"></p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645000061220.png"></p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p><img src="/2022/05/30/redis//1645000389374.png"></p>
+<p>1、keys *</p>
+<p>2、set trill:username user001, get trill:username</p>
+<p>3、strlen trill:username</p>
+<p>4、mset trill:username xx</p>
+<p>5、exists trill:username</p>
+<p>6、incrby fans 10</p>
+<p>7、incr fans 2次</p>
+<p>8、decrby fans 3</p>
+<p>9、decr fans 1次</p>
+<p>10、flushdb</p>
+<p>11、flushall</p>
+<h1 id="字符串2"><a href="#字符串2" class="headerlink" title="字符串2"></a>字符串2</h1><p>ex命令只有在字符串中才存在，若想其他key也支持，需要手动指定</p>
+<p><img src="/2022/05/30/redis//1645002714084.png"></p>
+<h2 id="ttl-key（检查过期时间，-persist-key过期变为不过期）"><a href="#ttl-key（检查过期时间，-persist-key过期变为不过期）" class="headerlink" title="ttl key（检查过期时间， persist key过期变为不过期）"></a>ttl key（检查过期时间， persist key过期变为不过期）</h2><p><img src="/2022/05/30/redis//1645002896436.png"></p>
+<h2 id="惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）"><a href="#惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）" class="headerlink" title="惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）"></a>惰性删除（不是等到key过期就直接删除，而是请求key的时候判断是否过期）</h2><p><img src="/2022/05/30/redis//1645015457811.png"></p>
+<h2 id="定期删除，随机采样删除数据库中的数据"><a href="#定期删除，随机采样删除数据库中的数据" class="headerlink" title="定期删除，随机采样删除数据库中的数据"></a>定期删除，随机采样删除数据库中的数据</h2><p><img src="/2022/05/30/redis//1645016084355.png"></p>
+<p><img src="/2022/05/30/redis//1645015924165.png"></p>
+<h2 id="主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）"><a href="#主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）" class="headerlink" title="主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）"></a>主动删除机制（默认为no-enviction机制，不让继续写入，但是可以删除key）</h2><p><img src="/2022/05/30/redis//1645016832585.png"></p>
+<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645017622788.png"></p>
+<p><img src="/2022/05/30/redis//1645018488072.png"></p>
+<p><img src="/2022/05/30/redis//1645017694612.png" alt="img"></p>
+<p><img src="/2022/05/30/redis//1645020756449.png"></p>
+<p><img src="/2022/05/30/redis//1645020952979.png"></p>
+<p><img src="/2022/05/30/redis//1645021160696.png"></p>
+<p><img src="/2022/05/30/redis//1645021252577.png"></p>
+<p><img src="/2022/05/30/redis//1645022325024.png"></p>
+<h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h2><p><img src="/2022/05/30/redis//1645024743629.png" alt="img"></p>
+<p>1、keys *</p>
+<p>2、RPUSH spider 1 2</p>
+<p>3、lrange spider 0 -1</p>
+<p>4、llen spider</p>
+<p>5、lset spider 0 01</p>
+<p>6、linsert spider after 04 02</p>
+<p>7、rpop spider</p>
+<p>8、lrem spider 0 02</p>
+<p>9、ltrim spider 0 2</p>
+<h1 id="pyredis操作"><a href="#pyredis操作" class="headerlink" title="pyredis操作"></a>pyredis操作</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><img src="/2022/05/30/redis//1645161722169.png"></p>
+<h2 id="代码中使用方法"><a href="#代码中使用方法" class="headerlink" title="代码中使用方法"></a>代码中使用方法</h2><p><img src="/2022/05/30/redis//1645161776289.png"></p>
+<h1 id="位图"><a href="#位图" class="headerlink" title="位图"></a>位图</h1><p><img src="/2022/05/30/redis//1645171869946.png" alt="img"></p>
+<p><img src="/2022/05/30/redis//1645171935518.png"></p>
+<h2 id="常用命令-1"><a href="#常用命令-1" class="headerlink" title="常用命令"></a>常用命令</h2><p>setbit，key不存在时，全部默认初始化为0，长度为 8 的倍数。</p>
+<p> <img src="/2022/05/30/redis//1645172436427.png"></p>
+<p><img src="/2022/05/30/redis//1645172595105.png"></p>
+<h2 id="字节索引，-8位为一个字节，前8位为0，接着8为为1，以此类推"><a href="#字节索引，-8位为一个字节，前8位为0，接着8为为1，以此类推" class="headerlink" title="字节索引， 8位为一个字节，前8位为0，接着8为为1，以此类推"></a>字节索引， 8位为一个字节，前8位为0，接着8为为1，以此类推</h2><p><img src="/2022/05/30/redis//1645172650634.png"></p>
+<p><img src="/2022/05/30/redis//1645172868091.png"></p>
+<p><img src="/2022/05/30/redis//1645172895802.png"></p>
+<p><img src="/2022/05/30/redis//1645172968966.png"></p>
+<h1 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h1><p><img src="/2022/05/30/redis//1645189817987.png"></p>
+<h2 id="特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。"><a href="#特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。" class="headerlink" title="特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。"></a>特点条件下，比如用户有姓名、身份证号，电话号码啥的多个信息，可以使用hash，更加节约内存，同时也比查找多个字符串更加快速的获取字段值。</h2><p>缺点是过期只能将所有的保存信息进行过期操作，而不能对单个信息进行过期操作。+</p>
+<p><img src="/2022/05/30/redis//1645241753956.png" alt="img"></p>
+<h2 id="常用命令-2"><a href="#常用命令-2" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645242100281.png"></p>
+<p><img src="/2022/05/30/redis//1645242121991.png"></p>
+<p><img src="/2022/05/30/redis//1645242396590.png"></p>
+<p><img src="/2022/05/30/redis//1645242261452.png" alt="img"></p>
+<h2 id="应用场景-1"><a href="#应用场景-1" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645242547812.png"></p>
+<p><img src="/2022/05/30/redis//1645242586733.png"></p>
+<h2 id="Python中hash算法处理过程"><a href="#Python中hash算法处理过程" class="headerlink" title="Python中hash算法处理过程"></a>Python中hash算法处理过程</h2><p><img src="/2022/05/30/redis//1645275342085.png"></p>
+<h2 id="redis中hash算法处理流程"><a href="#redis中hash算法处理流程" class="headerlink" title="redis中hash算法处理流程"></a>redis中hash算法处理流程</h2><p>位置重复时，采用多重链表来解决</p>
+<p><img src="/2022/05/30/redis//1645275652961.png"></p>
+<h1 id="集合（无序，去重）"><a href="#集合（无序，去重）" class="headerlink" title="集合（无序，去重）"></a>集合（无序，去重）</h1><h2 id="常用命令-3"><a href="#常用命令-3" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645275970650.png"></p>
+<p><img src="/2022/05/30/redis//1645276039575.png"></p>
+<p>8、将元素从一个集合转移到另一个集合</p>
+<p>9、差集依照左边为标准</p>
+<p><img src="/2022/05/30/redis//1645276712258.png" alt="img">‘<img src="/2022/05/30/redis//1645276849544.png"></p>
+<h2 id="应用场景-2"><a href="#应用场景-2" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645276951590.png"></p>
+<h2 id="底层实现（A、纯数字-intset-B、有字符串-hashtable）"><a href="#底层实现（A、纯数字-intset-B、有字符串-hashtable）" class="headerlink" title="底层实现（A、纯数字 intset  B、有字符串 hashtable）"></a>底层实现（A、纯数字 intset  B、有字符串 hashtable）</h2><p><img src="/2022/05/30/redis//1645277321431.png"></p>
+<h1 id="有序集合"><a href="#有序集合" class="headerlink" title="有序集合"></a>有序集合</h1><p><img src="/2022/05/30/redis//1645278974341.png"></p>
+<h2 id="常用命令-4"><a href="#常用命令-4" class="headerlink" title="常用命令"></a>常用命令</h2><p><img src="/2022/05/30/redis//1645279080388.png"></p>
+<p><img src="/2022/05/30/redis//1645280110323.png"></p>
+<p><img src="/2022/05/30/redis//1645280515092.png"></p>
+<p><img src="/2022/05/30/redis//1645280594502.png"></p>
+<p>weight操作时，先根据权重转换集合对应的值，然后在进行聚合运算</p>
+<p><img src="/2022/05/30/redis//1645281523322.png"></p>
+<h2 id="应用场景-3"><a href="#应用场景-3" class="headerlink" title="应用场景"></a>应用场景</h2><p><img src="/2022/05/30/redis//1645282127518.png" alt="img"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/" rel="tag">redis</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-restframework"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/30/restframework/"
+    >rest_framework</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/30/restframework/" class="article-date">
+  <time datetime="2022-05-29T16:09:10.000Z" itemprop="datePublished">2022-05-30</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/django/">django</a> / <a class="article-category-link" href="/categories/django/rest-framework/">rest_framework</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="RestFrameWork"><a href="#RestFrameWork" class="headerlink" title="RestFrameWork"></a>RestFrameWork</h1><h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p><img src="/2022/05/30/restframework//1648878943995.png" alt="img"></p>
+<h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><ol>
+<li><p>问题：有些API需要用户登陆成功后才可以访问，有些无需登录便可访问</p>
+</li>
+<li><p>解决方案</p>
+<ul>
+<li>创建两张表（user， token)</li>
+<li>用户登录（返回token并保存到数据库）</li>
+</ul>
+</li>
+<li><p>认证流程图，如图</p>
+</li>
+<li><p>使用方法</p>
+<ul>
+<li>局部使用 &amp; 全局使用</li>
+<li>匿名的时候，request.user、auth 为 None</li>
+</ul>
+</li>
+<li><p>内置认证类</p>
+<ul>
+<li>认证类，必须继承于：from rest_framework.authentication import BaseAuthentication</li>
+<li>其他认证类：BasicAuthentication，SessionAuthentication</li>
+</ul>
+</li>
+</ol>
+<h3 id="认证流程"><a href="#认证流程" class="headerlink" title="认证流程"></a>认证流程</h3><ul>
+<li><p>创建类，继承 BaseAuthentication，实现 authenticate 方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Authication</span>(<span class="title class_ inherited__">BaseAuthentication</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">authenticate</span>(<span class="params">self, request</span>):</span><br><span class="line">        token = request._request.GET.get(<span class="string">&#x27;token&#x27;</span>)</span><br><span class="line">        token_obj = models.UserToken.objects.<span class="built_in">filter</span>(token=token).first()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> token_obj:</span><br><span class="line">            <span class="keyword">raise</span> AuthenticationFailed(<span class="string">&#x27;用户认证失败!&#x27;</span>)</span><br><span class="line">        <span class="comment"># rest_framework 内部会将两个字段赋给 request, 以便后续使用</span></span><br><span class="line">        <span class="comment"># 分别为 self.user, self.auth</span></span><br><span class="line">        <span class="keyword">return</span> (token_obj.user, token_obj)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">authenticate_header</span>(<span class="params">self, request</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>返回值：</p>
+<ul>
+<li>None</li>
+<li>raise excetion</li>
+</ul>
+</li>
+<li><p>局部使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">OrderView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    订单相关业务</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    authentication_classes = [Authication, ]</span><br><span class="line"></span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="number">1</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;username&#x27;</span>: <span class="string">&#x27;zhangsan&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;pwd&#x27;</span>: <span class="number">123</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="number">2</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;username&#x27;</span>: <span class="string">&#x27;lisi&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;pwd&#x27;</span>: <span class="number">123</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        ret = &#123;<span class="string">&#x27;code&#x27;</span>: <span class="number">1000</span>, <span class="string">&#x27;msg&#x27;</span>: <span class="literal">None</span>, <span class="string">&#x27;data&#x27;</span>: <span class="literal">None</span>&#125;</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            ret[<span class="string">&#x27;data&#x27;</span>] = self.data</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> JsonResponse(ret)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>全局使用 setting.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">REST_FRAMEWORK = &#123;</span><br><span class="line">    <span class="comment"># 全局认证，若某个类不需要，可以设置authentication_classes为[]</span></span><br><span class="line">    <span class="string">&#x27;DEFAULT_AUTHENTICATION_CLASSES&#x27;</span>: [<span class="string">&#x27;api.auth.Authentication.FirstAuthication&#x27;</span>,</span><br><span class="line">                                       <span class="string">&#x27;api.auth.Authentication.Authication&#x27;</span>],</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;UNAUTHENTICATED_USER&#x27;</span>: <span class="literal">None</span>,  <span class="comment"># 匿名，request.user = None</span></span><br><span class="line">    <span class="string">&#x27;UNAUTHENTICATED_TOKEN&#x27;</span>: <span class="literal">None</span>,  <span class="comment"># 匿名 request.auth = None</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="源码流程"><a href="#源码流程" class="headerlink" title="源码流程"></a>源码流程</h3><p>dispatch -&gt; 封装request -&gt; request.user -&gt; authentication_classes -&gt; authentication_classes</p>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyPermission</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">has_permission</span>(<span class="params">self, request, view</span>):</span><br><span class="line">        <span class="keyword">if</span> request.user.user_type != <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="全局设置"><a href="#全局设置" class="headerlink" title="全局设置"></a>全局设置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">REST_FRAMEWORK = &#123;</span><br><span class="line">    <span class="comment"># 全局认证，若某个类不需要，可以设置authentication_classes为[]</span></span><br><span class="line">    <span class="string">&#x27;DEFAULT_AUTHENTICATION_CLASSES&#x27;</span>: [<span class="string">&#x27;api.auth.Authentication.FirstAuthication&#x27;</span>,</span><br><span class="line">                                       <span class="string">&#x27;api.auth.Authentication.Authication&#x27;</span>],</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;UNAUTHENTICATED_USER&#x27;</span>: <span class="literal">None</span>,  <span class="comment"># 匿名，request.user = None</span></span><br><span class="line">    <span class="string">&#x27;UNAUTHENTICATED_TOKEN&#x27;</span>: <span class="literal">None</span>,  <span class="comment"># 匿名 request.auth = None</span></span><br><span class="line">    <span class="string">&quot;DEFAULT_PERMISSION_CLASSES&quot;</span>: [<span class="string">&#x27;api.auth.permission.MyPermission&#x27;</span>, ],  <span class="comment"># permission</span></span><br><span class="line">    <span class="string">&#x27;DEFAULT_THROTTLE_CLASSES&#x27;</span>: [<span class="string">&#x27;api.auth.throttle.VisitThrottle&#x27;</span>],  <span class="comment"># 频率</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="频率"><a href="#频率" class="headerlink" title="频率"></a>频率</h2><ul>
+<li>类，继承于：BaseThrottle，实现 allow_request、wait函数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">VisitThrottle</span>(<span class="title class_ inherited__">BaseThrottle</span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    60S内只能访问3次</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.history = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">allow_request</span>(<span class="params">self, request, view</span>):</span><br><span class="line">        ip = request.META.get(<span class="string">&#x27;REMOTE_ADDR&#x27;</span>)</span><br><span class="line">        ctime = time.time()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ip <span class="keyword">not</span> <span class="keyword">in</span> VISIT_RECORD:</span><br><span class="line">            <span class="comment"># 将第一次访问的时间加入</span></span><br><span class="line">            VISIT_RECORD[ip] = [ctime, ]</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        history = VISIT_RECORD.get(ip)</span><br><span class="line">        self.history = history</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> history <span class="keyword">and</span> history[-<span class="number">1</span>] &lt; ctime - <span class="number">60</span>:</span><br><span class="line">            <span class="comment"># 判断history是否有值，且最后一个值的时间是否小于60s，小于则可以移除</span></span><br><span class="line">            history.pop()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(history) &lt; <span class="number">3</span>:</span><br><span class="line">            VISIT_RECORD[ip].insert(<span class="number">0</span>, ctime)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">wait</span>(<span class="params">self</span>):</span><br><span class="line">        ctime = time.time()</span><br><span class="line">        <span class="keyword">return</span> <span class="number">60</span> - (ctime - self.history[-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>类，继承于: SimpleRateThrottle，实现get_cache_key函数，并且修改setting配置</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">IpThrottle</span>(<span class="title class_ inherited__">SimpleRateThrottle</span>):</span><br><span class="line">scope = <span class="string">&#x27;ip&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_cache_key</span>(<span class="params">self, request, view</span>):</span><br><span class="line">    <span class="comment"># 通过ip来控制访问频率</span></span><br><span class="line">    <span class="keyword">return</span> self.get_ident(request)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserThrottle</span>(<span class="title class_ inherited__">SimpleRateThrottle</span>):</span><br><span class="line">scope = <span class="string">&#x27;user&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_cache_key</span>(<span class="params">self, request, view</span>):</span><br><span class="line">    <span class="comment"># 用户名</span></span><br><span class="line">    <span class="keyword">return</span> request.user.username</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;DEFAULT_THROTTLE_RATES&#x27;</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;ip&#x27;</span>: <span class="string">&#x27;3/m&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;user&#x27;</span>: <span class="string">&#x27;5/m&#x27;</span>,</span><br><span class="line">&#125;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="重要程度"><a href="#重要程度" class="headerlink" title="重要程度"></a>重要程度</h1><ul>
+<li>版本        *</li>
+<li>解析器     *</li>
+<li>序列化     ****<ul>
+<li>请求数据校验</li>
+<li>QuerySet序列化</li>
+</ul>
+</li>
+<li>分页        **</li>
+<li>路由        **</li>
+<li>视图        **</li>
+<li>渲染器     *</li>
+</ul>
+<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><h3 id="BaseVersioning使用（version在url中以get参数形式传递）"><a href="#BaseVersioning使用（version在url中以get参数形式传递）" class="headerlink" title="BaseVersioning使用（version在url中以get参数形式传递）"></a>BaseVersioning使用（version在url中以get参数形式传递）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework.versioning <span class="keyword">import</span> BaseVersioning</span><br><span class="line"></span><br><span class="line"><span class="comment"># http://127.0.0.1:8000/order/?token=49713936b12fe71833dcfbbc9ce9b81e&amp;version=v1</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ParameVersion</span>(<span class="title class_ inherited__">BaseVersioning</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">determine_version</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        version = request.query_params.get(<span class="string">&#x27;version&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> version</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">OrderView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">    订单相关业务</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="comment"># 全局认证前提下，若不需要认证局部处理方案， 设置authentication_classes为[]</span></span><br><span class="line">    authentication_classes = [Authication, ]</span><br><span class="line">    <span class="comment"># 设置权限，只有SVIP才可以访问订单</span></span><br><span class="line">    <span class="comment"># permission_classes = [MyPermission, ]</span></span><br><span class="line">    throttle_classes = [UserThrottle, ]</span><br><span class="line"></span><br><span class="line">    versioning_class = ParameVersion</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">REST_FRAMEWORK = &#123;</span><br><span class="line">    <span class="string">&#x27;DEFAULT_VERSION&#x27;</span>: <span class="string">&#x27;v1&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;ALLOWED_VERSIONS&#x27;</span>: [<span class="string">&#x27;v1&#x27;</span>, <span class="string">&#x27;v2&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;VERSION_PARAM&#x27;</span>: <span class="string">&#x27;version&#x27;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="QueryParameterVersioning-控制版本范围"><a href="#QueryParameterVersioning-控制版本范围" class="headerlink" title="QueryParameterVersioning 控制版本范围"></a>QueryParameterVersioning 控制版本范围</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">versioning_clas = QueryParameterVersioning</span><br><span class="line"></span><br><span class="line">REST_FRAMEWORK = &#123;</span><br><span class="line">    &#x27;DEFAULT_VERSION&#x27;: &#x27;v1&#x27;,</span><br><span class="line">    &#x27;ALLOWED_VERSIONS&#x27;: [&#x27;v1&#x27;, &#x27;v2&#x27;],</span><br><span class="line">    &#x27;VERSION_PARAM&#x27;: &#x27;version&#x27;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="URLPathVersioning（通过url路径来控制版本）"><a href="#URLPathVersioning（通过url路径来控制版本）" class="headerlink" title="URLPathVersioning（通过url路径来控制版本）"></a>URLPathVersioning（通过url路径来控制版本）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># urls.py</span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(&#x27;admin/&#x27;, admin.site.urls),</span><br><span class="line">    path(&#x27;api/v1/auth/&#x27;, AuthView.as_view()),</span><br><span class="line">    re_path(r&#x27;api/(?P&lt;version&gt;[v1|v2]+)/order/&#x27;, OrderView.as_view()),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">#setting</span><br><span class="line"></span><br><span class="line">&#x27;DEFAULT_VERSION_CLASS&#x27;: &#x27;rest_framework.versioning.URLPathVersioning&#x27;,</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="反向生成url"><a href="#反向生成url" class="headerlink" title="反向生成url"></a>反向生成url</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    re_path(<span class="string">r&#x27;api/(?P&lt;version&gt;[v1|v2]+)/order/&#x27;</span>, OrderView.as_view(), name=<span class="string">&#x27;order&#x27;</span>),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取版本</span></span><br><span class="line"><span class="built_in">print</span>(request.version)</span><br><span class="line"><span class="comment"># 获取版本处理对象</span></span><br><span class="line"><span class="built_in">print</span>(request.versioning_scheme)</span><br><span class="line"><span class="comment"># 反向生成url</span></span><br><span class="line">url = request.versioning_scheme.reverse(viewname=<span class="string">&#x27;order&#x27;</span>, request=request)</span><br><span class="line"><span class="built_in">print</span>(url)</span><br></pre></td></tr></table></figure>
+
+<h2 id="解析器"><a href="#解析器" class="headerlink" title="解析器"></a>解析器</h2><ol>
+<li>获取用户请求</li>
+<li>获取用户请求体</li>
+<li>根据用户请求头，然后用parser_classes的请求头进行比较</li>
+<li>解析</li>
+<li>request.data获取数据 使用方法</li>
+</ol>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 局部</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ParserView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="keyword">from</span> rest_framework.parsers <span class="keyword">import</span> JSONParser, FormParser</span><br><span class="line">    parser_classes = [JSONParser, FormParser, ]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">post</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="built_in">print</span>(request.data)</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">&#x27;Parser&#x27;</span>) </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#全局</span></span><br><span class="line">REST_FRAMEWORK = &#123;</span><br><span class="line">    <span class="string">&#x27;DEFAULT_PARSER_CLASSES&#x27;</span>: [<span class="string">&#x27;rest_framework.parsers.JSONParser&#x27;</span>, <span class="string">&#x27;rest_framework.parsers.FormParser&#x27;</span>, ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h2><h3 id="serializer-Serializer"><a href="#serializer-Serializer" class="headerlink" title="serializer.Serializer"></a>serializer.Serializer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfoSerializer</span>(serializers.Serializer):</span><br><span class="line">    username = serializers.CharField()</span><br><span class="line">    password = serializers.CharField()</span><br><span class="line">    user_type = serializers.IntegerField()</span><br><span class="line">    <span class="comment"># source取需要的字段</span></span><br><span class="line">    <span class="built_in">type</span> = serializers.CharField(source=<span class="string">&#x27;get_user_type_display&#x27;</span>)</span><br><span class="line">    gp = serializers.CharField(source=<span class="string">&#x27;group.title&#x27;</span>)</span><br><span class="line">    <span class="comment"># 自定义取出字段</span></span><br><span class="line">    rls = serializers.SerializerMethodField()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_rls</span>(<span class="params">self, row</span>):</span><br><span class="line">        row_obj_list = row.roles.<span class="built_in">all</span>()</span><br><span class="line">        ret = []</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> row_obj_list:</span><br><span class="line">            ret.append(&#123;<span class="string">&#x27;id&#x27;</span>: item.<span class="built_in">id</span>, <span class="string">&#x27;title&#x27;</span>: item.title&#125;)</span><br><span class="line">        <span class="keyword">return</span> ret</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfoView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        user = UserInfo.objects.<span class="built_in">all</span>()</span><br><span class="line">        <span class="comment"># many=True可以显示多个，默认为False</span></span><br><span class="line">        ser = UserInfoSerializer(instance=user, many=<span class="literal">True</span>)</span><br><span class="line">        <span class="comment"># ensure_ascii=False可以正常显示中文</span></span><br><span class="line">        ret = json.dumps(ser.data, ensure_ascii=<span class="literal">False</span>)</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(ret)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="serializers-ModelSerializer"><a href="#serializers-ModelSerializer" class="headerlink" title="serializers.ModelSerializer"></a>serializers.ModelSerializer</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfoModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = UserInfo</span><br><span class="line">        fields = <span class="string">&#x27;__all__&#x27;</span></span><br><span class="line">        depth = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfoView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        user = UserInfo.objects.<span class="built_in">all</span>()</span><br><span class="line">        <span class="comment"># many=True可以显示多个，默认为False</span></span><br><span class="line">        ser = UserInfoModelSerializer(instance=user, many=<span class="literal">True</span>)</span><br><span class="line">        <span class="comment"># ensure_ascii=False可以正常显示中文</span></span><br><span class="line">        ret = json.dumps(ser.data, ensure_ascii=<span class="literal">False</span>)</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(ret)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="反向生成url-1"><a href="#反向生成url-1" class="headerlink" title="反向生成url"></a>反向生成url</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfoModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="comment"># 获取到该路由的name(反向生成url)</span></span><br><span class="line">    <span class="comment"># 通过lookup_field = &#x27;group_id’获取数据库中该用户组的id</span></span><br><span class="line">    <span class="comment"># 通过lookup_url_kwarg = &#x27;pk’获取路由中该用户组取值的key获取id</span></span><br><span class="line">    <span class="comment"># 在ModelSerializer实例化的时候通过context参数传递reuqest</span></span><br><span class="line"></span><br><span class="line">    group = serializers.HyperlinkedIdentityField(view_name=<span class="string">&#x27;gp&#x27;</span>, lookup_field=<span class="string">&#x27;group_id&#x27;</span>, lookup_url_kwarg=<span class="string">&#x27;pk&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = UserInfo</span><br><span class="line">        fields = <span class="string">&#x27;__all__&#x27;</span></span><br><span class="line">        depth = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserInfoView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        user = UserInfo.objects.<span class="built_in">all</span>()</span><br><span class="line">        <span class="comment"># many=True可以显示多个，默认为False</span></span><br><span class="line">        <span class="comment"># 使用HyperlinkedIdentityField之后，需要加上context=&#123;&#x27;request&#x27;: request&#125;</span></span><br><span class="line">        ser = UserInfoModelSerializer(instance=user, many=<span class="literal">True</span>, context=&#123;<span class="string">&#x27;request&#x27;</span>: request&#125;)</span><br><span class="line">        <span class="comment"># ensure_ascii=False可以正常显示中文</span></span><br><span class="line">        ret = json.dumps(ser.data, ensure_ascii=<span class="literal">False</span>)</span><br><span class="line">        <span class="keyword">return</span> HttpResponse(ret)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&#x27;user/&#x27;</span>, UserInfoView.as_view()),</span><br><span class="line">    re_path(<span class="string">r&#x27;group/(?P&lt;pk&gt;\d+)&#x27;</span>, GroupView.as_view(), name=<span class="string">&#x27;gp&#x27;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义验证器"><a href="#自定义验证器" class="headerlink" title="自定义验证器"></a>自定义验证器</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyValidator</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, base</span>):</span><br><span class="line">        self.base = <span class="built_in">str</span>(base)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__call__</span>(<span class="params">self, value</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> value.endswith(self.base):</span><br><span class="line">            msg = <span class="string">&#x27;字段必须以%s结尾&#x27;</span> % self.base</span><br><span class="line">            <span class="keyword">raise</span> serializers.ValidationError(msg)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">set_context</span>(<span class="params">self, serializer_field</span>):</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserGroupSerializer</span>(serializers.Serializer):</span><br><span class="line">    title = serializers.CharField(error_messages=&#123;<span class="string">&#x27;required&#x27;</span>: <span class="string">&#x27;标题不能缺失&#x27;</span>, <span class="string">&#x27;blank&#x27;</span>: <span class="string">&#x27;标题内容不能为空&#x27;</span>&#125;,</span><br><span class="line">                                  validators=[MyValidator(<span class="string">&#x27;组&#x27;</span>), ])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserGroupView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">post</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        ser = UserGroupSerializer(data=request.data)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ser.is_valid():</span><br><span class="line">            <span class="built_in">print</span>(ser.validated_data[<span class="string">&#x27;title&#x27;</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(ser.errors)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">&#x27;POST&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="钩子方法验证"><a href="#钩子方法验证" class="headerlink" title="钩子方法验证"></a>钩子方法验证</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">UserGroupSerializer</span>(serializers.Serializer):</span><br><span class="line">    title = serializers.CharField(required=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 钩子方法进行验证</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">validate_title</span>(<span class="params">self, value</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> value.endswith(<span class="string">&#x27;s&#x27;</span>):</span><br><span class="line">            <span class="keyword">return</span> serializers.ValidationError(<span class="string">&#x27;必须以s结尾&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> value</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">UserGroupView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">post</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        ser = UserGroupSerializer(data=request.data)</span><br><span class="line">        ret = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">if</span> ser.is_valid():</span><br><span class="line">            <span class="built_in">print</span>(ser.validated_data[<span class="string">&#x27;title&#x27;</span>])</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(ser.errors)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> HttpResponse(<span class="string">&#x27;POST&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="分页-PageNumberPagination-LimitOffsetPagination"><a href="#分页-PageNumberPagination-LimitOffsetPagination" class="headerlink" title="分页(PageNumberPagination,LimitOffsetPagination)"></a>分页(PageNumberPagination,LimitOffsetPagination)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">PageSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = Role</span><br><span class="line">        fields = <span class="string">&#x27;__all__&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyPagination</span>(<span class="title class_ inherited__">PageNumberPagination</span>):</span><br><span class="line">    page_size = <span class="number">2</span>  <span class="comment"># 每个页面默认显示个数</span></span><br><span class="line">    page_size_query_param = <span class="string">&#x27;size&#x27;</span>  <span class="comment"># 调节每个页面的显示个数</span></span><br><span class="line">    max_page_size = <span class="number">4</span></span><br><span class="line">    page_query_param = <span class="string">&#x27;page&#x27;</span>  <span class="comment"># 调节跳转页码</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PageView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># http://127.0.0.1:8000/page/?size=4&amp;page=2</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 获取数据</span></span><br><span class="line">        roles = Role.objects.<span class="built_in">all</span>()</span><br><span class="line">        <span class="comment"># 分页操作</span></span><br><span class="line">        pg = MyPagination()</span><br><span class="line">        page_roles = pg.paginate_queryset(queryset=roles, request=request, view=self)</span><br><span class="line">        <span class="comment"># 序列化数据</span></span><br><span class="line">        ser = PageSerializer(instance=page_roles, many=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Response(ser.data)</span><br></pre></td></tr></table></figure>
+
+<h3 id="全局"><a href="#全局" class="headerlink" title="全局"></a>全局</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">REST_FRAMEWORK = &#123;</span><br><span class="line">    <span class="string">&quot;PAGE_SIZE&quot;</span>: <span class="number">2</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PageView</span>(<span class="title class_ inherited__">APIView</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># http://127.0.0.1:8000/page/?size=4&amp;page=2</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 获取数据</span></span><br><span class="line">        roles = Role.objects.<span class="built_in">all</span>()</span><br><span class="line">        <span class="comment"># 分页操作</span></span><br><span class="line">        pg = PageNumberPagination()</span><br><span class="line">        page_roles = pg.paginate_queryset(queryset=roles, request=request, view=self)</span><br><span class="line">        <span class="comment"># 序列化数据</span></span><br><span class="line">        ser = PageSerializer(instance=page_roles, many=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Response(ser.data)</span><br></pre></td></tr></table></figure>
+
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><h3 id="GenericAPIView"><a href="#GenericAPIView" class="headerlink" title="GenericAPIView"></a>GenericAPIView</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># setting.py</span></span><br><span class="line">REST_FRAMEWORK = &#123;</span><br><span class="line">    <span class="string">&quot;PAGE_SIZE&quot;</span>: <span class="number">2</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># url.py</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;v1/&#x27;</span>, View1View.as_view()),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> rest_framework.generics <span class="keyword">import</span> GenericAPIView</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">PageSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = Role</span><br><span class="line">        fields = <span class="string">&#x27;__all__&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">View1View</span>(<span class="title class_ inherited__">GenericAPIView</span>):</span><br><span class="line">    <span class="comment"># queryset：数据库中获取值</span></span><br><span class="line">    <span class="comment"># serializer_class：序列化的类方法</span></span><br><span class="line">    <span class="comment"># pagination_class：分页中的类方法</span></span><br><span class="line"></span><br><span class="line">    queryset = Role.objects.<span class="built_in">all</span>()</span><br><span class="line">    serializer_class = PageSerializer</span><br><span class="line">    pagination_class = PageNumberPagination</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 获取数据</span></span><br><span class="line">        roles = self.get_queryset()</span><br><span class="line">        <span class="comment"># 分页操作</span></span><br><span class="line">        page_roles = self.paginate_queryset(roles)</span><br><span class="line">        <span class="comment"># 序列化数据</span></span><br><span class="line">        ser = self.get_serializer(instance=page_roles, many=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Response(ser.data)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="GenericViewSet"><a href="#GenericViewSet" class="headerlink" title="GenericViewSet"></a>GenericViewSet</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># url.py</span></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;v1/&#x27;</span>, View1View.as_view(&#123;<span class="string">&#x27;get&#x27;</span>: <span class="string">&#x27;list&#x27;</span>&#125;)),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> rest_framework.viewsets <span class="keyword">import</span> GenericViewSet</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">View1View</span>(<span class="title class_ inherited__">GenericViewSet</span>):</span><br><span class="line">    <span class="comment"># queryset：数据库中获取值</span></span><br><span class="line">    <span class="comment"># serializer_class：序列化的类方法</span></span><br><span class="line">    <span class="comment"># pagination_class：分页中的类方法</span></span><br><span class="line"></span><br><span class="line">    queryset = Role.objects.<span class="built_in">all</span>().order_by(<span class="string">&#x27;id&#x27;</span>)</span><br><span class="line">    serializer_class = PageSerializer</span><br><span class="line">    pagination_class = PageNumberPagination</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">list</span>(<span class="params">self, request, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 获取数据</span></span><br><span class="line">        roles = self.get_queryset()</span><br><span class="line">        <span class="comment"># 分页操作</span></span><br><span class="line">        page_roles = self.paginate_queryset(roles)</span><br><span class="line">        <span class="comment"># 序列化数据</span></span><br><span class="line">        ser = self.get_serializer(instance=page_roles, many=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> Response(ser.data)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="ModelViewSet"><a href="#ModelViewSet" class="headerlink" title="ModelViewSet"></a>ModelViewSet</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    re_path(<span class="string">r&#x27;v1/(?P&lt;pk&gt;\d+)&#x27;</span>, View1View.as_view(&#123;<span class="string">&#x27;get&#x27;</span>: <span class="string">&#x27;retrieve&#x27;</span>, <span class="string">&#x27;post&#x27;</span>: <span class="string">&#x27;create&#x27;</span>, <span class="string">&#x27;delete&#x27;</span>: <span class="string">&#x27;destroy&#x27;</span>, <span class="string">&#x27;put&#x27;</span>: <span class="string">&#x27;update&#x27;</span>&#125;)),</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> rest_framework.viewsets <span class="keyword">import</span> ModelViewSet</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">View1View</span>(<span class="title class_ inherited__">ModelViewSet</span>):</span><br><span class="line">    <span class="comment"># queryset：数据库中获取值</span></span><br><span class="line">    <span class="comment"># serializer_class：序列化的类方法</span></span><br><span class="line">    <span class="comment"># pagination_class：分页中的类方法</span></span><br><span class="line"></span><br><span class="line">    queryset = Role.objects.<span class="built_in">all</span>()</span><br><span class="line">    serializer_class = PageSerializer</span><br><span class="line">    pagination_class = PageNumberPagination</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, re_path, include</span><br><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> routers</span><br><span class="line"><span class="keyword">from</span> api.views <span class="keyword">import</span> View1View</span><br><span class="line"></span><br><span class="line">router = routers.DefaultRouter()</span><br><span class="line">router.register(<span class="string">r&#x27;view&#x27;</span>, View1View)</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    <span class="comment"># http://127.0.0.1:8000/api/view/</span></span><br><span class="line">    <span class="comment"># http://127.0.0.1:8000/api/view/1/</span></span><br><span class="line">    re_path(<span class="string">r&#x27;api/&#x27;</span>, include(router.urls)),</span><br><span class="line"></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> rest_framework.viewsets <span class="keyword">import</span> ModelViewSet</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">View1View</span>(<span class="title class_ inherited__">ModelViewSet</span>):</span><br><span class="line">    <span class="comment"># queryset：数据库中获取值</span></span><br><span class="line">    <span class="comment"># serializer_class：序列化的类方法</span></span><br><span class="line">    <span class="comment"># pagination_class：分页中的类方法</span></span><br><span class="line"></span><br><span class="line">    queryset = Role.objects.<span class="built_in">all</span>()</span><br><span class="line">    serializer_class = PageSerializer</span><br><span class="line">    pagination_class = PageNumberPagination</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="渲染器"><a href="#渲染器" class="headerlink" title="渲染器"></a>渲染器</h2><h3 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">REST_FRAMEWORK = &#123;</span><br><span class="line">    <span class="string">&quot;PAGE_SIZE&quot;</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">&quot;DEFAULT_RENDERER_CLASSES&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;rest_framework.renderers.JSONRenderer&quot;</span>,</span><br><span class="line">        <span class="string">&quot;rest_framework.renderers.BrowsableAPIRenderer&quot;</span>,</span><br><span class="line">    ],</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="单独配置"><a href="#单独配置" class="headerlink" title="单独配置"></a>单独配置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">View1View</span>(<span class="title class_ inherited__">ModelViewSet</span>):</span><br><span class="line">    <span class="comment"># queryset：数据库中获取值</span></span><br><span class="line">    <span class="comment"># serializer_class：序列化的类方法</span></span><br><span class="line">    <span class="comment"># pagination_class：分页中的类方法</span></span><br><span class="line">    <span class="comment"># http://127.0.0.1:8000/api/view/?format=admin</span></span><br><span class="line">    renderer_classes = [JSONRenderer, BrowsableAPIRenderer, AdminRenderer]</span><br><span class="line"></span><br><span class="line">    queryset = Role.objects.<span class="built_in">all</span>()</span><br><span class="line">    serializer_class = PageSerializer</span><br><span class="line">    pagination_class = PageNumberPagination</span><br></pre></td></tr></table></figure>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest-framework/" rel="tag">rest_framework</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-python"
   class="article article-type-post"
   itemscope
@@ -864,381 +1287,6 @@
     <footer class="article-footer">
        
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest-framework/" rel="tag">rest_framework</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-数据库的设计"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/"
-    >数据库设计流程</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="article-date">
-  <time datetime="2022-05-26T03:21:12.000Z" itemprop="datePublished">2022-05-26</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h1><h2 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h2><p>需求分析–&gt; 概念模型设计–&gt;逻辑模型设计–&gt;</p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649938446040.png" alt="img"></p>
-<h2 id="ER图设计"><a href="#ER图设计" class="headerlink" title="ER图设计"></a>ER图设计</h2><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993338375.png"></p>
-<h3 id="局部ER模型设计"><a href="#局部ER模型设计" class="headerlink" title="局部ER模型设计"></a>局部ER模型设计</h3><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993355640.png"></p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993390245.png"></p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993543014.png" alt="img">借阅（<strong>BID,RID</strong>,借出日期，归还日期）</p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993568799.png"></p>
-<p>若转换成如下形式，借阅信息实体必须有主键标识。</p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649994147462.png"></p>
-<h2 id="ER图转换成关系模式的步骤"><a href="#ER图转换成关系模式的步骤" class="headerlink" title="ER图转换成关系模式的步骤"></a>ER图转换成关系模式的步骤</h2><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649949136864.png" alt="img"></p>
-<h3 id="一个实体类型转换成关系模式，标识符为主键"><a href="#一个实体类型转换成关系模式，标识符为主键" class="headerlink" title="一个实体类型转换成关系模式，标识符为主键"></a>一个实体类型转换成关系模式，标识符为主键</h3><p>系（<strong>系编号</strong> ，系名，电话）<br>教师 （__教工号__，姓名，性别，职称）<br>课程 （__课程号__，课程名，学分）</p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649948416331.png" alt="img"></p>
-<h3 id="实体联系转换方法"><a href="#实体联系转换方法" class="headerlink" title="实体联系转换方法"></a>实体联系转换方法</h3><ul>
-<li>一对一，任意一方添加对方的主键，尽量避免空值</li>
-<li>一对多，n</li>
-<li>n方添加1的主键</li>
-<li>多对多，新增关系模式，主键为（m,n）的联合主键</li>
-</ul>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649991951493.png"></p>
-<p>系（<strong>系编号</strong> ，系名，电话，___系主任教工号___）<br>教师 （__教工号__，姓名，性别，职称, ___所在系编号____）<br>课程 （__课程号__，课程名，学分，___所在系编号___）<br>任教 (__教工号，课程号__，教材)</p>
-<h1 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h1><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650004976818.png"></p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005066736.png"></p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005096666.png"></p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005347317.png"></p>
-<p>根据实际情况</p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005372799.png"></p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005329341.png"></p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650010404036.png"></p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650010432950.png"></p>
-<h1 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h1><ul>
-<li>__码__：表中可以唯一确定一个元组的某个属性（或者属性组），如果这样的码有不止一个，那么大家都叫候选码，我们从候选码中挑一个出来做老大，它就叫主码。</li>
-<li>__全码__：如果一个码包含了所有的属性，这个码就是全码。</li>
-<li>__主属性__：一个属性只要在任何一个候选码中出现过，这个属性就是主属性。</li>
-<li>__非主属性__：与上面相反，没有在任何候选码中出现过，这个属性就是非主属性。</li>
-<li>函数依赖</li>
-</ul>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650080153558.png"></p>
-<h2 id="第2范式"><a href="#第2范式" class="headerlink" title="第2范式"></a>第2范式</h2><p>在第1范式的基础上，消除非主属性对码的部分函数依赖，<br>非主属性完全依赖于码。</p>
-<h2 id="第3范式"><a href="#第3范式" class="headerlink" title="第3范式"></a>第3范式</h2><p>在第2范式的基础上，消除非主属性之间的传递函数依赖。</p>
-<h2 id="BC范式"><a href="#BC范式" class="headerlink" title="BC范式"></a>BC范式</h2><p>消除主属性对码的部分依赖和传递依赖。</p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650077443689.png"></p>
-<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650079553861.png"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" rel="tag">数据库设计</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-多进程和多线程"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/05/26/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B/"
-    >多线程多进程</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/05/26/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="article-date">
-  <time datetime="2022-05-26T01:54:12.000Z" itemprop="datePublished">2022-05-26</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><ul>
-<li>多进程，计算密集型，如大量的数据计算，利用CPU的多核优势，有几个核开几个进程</li>
-<li>多线程，IO密集型，如文件读写，网络数据传输等</li>
-</ul>
-<h1 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h1><h2 id="t-start"><a href="#t-start" class="headerlink" title="t.start"></a>t.start</h2><p>当前线程开始执行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line">t = threading.Thread(target=task, args=_args)</span><br><span class="line">t.start()</span><br></pre></td></tr></table></figure>
-
-<h2 id="t-join"><a href="#t-join" class="headerlink" title="t.join()"></a>t.join()</h2><p>等待当前线程完成，再继续往下进行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line">t = threading.Thread(target=task, args=_args)</span><br><span class="line">t.start()</span><br><span class="line">t.join()</span><br></pre></td></tr></table></figure>
-
-<h2 id="daemon"><a href="#daemon" class="headerlink" title="daemon"></a>daemon</h2><ul>
-<li>当daemon为False时，父线程在运行完毕后，会等待所有子线程退出才结束程序。</li>
-<li>当daemon为True时，父线程在运行完毕后，子线程无论是否正在运行，都会伴随主线程一起退出。</li>
-</ul>
-<h2 id="自定义线程类"><a href="#自定义线程类" class="headerlink" title="自定义线程类"></a>自定义线程类</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">task</span>(<span class="params">args</span>):</span><br><span class="line">    name = threading.current_thread().getName()</span><br><span class="line">    <span class="built_in">print</span>(name)</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    t = threading.Thread(target=task, args=(<span class="number">11</span>,))</span><br><span class="line">    t.setName(<span class="string">&#x27;task-&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(i))</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure>
-
-<p>将要做的事写入到线程里面去,定义run方法</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyThread</span>(threading.Thread):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;执行线程&#x27;</span>, self._args)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    t = MyThread(args=(i, ))</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure>
-
-<h2 id="线程安全，利用锁机制"><a href="#线程安全，利用锁机制" class="headerlink" title="线程安全，利用锁机制"></a>线程安全，利用锁机制</h2><ul>
-<li>Lock 只能单个加锁、解锁</li>
-<li>RLock 支持嵌套加锁、解锁</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#单个</span></span><br><span class="line">lock_object.acquire()</span><br><span class="line">lock_object.release()</span><br><span class="line"><span class="comment">#嵌套</span></span><br><span class="line">lock_object.acquire()</span><br><span class="line">lock_object.acquire()</span><br><span class="line"></span><br><span class="line">lock_object.release()</span><br><span class="line">lock_object.release()</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line">lock_object = threading.RLock()</span><br><span class="line">data = []</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">task</span>():</span><br><span class="line">    lock_object.acquire()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">        data.append(i)</span><br><span class="line">    lock_object.release()</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">len</span>(data))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">task1</span>():</span><br><span class="line">    <span class="comment"># with lock_object自动加锁，释放锁</span></span><br><span class="line">    <span class="keyword">with</span> lock_object:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">            data.append(i)</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">len</span>(data))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>):</span><br><span class="line">    t = threading.Thread(target=task)</span><br><span class="line">    t.start()</span><br></pre></td></tr></table></figure>
-
-<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义一个准备作为线程任务的函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">action</span>(<span class="params"><span class="built_in">max</span></span>):</span><br><span class="line">    my_sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">max</span>):</span><br><span class="line">        <span class="built_in">print</span>(threading.current_thread().name + <span class="string">&#x27;  &#x27;</span> + <span class="built_in">str</span>(i))</span><br><span class="line">        my_sum += i</span><br><span class="line">    <span class="keyword">return</span> my_sum</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个包含2条线程的线程池</span></span><br><span class="line"><span class="keyword">with</span> ThreadPoolExecutor(max_workers=<span class="number">2</span>) <span class="keyword">as</span> pool:</span><br><span class="line">    <span class="comment"># 向线程池提交一个task, 50会作为action()函数的参数</span></span><br><span class="line">    future1 = pool.submit(action, <span class="number">50</span>)</span><br><span class="line">    <span class="comment"># 向线程池再提交一个task, 100会作为action()函数的参数</span></span><br><span class="line">    future2 = pool.submit(action, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_result</span>(<span class="params">future</span>):</span><br><span class="line">        <span class="built_in">print</span>(future.result())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 为future1添加线程完成的回调函数</span></span><br><span class="line">    future1.add_done_callback(get_result)</span><br><span class="line">    <span class="comment"># 为future2添加线程完成的回调函数</span></span><br><span class="line">    future2.add_done_callback(get_result)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;--------------&#x27;</span>) </span><br></pre></td></tr></table></figure>
-
-<h2 id="单例模式（拓展"><a href="#单例模式（拓展" class="headerlink" title="单例模式（拓展)"></a>单例模式（拓展)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Singleton</span>:</span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line">    lock = threading.RLock()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name</span>):</span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__new__</span>(<span class="params">cls, *args, **kwargs</span>):</span><br><span class="line">        <span class="comment"># 多线程的情况下，会有问题，可能创建多个对象，需要加锁来控制</span></span><br><span class="line">        <span class="keyword">with</span> cls.lock:</span><br><span class="line">            <span class="keyword">if</span> cls.instance:</span><br><span class="line">                <span class="keyword">return</span> cls.instance</span><br><span class="line">            cls.instance = <span class="built_in">object</span>.__new__(cls, *args, **kwargs)</span><br><span class="line">            <span class="keyword">return</span> cls.instance</span><br></pre></td></tr></table></figure>
-
-<h1 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h1><p>进程间相互隔离</p>
-<p>三大模式</p>
-<ul>
-<li>fork， 拷贝所有资源，支持文件对象&amp;&amp;锁的传参，[unix]</li>
-<li>spawn， run可以传递参数，不支持文件对象&amp;&amp;线程锁，[win, unix]，main代码块开始执行</li>
-<li>forkserver，同spawn</li>
-</ul>
-<h2 id="常用函数作用"><a href="#常用函数作用" class="headerlink" title="常用函数作用"></a>常用函数作用</h2><ul>
-<li>join（） 等待工作进程退出。必须打电话close()或 terminate()使用之前join()。</li>
-<li>close（） 防止任何更多的任务被提交到池中。 一旦完成所有任务，工作进程将退出。</li>
-<li>terminate（）立即停止工作进程而不完成未完成的工作。当池对象被垃圾收集时，terminate()将立即调用。</li>
-</ul>
-<p>示例代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">info</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;module name:&#x27;</span>, __name__)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;parent process:&#x27;</span>, os.getppid())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;process id:&#x27;</span>, os.getpid())</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">name</span>):</span><br><span class="line">    info()</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;hello&#x27;</span>, name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    info()</span><br><span class="line">    p = Process(target=f, args=(<span class="string">&#x27;bob&#x27;</span>,))</span><br><span class="line">    <span class="comment"># p.daemon = False</span></span><br><span class="line">    <span class="built_in">print</span>(p.daemon)</span><br><span class="line">    p.start()</span><br><span class="line">    p.join(<span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;name:&#x27;</span>, p.name)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;is_alive:&#x27;</span>, p.is_alive())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;exitcode:&#x27;</span>, p.exitcode)</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">------------------------------------------------------------</span></span><br><span class="line"><span class="string">module name: __main__</span></span><br><span class="line"><span class="string">parent process: 1188</span></span><br><span class="line"><span class="string">process id: 13060</span></span><br><span class="line"><span class="string">False</span></span><br><span class="line"><span class="string">module name: __mp_main__</span></span><br><span class="line"><span class="string">parent process: 13060</span></span><br><span class="line"><span class="string">process id: 13424</span></span><br><span class="line"><span class="string">name: Process-1</span></span><br><span class="line"><span class="string">is_alive: True</span></span><br><span class="line"><span class="string">exitcode: None</span></span><br><span class="line"><span class="string">hello bob</span></span><br><span class="line"><span class="string">------------------------------------------------------------</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="进程池"><a href="#进程池" class="headerlink" title="进程池"></a>进程池</h2><p>apply一个一个执行，并没有实现并行操作，阻塞式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">p</span>):</span><br><span class="line">       <span class="built_in">print</span>(p)</span><br><span class="line">       time.sleep(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    pool = Pool(processes=<span class="number">10</span>)</span><br><span class="line">    <span class="keyword">for</span> i  <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">500</span>):</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">        (&#x27;\n&#x27;</span></span><br><span class="line"><span class="string">         &#x27;	（1）遍历500个可迭代对象，往进程池放一个子进程\n&#x27;</span></span><br><span class="line"><span class="string">         &#x27;	（2）执行这个子进程，等子进程执行完毕，再往进程池放一个子进程，再执行。（同时只执行一个子进程）\n&#x27;</span></span><br><span class="line"><span class="string">         &#x27;	 for循环执行完毕，再执行print函数。\n&#x27;</span></span><br><span class="line"><span class="string">         &#x27;	&#x27;)</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        pool.apply(test, args=(i,))   <span class="comment">#维持执行的进程总数为10，当一个进程执行完后启动一个新进程.</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br></pre></td></tr></table></figure>
-
-<p>apply_async，实现异步操作，非阻塞式，实现并行</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">p</span>):</span><br><span class="line">       <span class="built_in">print</span>(p)</span><br><span class="line">       time.sleep(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    pool = Pool(processes=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span> i  <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">500</span>):</span><br><span class="line">        <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">         （1）循环遍历，将500个子进程添加到进程池（相对父进程会阻塞）\n&#x27;</span></span><br><span class="line"><span class="string">         （2）每次执行2个子进程，等一个子进程执行完后，立马启动新的子进程。（相对父进程不阻塞）\n&#x27;</span></span><br><span class="line"><span class="string">        &#x27;&#x27;&#x27;</span></span><br><span class="line">        pool.apply_async(test, args=(i,))   <span class="comment">#维持执行的进程总数为10，当一个进程执行完后启动一个新进程.</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br></pre></td></tr></table></figure>
-
-<h2 id="多进程之间的数据共享"><a href="#多进程之间的数据共享" class="headerlink" title="多进程之间的数据共享"></a>多进程之间的数据共享</h2><h3 id="Queue-支持多对多"><a href="#Queue-支持多对多" class="headerlink" title="Queue 支持多对多"></a>Queue 支持多对多</h3><p>put存数据，get取数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process, Queue</span><br><span class="line"><span class="keyword">import</span> os, time, random</span><br><span class="line"><span class="comment"># 写数据进程执行的代码:</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_write</span>(<span class="params">q,urls</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Process(%s) is writing...&#x27;</span> % os.getpid())</span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">        q.put(url)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Put %s to queue...&#x27;</span> % url)</span><br><span class="line">        time.sleep(random.random())</span><br><span class="line"><span class="comment"># 读数据进程执行的代码:</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">_read</span>(<span class="params">q</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Process(%s) is reading...&#x27;</span> % os.getpid())</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        url = q.get(<span class="literal">True</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;Get %s from queue.&#x27;</span> % url)</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="comment"># 父进程创建Queue，并传给各个子进程：</span></span><br><span class="line">    q = Queue()</span><br><span class="line">    _writer1 = Process(target=_write, args=(q,[<span class="string">&#x27;url_1&#x27;</span>, <span class="string">&#x27;url_2&#x27;</span>, <span class="string">&#x27;url_3&#x27;</span>]))</span><br><span class="line">    _writer2 = Process(target=_write, args=(q,[<span class="string">&#x27;url_4&#x27;</span>,<span class="string">&#x27;url_5&#x27;</span>,<span class="string">&#x27;url_6&#x27;</span>]))</span><br><span class="line">    _reader = Process(target=_read, args=(q,))</span><br><span class="line">    <span class="comment"># 启动子进程_writer，写入:</span></span><br><span class="line">    _writer1.start()</span><br><span class="line">    _writer2.start()</span><br><span class="line">    <span class="comment"># 启动子进程_reader，读取:</span></span><br><span class="line">    _reader.start()</span><br><span class="line">    <span class="comment"># 等待_writer结束:</span></span><br><span class="line">    _writer1.join()</span><br><span class="line">    _writer2.join()</span><br><span class="line">    <span class="comment"># _reader进程里是死循环，无法等待其结束，只能强行终止:</span></span><br><span class="line">    _reader.terminate()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Pipe-只能一对一传输，一收一发"><a href="#Pipe-只能一对一传输，一收一发" class="headerlink" title="Pipe 只能一对一传输，一收一发"></a>Pipe 只能一对一传输，一收一发</h3><p>send 发数据，recv 收数据</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process, Pipe</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">talk</span>(<span class="params">pipe</span>):</span><br><span class="line">    pipe.send(<span class="built_in">dict</span>(name=<span class="string">&#x27;Bob&#x27;</span>, spam=<span class="number">42</span>))  <span class="comment"># 传输一个字典</span></span><br><span class="line">    reply = pipe.recv()  <span class="comment"># 接收传输的数据</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;talker got:&#x27;</span>, reply)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    (parentEnd, childEnd) = Pipe()  <span class="comment"># 创建两个 Pipe() 实例，也可以改成 conf1， conf2</span></span><br><span class="line">    child = Process(target=talk,</span><br><span class="line">                    args=(childEnd, ))  <span class="comment"># 创建一个 Process 进程，名称为 child</span></span><br><span class="line">    child.start()  <span class="comment"># 启动进程</span></span><br><span class="line">    <span class="built_in">print</span>(</span><br><span class="line">        <span class="string">&#x27;parent got:&#x27;</span>,</span><br><span class="line">        parentEnd.recv())  <span class="comment"># parentEnd 是一个 Pip() 管道，可以接收 child Process 进程传输的数据</span></span><br><span class="line">    parentEnd.send(&#123;x * <span class="number">2</span></span><br><span class="line">                    <span class="keyword">for</span> x <span class="keyword">in</span> <span class="string">&#x27;spam&#x27;</span></span><br><span class="line">                    &#125;)  <span class="comment"># parentEnd 是一个 Pip() 管道，可以使用 send 方法来传输数据</span></span><br><span class="line">    child.join()  <span class="comment"># 传输的数据被 talk 函数内的 pip 管道接收，并赋值给 reply</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;parent exit&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="数据共享"><a href="#数据共享" class="headerlink" title="数据共享"></a>数据共享</h2><ul>
-<li>Manager()返回的manager提供list, dict, Namespace, Lock, RLock, Semaphore, BoundedSemaphore, Condition, Event, Barrier, Queue, Value and Array类型的支持。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Process, Manager</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">d, l</span>):</span><br><span class="line">    d[<span class="number">1</span>] = <span class="string">&#x27;1&#x27;</span></span><br><span class="line">    d[<span class="string">&#x27;2&#x27;</span>] = <span class="number">2</span></span><br><span class="line">    d[<span class="number">0.25</span>] = <span class="literal">None</span></span><br><span class="line">    l.reverse()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="keyword">with</span> Manager() <span class="keyword">as</span> manager:</span><br><span class="line">        d = manager.<span class="built_in">dict</span>()</span><br><span class="line">        l = manager.<span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">        p = Process(target=f, args=(d, l))</span><br><span class="line">        p.start()</span><br><span class="line">        p.join()</span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(d)</span><br><span class="line">        <span class="built_in">print</span>(l)</span><br><span class="line">-------------------------------------------------------------</span><br><span class="line">&#123;<span class="number">1</span>: <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>: <span class="number">2</span>, <span class="number">0.25</span>: <span class="literal">None</span>&#125;</span><br><span class="line">[<span class="number">9</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%A4%9A%E8%BF%9B%E7%A8%8B/" rel="tag">多线程多进程</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-celery"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/05/26/celery/"
-    >celery</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/05/26/celery/" class="article-date">
-  <time datetime="2022-05-26T01:46:27.000Z" itemprop="datePublished">2022-05-26</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="celery介绍（分布式消息任务队列）"><a href="#celery介绍（分布式消息任务队列）" class="headerlink" title="celery介绍（分布式消息任务队列）"></a>celery介绍（分布式消息任务队列）</h2><p>Celery 是一款非常简单、灵活、可靠的分布式系统，可用于处理大量消息，并且提供了一整套操作此系统的一系列工具。</p>
-<h2 id="什么是任务队列"><a href="#什么是任务队列" class="headerlink" title="什么是任务队列"></a>什么是任务队列</h2><p>任务队列一般用于线程或计算机之间分配工作的一种机制。</p>
-<p>任务队列的输入是一个称为任务的工作单元，有专门的职程（Worker）进行不断的监视任务队列，进行执行新的任务工作。</p>
-<p>Celery 通过消息机制进行通信，通常使用中间人（Broker）作为客户端和职程（Worker）调节。启动一个任务，客户端向消息队列发送一条消息，然后中间人（Broker）将消息传递给一个职程（Worker），最后由职程（Worker）进行执行中间人（Broker）分配的任务。</p>
-<h2 id="celery流程"><a href="#celery流程" class="headerlink" title="celery流程"></a>celery流程</h2><p>消息中间件（message broker）</p>
-<p>任务执行单元（worker）</p>
-<p>任务执行结果存储（task result store）<img src="/2022/05/26/celery//1653226700584.png" alt="img"></p>
-<h2 id="多目录异步任务"><a href="#多目录异步任务" class="headerlink" title="多目录异步任务"></a>多目录异步任务</h2><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="/2022/05/26/celery//image-20220523094307264.png" alt="image-20220523094307264"></p>
-<p>celery.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"></span><br><span class="line">cel = Celery(<span class="string">&#x27;celery_demo&#x27;</span>,</span><br><span class="line">             broker=<span class="string">&#x27;redis://127.0.0.1:6379/1&#x27;</span>,  <span class="comment"># 创建任务</span></span><br><span class="line">             backend=<span class="string">&#x27;redis://127.0.0.1:6379/2&#x27;</span>,  <span class="comment"># 保存任务结果</span></span><br><span class="line">             include=[<span class="string">&#x27;celery_tasks.task01&#x27;</span>,</span><br><span class="line">                      <span class="string">&#x27;celery_tasks.task02&#x27;</span>, ],</span><br><span class="line">             )</span><br><span class="line"><span class="comment"># 时区</span></span><br><span class="line">cel.conf.timezone = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line"><span class="comment"># 使用utc</span></span><br><span class="line">cel.conf.enable_utc = <span class="literal">False</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>task01.py</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .celery <span class="keyword">import</span> cel</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@cel.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_mail</span>(<span class="params">name</span>):</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;向 %s发送邮件任务&quot;</span> % name</span><br></pre></td></tr></table></figure>
-
-<p>task02.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .celery <span class="keyword">import</span> cel</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@cel.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_msg</span>(<span class="params">name</span>):</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;向 %s发送短信任务&quot;</span> % name</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>produce_tasks.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">sys.path.append(<span class="string">&quot;..&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery_tasks.task01 <span class="keyword">import</span> send_mail</span><br><span class="line"></span><br><span class="line">res = send_mail.delay(<span class="string">&#x27;zhang&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>check_result.py</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery.result <span class="keyword">import</span> AsyncResult</span><br><span class="line"></span><br><span class="line">sys.path.append(<span class="string">&quot;..&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery_tasks.celery <span class="keyword">import</span> cel</span><br><span class="line"></span><br><span class="line">async_result = AsyncResult(<span class="built_in">id</span>=<span class="string">&quot;dc955c8b-bffb-436f-ae0f-deb8c528258a&quot;</span>, app=cel)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> async_result.successful():</span><br><span class="line">    res = async_result.get()</span><br><span class="line">    <span class="built_in">print</span>(res)</span><br><span class="line"></span><br><span class="line"><span class="keyword">elif</span> async_result.failed():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;执行失败&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> async_result.status == <span class="string">&quot;PENDING&quot;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;任务等待中被执行&#x27;</span>)</span><br><span class="line"><span class="keyword">elif</span> async_result.status == <span class="string">&quot;PETRY&quot;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;任务异常后正在被重试&#x27;</span>)</span><br><span class="line"><span class="keyword">elif</span> async_result.status == <span class="string">&#x27;STARTED&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;任务开始被执行&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>启动命令：先执行work，然后执行produce_tasks</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">celery -A celery_tasks worker -l info -P eventlet</span><br><span class="line">python produce_tasks.py</span><br></pre></td></tr></table></figure>
-
-<h2 id="多目录异步定时任务"><a href="#多目录异步定时任务" class="headerlink" title="多目录异步定时任务"></a>多目录异步定时任务</h2><h3 id="项目结构-1"><a href="#项目结构-1" class="headerlink" title="项目结构"></a>项目结构</h3><p><img src="/2022/05/26/celery//image-20220523094307264.png" alt="image-20220523094307264"></p>
-<p>单个定时任务</p>
-<p>produce_task.py</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">sys.path.append(<span class="string">&quot;..&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery_tasks.task01 <span class="keyword">import</span> send_mail</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime, timedelta</span><br><span class="line"></span><br><span class="line">ctime = datetime.now()  <span class="comment"># 获取当前时间</span></span><br><span class="line">utc_time = datetime.utcfromtimestamp(ctime.timestamp())  <span class="comment"># 时间转换为时间戳</span></span><br><span class="line">time_delay = timedelta(seconds=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">task_time = utc_time + time_delay</span><br><span class="line"></span><br><span class="line">res = send_mail.apply_async(args=[<span class="string">&#x27;zhang&#x27;</span>], eta=task_time)</span><br><span class="line"><span class="built_in">print</span>(res.<span class="built_in">id</span>)</span><br></pre></td></tr></table></figure>
-
-<p>多个定时任务</p>
-<p>celery_tasks.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> timedelta</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"><span class="keyword">from</span> celery.schedules <span class="keyword">import</span> crontab</span><br><span class="line"></span><br><span class="line">cel = Celery(<span class="string">&#x27;celery_demo&#x27;</span>,</span><br><span class="line">             broker=<span class="string">&#x27;redis://127.0.0.1:6379/1&#x27;</span>,  <span class="comment"># 创建任务</span></span><br><span class="line">             backend=<span class="string">&#x27;redis://127.0.0.1:6379/2&#x27;</span>,  <span class="comment"># 保存任务结果</span></span><br><span class="line">             include=[<span class="string">&#x27;celery_tasks.task01&#x27;</span>,</span><br><span class="line">                      <span class="string">&#x27;celery_tasks.task02&#x27;</span>, ],</span><br><span class="line">             )</span><br><span class="line"><span class="comment"># 时区</span></span><br><span class="line">cel.conf.timezone = <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br><span class="line"><span class="comment"># 使用utc</span></span><br><span class="line">cel.conf.enable_utc = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">cel.conf.beat_schedule = &#123;</span><br><span class="line">    <span class="string">&#x27;add-every-10-seconds&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;celery_tasks.task01.send_mail&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: timedelta(seconds=<span class="number">6</span>), <span class="comment"># 每6s增加一个任务</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (<span class="string">&#x27;zhang&#x27;</span>,)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&#x27;add-every-1-minutes&#x27;</span>: &#123;</span><br><span class="line">        <span class="string">&#x27;task&#x27;</span>: <span class="string">&#x27;celery_tasks.task02.send_msg&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;schedule&#x27;</span>: crontab(minute=<span class="string">&#x27;*/1&#x27;</span>),  <span class="comment"># 每分钟发送一次</span></span><br><span class="line">        <span class="string">&#x27;args&#x27;</span>: (<span class="string">&#x27;zhang&#x27;</span>,)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>启动命令：先启动beat生成任务，然后work执行任务</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">celery -A celery_tasks beat</span><br><span class="line">celery -A celery_tasks worker -l info -P eventlet</span><br></pre></td></tr></table></figure>
-
-<h2 id="Django与celery结合使用"><a href="#Django与celery结合使用" class="headerlink" title="Django与celery结合使用"></a>Django与celery结合使用</h2><p><img src="/2022/05/26/celery//image-20220523155250320.png" alt="image-20220523155250320"></p>
-<p>sms.tasks.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">sys.path.append(<span class="string">&quot;..&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mycelery.main <span class="keyword">import</span> app</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_mail</span>(<span class="params">name</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;向 %s发送邮件任务&quot;</span> % name)</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;ok&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>config.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">broker_url = <span class="string">&#x27;redis://127.0.0.1:6379/14&#x27;</span></span><br><span class="line">result_backend = <span class="string">&#x27;redis://127.0.0.1:6379/15&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>main.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"></span><br><span class="line">app = Celery(<span class="string">&#x27;sms&#x27;</span>)</span><br><span class="line"></span><br><span class="line">os.environ.setdefault(<span class="string">&#x27;DJANGO_SETTINGS_MODULE&#x27;</span>, <span class="string">&#x27;django_celery.settings.dev&#x27;</span>)</span><br><span class="line"></span><br><span class="line">app.config_from_object(<span class="string">&#x27;mycelery.config&#x27;</span>)</span><br><span class="line"></span><br><span class="line">app.autodiscover_tasks([<span class="string">&quot;mycelery.sms&quot;</span>, ])</span><br></pre></td></tr></table></figure>
-
-<p>django views.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.http <span class="keyword">import</span> HttpResponse</span><br><span class="line"><span class="keyword">from</span> mycelery.sms.tasks <span class="keyword">import</span> send_mail</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">celery</span>(<span class="params">request</span>):</span><br><span class="line">    send_mail(<span class="string">&#x27;zhang&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">&#x27;ok&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>urls.py</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&#x27;test/&#x27;</span>, views.celery),</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>运行命令，进入mycelery根目录执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">celery -A mycelery.main worker -l info -P eventlet</span><br></pre></td></tr></table></figure>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/celery/" rel="tag">celery</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-scrapy"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/05/24/scrapy/"
-    >scrapy</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/05/24/scrapy/" class="article-date">
-  <time datetime="2022-05-24T03:04:56.000Z" itemprop="datePublished">2022-05-24</time>
-</a>    
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p><strong>scrapy startproject queto</strong></p>
-<h2 id="创建爬虫"><a href="#创建爬虫" class="headerlink" title="创建爬虫"></a>创建爬虫</h2><p><strong>在spider目录下面建立queto_spider.py文件</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class QuetoSpider(scrapy.Spider):</span><br><span class="line"></span><br><span class="line">    name = &#x27;queto&#x27;</span><br><span class="line"></span><br><span class="line">    def start_requests(self):</span><br><span class="line">        urls = [</span><br><span class="line">            &#x27;https://quotes.toscrape.com/page/1/&#x27;,</span><br><span class="line">            &#x27;https://quotes.toscrape.com/page/2/&#x27;</span><br><span class="line">        ]</span><br><span class="line">        for url in urls:</span><br><span class="line">            yield scrapy.Request(url, callback=self.parse)</span><br><span class="line"></span><br><span class="line">    def parse(self, response, **kwargs):</span><br><span class="line">        page = response.url.split(&#x27;/&#x27;)[-2]</span><br><span class="line">        filename = &#x27;%s.html&#x27; % page</span><br><span class="line"></span><br><span class="line">        with open(filename, &#x27;wb&#x27;) as f:</span><br><span class="line">            f.write(response.body)</span><br></pre></td></tr></table></figure>
-
-<h2 id="跳转到下一页-此处下一页的链接为-x2F-page-x2F-2-x2F"><a href="#跳转到下一页-此处下一页的链接为-x2F-page-x2F-2-x2F" class="headerlink" title="跳转到下一页(此处下一页的链接为 &#x2F;page&#x2F;2&#x2F;)"></a>跳转到下一页(此处下一页的链接为 &#x2F;page&#x2F;2&#x2F;)</h2><h3 id="构造新的链接"><a href="#构造新的链接" class="headerlink" title="构造新的链接"></a>构造新的链接</h3><ul>
-<li><strong>response.urljoin</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if next_page is not None:</span><br><span class="line">    next_page = response.urljoin(next_page)</span><br><span class="line">    yield scrapy.Request(next_page, callback=self.parse)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>response.follow</strong></li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">next_url = response.xpath(&#x27;//li[@class=&quot;next&quot;]/a/@href&#x27;).get()</span><br><span class="line">if next_url is not None:</span><br><span class="line">    yield response.follow(next_url, callback=self.parse)</span><br></pre></td></tr></table></figure>
-
-<p><strong>完整项目代码</strong></p>
-<p><strong>yield中提取数据保存</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class QuetoSpider(scrapy.Spider):</span><br><span class="line"></span><br><span class="line">    name = &#x27;queto&#x27;</span><br><span class="line"></span><br><span class="line">    start_urls = [</span><br><span class="line">        &#x27;https://quotes.toscrape.com/page/1/&#x27;,</span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    def parse(self, response, **kwargs):</span><br><span class="line">        for item in response.xpath(&#x27;//div[@class=&quot;quote&quot;]&#x27;):</span><br><span class="line">            yield &#123;</span><br><span class="line">                &#x27;text&#x27;: item.xpath(&#x27;//span/text()&#x27;).get(),</span><br><span class="line">                &#x27;author&#x27;: item.xpath(&#x27;//span/small/text()&#x27;).get(),</span><br><span class="line">                &#x27;tag&#x27;: item.xpath(&#x27;//div/a[@class=&quot;tag&quot;]/text()&#x27;).get(),</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        next_url = response.xpath(&#x27;//li[@class=&quot;next&quot;]/a/@href&#x27;).get()</span><br><span class="line">        if next_url is not None:</span><br><span class="line">            yield response.follow(next_url, callback=self.parse)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="执行爬虫命令"><a href="#执行爬虫命令" class="headerlink" title="执行爬虫命令"></a>执行爬虫命令</h2><p><strong>scrapy crawl queto</strong>， 此处crawl后面的名字与上面的name相互对应</p>
-<p><strong>scrapy crawl queto -o queto.jl</strong>， 保存为jl格式</p>
-<p><strong>scrapy crawl queto -o queto.json</strong>, 保存为json格式</p>
-<p><a target="_blank" rel="noopener" href="https://www.shangyang.me/2017/06/29/scrapy-learning-1-tutorial/">参考链接</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.scrapy.org/en/latest/intro/tutorial.html#creating-a-project">参考链接</a></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/scrapy/" rel="tag">scrapy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a></li></ul>
 
     </footer>
   </div>

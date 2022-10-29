@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Archives |  Alin</title>
+      <title>swap分区 |  Alin</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,241 +54,217 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-swap分区"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">Archives</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2022" class="archive-year">2022</a>
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  swap分区
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/10/29/swap%E5%88%86%E5%8C%BA/" class="article-date">
+  <time datetime="2022-10-29T15:34:07.000Z" itemprop="datePublished">2022-10-29</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">353</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">1 min</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
-    <div class="archives">
       
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2/" class="archive-article-date">
-  <time datetime="2022-10-29T16:07:07.000Z" itemprop="datePublished">10/30</time>
-</a>
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2/"
-    >订阅链接更换</a> 
-</h2>
+  <h2 id="Ubuntu添加Swap分区"><a href="#Ubuntu添加Swap分区" class="headerlink" title="Ubuntu添加Swap分区"></a>Ubuntu添加Swap分区</h2><h3 id="查看系统是否有Swap分区"><a href="#查看系统是否有Swap分区" class="headerlink" title="查看系统是否有Swap分区"></a>查看系统是否有Swap分区</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo swapon --show</span><br></pre></td></tr></table></figure>
+
+<p>如果没有任何输出，表示没有swap分区，也可以通过free命令验证一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#Output</span><br><span class="line">              total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:            486         316          81           5          88         132</span><br><span class="line">Swap:             0           0           0</span><br></pre></td></tr></table></figure>
+
+<p>可以看到Swap的大小是零，也就是没有swap分区。</p>
+<h3 id="创建Swap分区文件"><a href="#创建Swap分区文件" class="headerlink" title="创建Swap分区文件"></a>创建Swap分区文件</h3><p>创建一个1G大小的文件作为交换分区的文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo fallocate -l 1G /swapfile</span><br></pre></td></tr></table></figure>
+
+<p>设置这个文件权限</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 600 /swapfile</span><br></pre></td></tr></table></figure>
+
+<p>格式化为交换分区文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkswap /swapfile</span><br></pre></td></tr></table></figure>
+
+<p>启用交换分区文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo swapon /swapfile</span><br></pre></td></tr></table></figure>
+
+<p>验证一下swap分区文件是否创建成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo swapon --show</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#Output</span><br><span class="line">NAME      TYPE  SIZE USED PRIO</span><br><span class="line">/swapfile file 1024M   0B   -1</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置开机时自启用Swap分区"><a href="#设置开机时自启用Swap分区" class="headerlink" title="设置开机时自启用Swap分区"></a>设置开机时自启用Swap分区</h3><p>备份 <code>/etc/fstab</code>文件，防止出错</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/fstab /etc/fstab.bak</span><br></pre></td></tr></table></figure>
+
+<p>输入下面的命令在 <code>/etc/fstab</code>文件添加一行swap文件的信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &#x27;/swapfile none swap sw 0 0&#x27; | sudo tee -a /etc/fstab</span><br></pre></td></tr></table></figure>
+
+<h3 id="优化Swap设置"><a href="#优化Swap设置" class="headerlink" title="优化Swap设置"></a>优化Swap设置</h3><p>调整Swappiness值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl vm.swappiness=10</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#Output</span><br><span class="line">vm.swappiness = 10</span><br></pre></td></tr></table></figure>
+
+<p>调整Cache Pressure值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl vm.vfs_cache_pressure=50</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#Output</span><br><span class="line">vm.vfs_cache_pressure = 50</span><br></pre></td></tr></table></figure>
+
+<p>设置开机时自动调整这两项设置值<br>在 <code>/etc/sysctl.conf</code>文件最后添加下面两行内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vm.swappiness=10</span><br><span class="line">vm.vfs_cache_pressure=50</span><br></pre></td></tr></table></figure>
+
+<p>OK，搞定，测试一下看pip是否能安装这个包了，哈哈，不再是Killed，变成了Successfully installed，没有问题，成功安装。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#Output</span><br><span class="line">Installing collected packages: pypinyin</span><br><span class="line">Successfully installed pypinyin-0.33.0</span><br></pre></td></tr></table></figure>
  
-
-    </header>
-    
-    
-  </div>
-</article>
+      <!-- reward -->
       
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/10/29/swap%E5%88%86%E5%8C%BA/" class="archive-article-date">
-  <time datetime="2022-10-29T15:34:07.000Z" itemprop="datePublished">10/29</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/10/29/swap%E5%88%86%E5%8C%BA/"
-    >swap分区</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/08/08/hello-world/" class="archive-article-date">
-  <time datetime="2022-08-08T14:03:32.004Z" itemprop="datePublished">08/08</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/08/08/hello-world/"
-    >Hello World</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/08/08/clash/" class="archive-article-date">
-  <time datetime="2022-08-08T14:03:31.996Z" itemprop="datePublished">08/08</time>
-</a>
-      
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/07/11/%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83xss%E6%94%BB%E5%87%BB/" class="archive-article-date">
-  <time datetime="2022-07-11T06:30:05.000Z" itemprop="datePublished">07/11</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/07/11/%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83xss%E6%94%BB%E5%87%BB/"
-    >防范xss攻击</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/07/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  <time datetime="2022-07-08T14:16:00.000Z" itemprop="datePublished">07/08</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/07/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
-    >操作系统</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="archive-article-date">
-  <time datetime="2022-07-08T14:16:00.000Z" itemprop="datePublished">07/08</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
-    >计算机网络</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/07/08/mysql/" class="archive-article-date">
-  <time datetime="2022-07-08T14:13:27.000Z" itemprop="datePublished">07/08</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/07/08/mysql/"
-    >mysql</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/07/06/%E5%88%B7%E6%9C%BA/" class="archive-article-date">
-  <time datetime="2022-07-06T01:56:05.000Z" itemprop="datePublished">07/06</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/07/06/%E5%88%B7%E6%9C%BA/"
-    >1+9r刷机笔记</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/05/30/Python%E8%A3%85%E9%A5%B0%E5%99%A8/" class="archive-article-date">
-  <time datetime="2022-05-29T16:09:10.000Z" itemprop="datePublished">05/30</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2022/05/30/Python%E8%A3%85%E9%A5%B0%E5%99%A8/"
-    >Python装饰器</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
+      <div id="reword-out">
+        <div id="reward-btn">
+          Donate
+        </div>
+      </div>
       
     </div>
-  </div>
-  
-  
-
-  
-  <nav class="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">下一页</a>
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://blog.sabery.top/2022/10/29/swap%E5%88%86%E5%8C%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swap%E5%88%86%E5%8C%BA/" rel="tag">swap分区</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            订阅链接更换
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2022/08/08/hello-world/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Hello World</div>
+      </a>
+    
   </nav>
+
   
+   
+    
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -425,6 +401,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
