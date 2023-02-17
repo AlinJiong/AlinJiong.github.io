@@ -100,17 +100,17 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2022/08/08/clash/</url>
-    <content><![CDATA[<ul>
-<li><input disabled type="checkbox"> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: clash给手机分享热点</span><br><span class="line">date: 2022-07-06 09:56:05</span><br><span class="line">tags:</span><br><span class="line">- 刷机</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>电脑clash端如下配置，手机和电脑连接<strong>同一个wifi</strong>，<strong>点开</strong>clash <strong>Allow LAN</strong>的时候会有<strong>WLAN</strong>地址，就是代理地址，需要在手机上配置，例如：现在是代理地址192.168.0.10，clash <strong>Port端口</strong>为8888</p>
-<p><img src="/2022/08/08/clash//image-20220706094825205.png" alt="image-20220706094825205"></p>
-<p><img src="/2022/08/08/clash//image-20220706095105820.png" alt="image-20220706095105820"></p>
+    <title>clash给手机分享热点</title>
+    <url>/2022/07/06/clash/</url>
+    <content><![CDATA[<p>电脑clash端如下配置，手机和电脑连接<strong>同一个wifi</strong>，<strong>点开</strong>clash <strong>Allow LAN</strong>的时候会有<strong>WLAN</strong>地址，就是代理地址，需要在手机上配置，例如：现在是代理地址192.168.0.10，clash <strong>Port端口</strong>为8888</p>
+<p><img src="/2022/07/06/clash//image-20220706094825205.png" alt="image-20220706094825205"></p>
+<p><img src="/2022/07/06/clash//image-20220706095105820.png" alt="image-20220706095105820"></p>
 <p>手机上配置如下：</p>
-<p><img src="/2022/08/08/clash//image-20220706095224196.png" alt="image-20220706095224196"></p>
+<p><img src="/2022/07/06/clash//image-20220706095224196.png" alt="image-20220706095224196"></p>
 ]]></content>
+      <tags>
+        <tag>刷机</tag>
+      </tags>
   </entry>
   <entry>
     <title>cookies和session的使用</title>
@@ -230,133 +230,6 @@
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>sql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/08/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>mysql</title>
-    <url>/2022/07/08/mysql/</url>
-    <content><![CDATA[<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="建立-amp-amp-删除-amp-amp-使用数据库"><a href="#建立-amp-amp-删除-amp-amp-使用数据库" class="headerlink" title="建立&amp;&amp;删除&amp;&amp;使用数据库"></a>建立&amp;&amp;删除&amp;&amp;使用数据库</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> database xxx;</span><br><span class="line"><span class="keyword">drop</span> database xxx;</span><br><span class="line">use xxx;</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建表-amp-amp-删除表"><a href="#创建表-amp-amp-删除表" class="headerlink" title="创建表&amp;&amp;删除表"></a>创建表&amp;&amp;删除表</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">user</span>(</span><br><span class="line">id <span class="type">INT</span> UNSIGNED AUTO_INCREMENT,</span><br><span class="line">username <span class="type">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line"><span class="keyword">PRIMARY</span> key(id)</span><br><span class="line">)ENGINE<span class="operator">=</span>INNODB <span class="keyword">DEFAULT</span> charset<span class="operator">=</span>utf8;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span>; # 删除表和结构</span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span>; # 删除所有数据，保存表结构</span><br></pre></td></tr></table></figure>
-
-<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">table</span> (id, username) <span class="keyword">values</span> (<span class="number">1</span>,<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> id<span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name,column_name</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line">[<span class="keyword">WHERE</span> Clause]</span><br><span class="line">[LIMIT N][ <span class="keyword">OFFSET</span> M]</span><br></pre></td></tr></table></figure>
-
-<h2 id="limit-限制返回行数"><a href="#limit-限制返回行数" class="headerlink" title="limit 限制返回行数"></a>limit 限制返回行数</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line">limit <span class="number">0</span>,<span class="number">2</span>; #从<span class="number">0</span>开始，前面两个</span><br></pre></td></tr></table></figure>
-
-<h2 id="不等于-lt-gt-x2F-x3D-，不是所以系统都可以用）"><a href="#不等于-lt-gt-x2F-x3D-，不是所以系统都可以用）" class="headerlink" title="不等于 &lt;&gt;&#x2F; (!&#x3D;，不是所以系统都可以用）"></a>不等于 &lt;&gt;&#x2F; (!&#x3D;，不是所以系统都可以用）</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> age,university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university<span class="operator">&lt;&gt;</span><span class="string">&#x27;复旦大学&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="为空-is-null"><a href="#为空-is-null" class="headerlink" title="为空 is null"></a>为空 is null</h2><h2 id="不为空-is-not-null-x2F-lt-gt-“”"><a href="#不为空-is-not-null-x2F-lt-gt-“”" class="headerlink" title="不为空 is not null&#x2F; &lt;&gt; “”"></a>不为空 is not null&#x2F; &lt;&gt; “”</h2><h2 id="update-更新数据"><a href="#update-更新数据" class="headerlink" title="update 更新数据"></a>update 更新数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name <span class="keyword">SET</span> field1<span class="operator">=</span><span class="keyword">new</span><span class="operator">-</span>value1, field2<span class="operator">=</span><span class="keyword">new</span><span class="operator">-</span>value2</span><br><span class="line">[<span class="keyword">WHERE</span> Clause]</span><br><span class="line"></span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> username<span class="operator">=</span><span class="string">&#x27;alin&#x27;</span> <span class="keyword">where</span> id<span class="operator">=</span><span class="number">6</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="like-查找数据"><a href="#like-查找数据" class="headerlink" title="like 查找数据"></a>like 查找数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> field1, field2,...fieldN</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> field1 <span class="keyword">LIKE</span> condition1 [<span class="keyword">AND</span> [<span class="keyword">OR</span>]] filed2 <span class="operator">=</span> <span class="string">&#x27;somevalue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `<span class="keyword">user</span>` <span class="keyword">WHERE</span> username <span class="keyword">like</span> <span class="string">&#x27;a%&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;%a&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>以a结尾的数据</span><br><span class="line"><span class="string">&#x27;a%&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>以a开头的数据</span><br><span class="line"><span class="string">&#x27;%a%&#x27;</span>    <span class="operator">/</span><span class="operator">/</span>含有a的数据</span><br><span class="line"><span class="string">&#x27;_a_&#x27;</span>    <span class="operator">/</span><span class="operator">/</span>三位且中间字母是a的</span><br><span class="line"><span class="string">&#x27;_a&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>两位且结尾字母是a的</span><br><span class="line"><span class="string">&#x27;a_&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>两位且开头字母是a的</span><br></pre></td></tr></table></figure>
-
-<h2 id="union-操作符，将不同的-select-结果组合到一个结果集中，expresssion-可以不同"><a href="#union-操作符，将不同的-select-结果组合到一个结果集中，expresssion-可以不同" class="headerlink" title="union 操作符，将不同的 select 结果组合到一个结果集中，expresssion 可以不同"></a>union 操作符，将不同的 select 结果组合到一个结果集中，expresssion 可以不同</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> expression1, expression2, ... expression_n</span><br><span class="line"><span class="keyword">FROM</span> tables</span><br><span class="line">[<span class="keyword">WHERE</span> conditions]</span><br><span class="line"><span class="keyword">UNION</span> [<span class="keyword">ALL</span> <span class="operator">|</span> <span class="keyword">DISTINCT</span>]</span><br><span class="line"><span class="keyword">SELECT</span> expression1, expression2, ... expression_n</span><br><span class="line"><span class="keyword">FROM</span> tables</span><br><span class="line">[<span class="keyword">WHERE</span> conditions];</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> id <span class="keyword">from</span> book</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">select</span> username <span class="keyword">from</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="group-by：默认为-asc-升序"><a href="#group-by：默认为-asc-升序" class="headerlink" title="group by：默认为 asc 升序"></a>group by：默认为 asc 升序</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> field1, field2,...fieldN <span class="keyword">FROM</span> table_name1, table_name2...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> field1 [<span class="keyword">ASC</span> [<span class="keyword">DESC</span>][默认 <span class="keyword">ASC</span>]], [field2...] [<span class="keyword">ASC</span> [<span class="keyword">DESC</span>][默认 <span class="keyword">ASC</span>]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> id <span class="keyword">from</span> <span class="keyword">user</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> username <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="group-by-分组统计"><a href="#group-by-分组统计" class="headerlink" title="group by 分组统计"></a>group by 分组统计</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name, <span class="keyword">function</span>(column_name)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name operator <span class="keyword">value</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column_name;</span><br><span class="line"></span><br><span class="line">#分组求和，而不是整体求和</span><br><span class="line"><span class="keyword">SELECT</span> Customer,OrderDate,<span class="built_in">SUM</span>(OrderPrice)</span><br><span class="line"><span class="keyword">FROM</span> Orders</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Customer,OrderDate</span><br></pre></td></tr></table></figure>
-
-<h2 id="group-by-having"><a href="#group-by-having" class="headerlink" title="group by+having"></a>group by+having</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> emp_no, <span class="built_in">count</span>(salary) t     #在工资表里查找员工编号、统计发工资的次数（取别名t）</span><br><span class="line"><span class="keyword">from</span> salaries</span><br><span class="line"><span class="keyword">where</span> creat_date <span class="keyword">between</span> <span class="string">&#x27;2020-01-01&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;2020-12-31&#x27;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> emp_no        #通过员工编号编组</span><br><span class="line"><span class="keyword">HAVING</span> t<span class="operator">&gt;</span><span class="number">15</span>       #查询发工资次数大于<span class="number">15</span>次的</span><br></pre></td></tr></table></figure>
-
-<h2 id="左连接"><a href="#左连接" class="headerlink" title="左连接"></a>左连接</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> a.bookname, a.pushlishTime, b.usename</span><br><span class="line"><span class="keyword">from</span> Books a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> Author b</span><br><span class="line"><span class="keyword">on</span> a.uid <span class="operator">=</span> b.id</span><br></pre></td></tr></table></figure>
-
-<h2 id="时间控制"><a href="#时间控制" class="headerlink" title="时间控制"></a>时间控制</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span>包含当天</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> DATEDIFF(字段,NOW())<span class="operator">&lt;=</span><span class="number">0</span> <span class="keyword">AND</span> DATEDIFF(字段,NOW())<span class="operator">&gt;</span><span class="operator">-</span>n</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>不包含当天</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> DATEDIFF(字段,NOW())<span class="operator">&lt;</span><span class="number">0</span> <span class="keyword">AND</span> DATEDIFF(字段,NOW())<span class="operator">&gt;</span><span class="operator">-</span>n</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> a.bookname, a.pushlishTime, b.usename</span><br><span class="line"><span class="keyword">from</span> Books a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> Author b</span><br><span class="line"><span class="keyword">on</span> a.uid <span class="operator">=</span> b.id</span><br><span class="line"><span class="keyword">where</span> DATEDIFF(a.updateTime, NOW())<span class="operator">&lt;=</span><span class="number">0</span> <span class="keyword">and</span> DATEDIFF(a.updateTime, NOW())<span class="operator">&gt;</span><span class="number">-7</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> a.likes</span><br></pre></td></tr></table></figure>
-
-<h1 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h1><h2 id="InnoDB："><a href="#InnoDB：" class="headerlink" title="InnoDB："></a>InnoDB：</h2><h3 id="优点：提供良好的事务管理，崩溃修复能力和并发控制，3-层即可控制百万级的数据，聚集索引"><a href="#优点：提供良好的事务管理，崩溃修复能力和并发控制，3-层即可控制百万级的数据，聚集索引" class="headerlink" title="优点：提供良好的事务管理，崩溃修复能力和并发控制，3 层即可控制百万级的数据，聚集索引"></a>优点：提供良好的事务管理，崩溃修复能力和并发控制，3 层即可控制百万级的数据，聚集索引</h3><h3 id="缺点：读写能力较差，占用的数据空间大"><a href="#缺点：读写能力较差，占用的数据空间大" class="headerlink" title="缺点：读写能力较差，占用的数据空间大"></a>缺点：读写能力较差，占用的数据空间大</h3><p><img src="/2022/07/08/mysql//image-20220525235957544.png" alt="image-20220525235957544"></p>
-<h2 id="MyISAM："><a href="#MyISAM：" class="headerlink" title="MyISAM："></a>MyISAM：</h2><h3 id="优点：插入速度快，内存占用低，-非聚集索引"><a href="#优点：插入速度快，内存占用低，-非聚集索引" class="headerlink" title="优点：插入速度快，内存占用低， 非聚集索引"></a>优点：插入速度快，内存占用低， 非聚集索引</h3><h3 id="缺点：不支持事务，数据分散存储为三个文件"><a href="#缺点：不支持事务，数据分散存储为三个文件" class="headerlink" title="缺点：不支持事务，数据分散存储为三个文件"></a>缺点：不支持事务，数据分散存储为三个文件</h3><p><img src="/2022/07/08/mysql//image-20220525231552462.png" alt="image-20220525231552462"></p>
-<p><img src="/2022/07/08/mysql//image-20220525231604086.png" alt="image-20220525231604086"></p>
-<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><h3 id="存取速度快，利用内存中的数据来建立表，安全性比较低。"><a href="#存取速度快，利用内存中的数据来建立表，安全性比较低。" class="headerlink" title="存取速度快，利用内存中的数据来建立表，安全性比较低。"></a>存取速度快，利用内存中的数据来建立表，安全性比较低。</h3><p><img src="/2022/07/08/mysql//image-20220525231623029.png" alt="image-20220525231623029"></p>
-<p><img src="/2022/07/08/mysql//image-20220525231630286.png" alt="image-20220525231630286"></p>
-<h2 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h2><p>主键索引：唯一、非空</p>
-<p>唯一索引：唯一、可为空</p>
-<p>普通索引：可以重复、为空</p>
-<p>全文索引：</p>
-<p>组合索引：组合</p>
-<h2 id="B-树和-B-树的区别"><a href="#B-树和-B-树的区别" class="headerlink" title="B 树和 B+树的区别"></a>B 树和 B+树的区别</h2><p>B+树只有叶子节点放置数据，而 B 树所有节点都放置数据</p>
-<h2 id="回表"><a href="#回表" class="headerlink" title="回表"></a>回表</h2><p>先去非聚集索引的找到 ID，然后聚集索引查询对应的字段。（先非主键索引，然后主键索引）</p>
-<h2 id="覆盖索引（建立组合索引来实现）"><a href="#覆盖索引（建立组合索引来实现）" class="headerlink" title="覆盖索引（建立组合索引来实现）"></a>覆盖索引（建立组合索引来实现）</h2><p>使用覆盖索引，MySQL 只需要通过索引就可以查找和返回查询所需要的数据，而不必在使用索引处理数据之后再进行回表操作。</p>
-<h2 id="最左匹配原则"><a href="#最左匹配原则" class="headerlink" title="最左匹配原则"></a>最左匹配原则</h2><h1 id="SQL-删除规则"><a href="#SQL-删除规则" class="headerlink" title="SQL 删除规则"></a>SQL 删除规则</h1><p><img src="/2022/07/08/mysql//image-20220526000006280.png" alt="image-20220526000006280"></p>
-<h2 id="cascade-级联删除"><a href="#cascade-级联删除" class="headerlink" title="cascade 级联删除"></a>cascade 级联删除</h2><p>解释：（主表被删除，字表的数据也会删除）</p>
-<p>父表中删除包含主键值的行的操作，该值由子表的现有行中的外键列引用。</p>
-<p>在级联删除中，删除父表中的记录时，同时删除子表中外键引用此主健的记录。</p>
-<p>例子：</p>
-<p>employee 表中有员工的 dept_id 引用 department 表中 dept_id( 同时为 deptartment 主键 )作为外键。</p>
-<p>当 department 表（父表）中一个部门被删除，employee 表（子表）中引用这个部门的 dept_id 作为 dept_id 的记录也自动被删除。</p>
-<h2 id="protect"><a href="#protect" class="headerlink" title="protect"></a>protect</h2><p>不让删除，删除会抛出异常。</p>
-<h2 id="set-null"><a href="#set-null" class="headerlink" title="set_null"></a>set_null</h2><p>删除的时候，外键置为空值。</p>
-<h2 id="set-default"><a href="#set-default" class="headerlink" title="set_default"></a>set_default</h2><p>外键字段置为默认值。</p>
-<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p>自定义值</p>
-<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="1-1-Description"><a href="#1-1-Description" class="headerlink" title="1.1 Description"></a>1.1 Description</h3><p>salary</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">| id | name | sex | salary |</span><br><span class="line">|----|------|-----|--------|</span><br><span class="line">| 1  | A    | m   | 2500   |</span><br><span class="line">| 2  | B    | f   | 1500   |</span><br><span class="line">| 3  | C    | m   | 5500   |</span><br><span class="line">| 4  | D    | f   | 500    |</span><br></pre></td></tr></table></figure>
-
-<p>只用一个 SQL 查询，将 sex 字段反转。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">| id | name | sex | salary |</span><br><span class="line">|----|------|-----|--------|</span><br><span class="line">| 1  | A    | f   | 2500   |</span><br><span class="line">| 2  | B    | m   | 1500   |</span><br><span class="line">| 3  | C    | f   | 5500   |</span><br><span class="line">| 4  | D    | m   | 500    |</span><br></pre></td></tr></table></figure>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>两个相等的数异或的结果为 0，而 0 与任何一个数异或的结果为这个数。</p>
-<p>sex  字段只有两个取值：’f’ 和 ‘m’，并且有以下规律：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;f&#x27; ^ (&#x27;m&#x27; ^ &#x27;f&#x27;) = &#x27;m&#x27; ^ (&#x27;f&#x27; ^ &#x27;f&#x27;) = &#x27;m&#x27;</span><br><span class="line">&#x27;m&#x27; ^ (&#x27;m&#x27; ^ &#x27;f&#x27;) = &#x27;f&#x27; ^ (&#x27;m&#x27; ^ &#x27;m&#x27;) = &#x27;f&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>因此将 sex 字段和 ‘m’ ^ ‘f’ 进行异或操作，最后就能反转 sex 字段。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> salary</span><br><span class="line"><span class="keyword">SET</span> sex <span class="operator">=</span> <span class="type">CHAR</span>(ASCII(sex) <span class="operator">^</span> ASCII(<span class="string">&#x27;m&#x27;</span>) <span class="operator">^</span> ASCII(<span class="string">&#x27;f&#x27;</span>));</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-2-Description"><a href="#1-2-Description" class="headerlink" title="1.2 Description"></a>1.2 Description</h3><p>邮件地址表：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+----+---------+</span><br><span class="line">| Id | Email   |</span><br><span class="line">+----+---------+</span><br><span class="line">| 1  | john@example.com |</span><br><span class="line">| 2  | bob@example.com |</span><br><span class="line">| 3  | john@example.com |</span><br><span class="line">+----+---------+</span><br></pre></td></tr></table></figure>
-
-<p>删除重复的邮件地址：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+----+------------------+</span><br><span class="line">| Id | Email            |</span><br><span class="line">+----+------------------+</span><br><span class="line">| 1  | john@example.com |</span><br><span class="line">| 2  | bob@example.com  |</span><br><span class="line">+----+------------------+</span><br></pre></td></tr></table></figure>
-
-<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p>只保留相同 Email 中 Id 最小的那一个，然后删除其它的。</p>
-<p>连接查询：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> p1</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Person p1,</span><br><span class="line">    Person p2</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    p1.Email <span class="operator">=</span> p2.Email</span><br><span class="line">    <span class="keyword">AND</span> p1.Id <span class="operator">&gt;</span> p2.Id</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-Description"><a href="#1-3-Description" class="headerlink" title="1.3 Description"></a>1.3 Description</h3><p>Employee 表：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+----+-------+--------+-----------+</span><br><span class="line">| Id | Name  | Salary | ManagerId |</span><br><span class="line">+----+-------+--------+-----------+</span><br><span class="line">| 1  | Joe   | 70000  | 3         |</span><br><span class="line">| 2  | Henry | 80000  | 4         |</span><br><span class="line">| 3  | Sam   | 60000  | NULL      |</span><br><span class="line">| 4  | Max   | 90000  | NULL      |</span><br><span class="line">+----+-------+--------+-----------+</span><br></pre></td></tr></table></figure>
-
-<p>查找薪资大于其经理薪资的员工信息。</p>
-<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    E1.NAME <span class="keyword">AS</span> Employee</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Employee E1</span><br><span class="line">    <span class="keyword">INNER</span> <span class="keyword">JOIN</span> Employee E2</span><br><span class="line">    <span class="keyword">ON</span> E1.ManagerId <span class="operator">=</span> E2.Id</span><br><span class="line">    <span class="keyword">AND</span> E1.Salary <span class="operator">&gt;</span> E2.Salary;</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-4-Description"><a href="#1-4-Description" class="headerlink" title="1.4 Description"></a>1.4 Description</h3><p>Employee 表：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| Id | Name  | Salary | DepartmentId |</span><br><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| 1  | Joe   | 70000  | 1            |</span><br><span class="line">| 2  | Henry | 80000  | 2            |</span><br><span class="line">| 3  | Sam   | 60000  | 2            |</span><br><span class="line">| 4  | Max   | 90000  | 1            |</span><br><span class="line">+----+-------+--------+--------------+</span><br></pre></td></tr></table></figure>
-
-<p>Department 表：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+----+----------+</span><br><span class="line">| Id | Name     |</span><br><span class="line">+----+----------+</span><br><span class="line">| 1  | IT       |</span><br><span class="line">| 2  | Sales    |</span><br><span class="line">+----+----------+</span><br></pre></td></tr></table></figure>
-
-<p>查找一个 Department 中收入最高者的信息：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+------------+----------+--------+</span><br><span class="line">| Department | Employee | Salary |</span><br><span class="line">+------------+----------+--------+</span><br><span class="line">| IT         | Max      | 90000  |</span><br><span class="line">| Sales      | Henry    | 80000  |</span><br><span class="line">+------------+----------+--------+</span><br></pre></td></tr></table></figure>
-
-<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><p>创建一个临时表，包含了部门员工的最大薪资。可以对部门进行分组，然后使用 MAX() 汇总函数取得最大薪资。</p>
-<p>之后使用连接找到一个部门中薪资等于临时表中最大薪资的员工。</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    D.NAME Department,</span><br><span class="line">    E.NAME Employee,</span><br><span class="line">    E.Salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Employee E,</span><br><span class="line">    Department D,</span><br><span class="line">    ( <span class="keyword">SELECT</span> DepartmentId, <span class="built_in">MAX</span>( Salary ) Salary </span><br><span class="line">     <span class="keyword">FROM</span> Employee </span><br><span class="line">     <span class="keyword">GROUP</span> <span class="keyword">BY</span> DepartmentId ) M</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    E.DepartmentId <span class="operator">=</span> D.Id</span><br><span class="line">    <span class="keyword">AND</span> E.DepartmentId <span class="operator">=</span> M.DepartmentId</span><br><span class="line">    <span class="keyword">AND</span> E.Salary <span class="operator">=</span> M.Salary;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <tags>
         <tag>sql</tag>
       </tags>
   </entry>
@@ -592,6 +465,115 @@
         <tag>re</tag>
         <tag>xpath</tag>
         <tag>反射机制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql</title>
+    <url>/2022/07/08/mysql/</url>
+    <content><![CDATA[<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h2 id="建立-amp-amp-删除-amp-amp-使用数据库"><a href="#建立-amp-amp-删除-amp-amp-使用数据库" class="headerlink" title="建立&amp;&amp;删除&amp;&amp;使用数据库"></a>建立&amp;&amp;删除&amp;&amp;使用数据库</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> database xxx;</span><br><span class="line"><span class="keyword">drop</span> database xxx;</span><br><span class="line">use xxx;</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建表-amp-amp-删除表"><a href="#创建表-amp-amp-删除表" class="headerlink" title="创建表&amp;&amp;删除表"></a>创建表&amp;&amp;删除表</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">user</span>(</span><br><span class="line">id <span class="type">INT</span> UNSIGNED AUTO_INCREMENT,</span><br><span class="line">username <span class="type">VARCHAR</span>(<span class="number">100</span>) <span class="keyword">not</span> <span class="keyword">null</span>,</span><br><span class="line"><span class="keyword">PRIMARY</span> key(id)</span><br><span class="line">)ENGINE<span class="operator">=</span>INNODB <span class="keyword">DEFAULT</span> charset<span class="operator">=</span>utf8;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span>; # 删除表和结构</span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span>; # 删除所有数据，保存表结构</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">table</span> (id, username) <span class="keyword">values</span> (<span class="number">1</span>,<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">where</span> id<span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name,column_name</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line">[<span class="keyword">WHERE</span> Clause]</span><br><span class="line">[LIMIT N][ <span class="keyword">OFFSET</span> M]</span><br></pre></td></tr></table></figure>
+
+<h2 id="limit-限制返回行数"><a href="#limit-限制返回行数" class="headerlink" title="limit 限制返回行数"></a>limit 限制返回行数</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> device_id</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line">limit <span class="number">0</span>,<span class="number">2</span>; #从<span class="number">0</span>开始，前面两个</span><br></pre></td></tr></table></figure>
+
+<h2 id="不等于-lt-gt-x2F-x3D-，不是所以系统都可以用）"><a href="#不等于-lt-gt-x2F-x3D-，不是所以系统都可以用）" class="headerlink" title="不等于 &lt;&gt;&#x2F; (!&#x3D;，不是所以系统都可以用）"></a>不等于 &lt;&gt;&#x2F; (!&#x3D;，不是所以系统都可以用）</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> age,university</span><br><span class="line"><span class="keyword">from</span> user_profile</span><br><span class="line"><span class="keyword">where</span> university<span class="operator">&lt;&gt;</span><span class="string">&#x27;复旦大学&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="为空-is-null"><a href="#为空-is-null" class="headerlink" title="为空 is null"></a>为空 is null</h2><h2 id="不为空-is-not-null-x2F-lt-gt-“”"><a href="#不为空-is-not-null-x2F-lt-gt-“”" class="headerlink" title="不为空 is not null&#x2F; &lt;&gt; “”"></a>不为空 is not null&#x2F; &lt;&gt; “”</h2><h2 id="update-更新数据"><a href="#update-更新数据" class="headerlink" title="update 更新数据"></a>update 更新数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_name <span class="keyword">SET</span> field1<span class="operator">=</span><span class="keyword">new</span><span class="operator">-</span>value1, field2<span class="operator">=</span><span class="keyword">new</span><span class="operator">-</span>value2</span><br><span class="line">[<span class="keyword">WHERE</span> Clause]</span><br><span class="line"></span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> username<span class="operator">=</span><span class="string">&#x27;alin&#x27;</span> <span class="keyword">where</span> id<span class="operator">=</span><span class="number">6</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="like-查找数据"><a href="#like-查找数据" class="headerlink" title="like 查找数据"></a>like 查找数据</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> field1, field2,...fieldN</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> field1 <span class="keyword">LIKE</span> condition1 [<span class="keyword">AND</span> [<span class="keyword">OR</span>]] filed2 <span class="operator">=</span> <span class="string">&#x27;somevalue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> `<span class="keyword">user</span>` <span class="keyword">WHERE</span> username <span class="keyword">like</span> <span class="string">&#x27;a%&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;%a&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>以a结尾的数据</span><br><span class="line"><span class="string">&#x27;a%&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>以a开头的数据</span><br><span class="line"><span class="string">&#x27;%a%&#x27;</span>    <span class="operator">/</span><span class="operator">/</span>含有a的数据</span><br><span class="line"><span class="string">&#x27;_a_&#x27;</span>    <span class="operator">/</span><span class="operator">/</span>三位且中间字母是a的</span><br><span class="line"><span class="string">&#x27;_a&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>两位且结尾字母是a的</span><br><span class="line"><span class="string">&#x27;a_&#x27;</span>     <span class="operator">/</span><span class="operator">/</span>两位且开头字母是a的</span><br></pre></td></tr></table></figure>
+
+<h2 id="union-操作符，将不同的-select-结果组合到一个结果集中，expresssion-可以不同"><a href="#union-操作符，将不同的-select-结果组合到一个结果集中，expresssion-可以不同" class="headerlink" title="union 操作符，将不同的 select 结果组合到一个结果集中，expresssion 可以不同"></a>union 操作符，将不同的 select 结果组合到一个结果集中，expresssion 可以不同</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> expression1, expression2, ... expression_n</span><br><span class="line"><span class="keyword">FROM</span> tables</span><br><span class="line">[<span class="keyword">WHERE</span> conditions]</span><br><span class="line"><span class="keyword">UNION</span> [<span class="keyword">ALL</span> <span class="operator">|</span> <span class="keyword">DISTINCT</span>]</span><br><span class="line"><span class="keyword">SELECT</span> expression1, expression2, ... expression_n</span><br><span class="line"><span class="keyword">FROM</span> tables</span><br><span class="line">[<span class="keyword">WHERE</span> conditions];</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> id <span class="keyword">from</span> book</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">select</span> username <span class="keyword">from</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="group-by：默认为-asc-升序"><a href="#group-by：默认为-asc-升序" class="headerlink" title="group by：默认为 asc 升序"></a>group by：默认为 asc 升序</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> field1, field2,...fieldN <span class="keyword">FROM</span> table_name1, table_name2...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> field1 [<span class="keyword">ASC</span> [<span class="keyword">DESC</span>][默认 <span class="keyword">ASC</span>]], [field2...] [<span class="keyword">ASC</span> [<span class="keyword">DESC</span>][默认 <span class="keyword">ASC</span>]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> id <span class="keyword">from</span> <span class="keyword">user</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> username <span class="keyword">desc</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="group-by-分组统计"><a href="#group-by-分组统计" class="headerlink" title="group by 分组统计"></a>group by 分组统计</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name, <span class="keyword">function</span>(column_name)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name operator <span class="keyword">value</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column_name;</span><br><span class="line"></span><br><span class="line">#分组求和，而不是整体求和</span><br><span class="line"><span class="keyword">SELECT</span> Customer,OrderDate,<span class="built_in">SUM</span>(OrderPrice)</span><br><span class="line"><span class="keyword">FROM</span> Orders</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Customer,OrderDate</span><br></pre></td></tr></table></figure>
+
+<h2 id="group-by-having"><a href="#group-by-having" class="headerlink" title="group by+having"></a>group by+having</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> emp_no, <span class="built_in">count</span>(salary) t     #在工资表里查找员工编号、统计发工资的次数（取别名t）</span><br><span class="line"><span class="keyword">from</span> salaries</span><br><span class="line"><span class="keyword">where</span> creat_date <span class="keyword">between</span> <span class="string">&#x27;2020-01-01&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;2020-12-31&#x27;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> emp_no        #通过员工编号编组</span><br><span class="line"><span class="keyword">HAVING</span> t<span class="operator">&gt;</span><span class="number">15</span>       #查询发工资次数大于<span class="number">15</span>次的</span><br></pre></td></tr></table></figure>
+
+<h2 id="左连接"><a href="#左连接" class="headerlink" title="左连接"></a>左连接</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> a.bookname, a.pushlishTime, b.usename</span><br><span class="line"><span class="keyword">from</span> Books a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> Author b</span><br><span class="line"><span class="keyword">on</span> a.uid <span class="operator">=</span> b.id</span><br></pre></td></tr></table></figure>
+
+<h2 id="时间控制"><a href="#时间控制" class="headerlink" title="时间控制"></a>时间控制</h2><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span>包含当天</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> DATEDIFF(字段,NOW())<span class="operator">&lt;=</span><span class="number">0</span> <span class="keyword">AND</span> DATEDIFF(字段,NOW())<span class="operator">&gt;</span><span class="operator">-</span>n</span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>不包含当天</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> 表名 <span class="keyword">WHERE</span> DATEDIFF(字段,NOW())<span class="operator">&lt;</span><span class="number">0</span> <span class="keyword">AND</span> DATEDIFF(字段,NOW())<span class="operator">&gt;</span><span class="operator">-</span>n</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> a.bookname, a.pushlishTime, b.usename</span><br><span class="line"><span class="keyword">from</span> Books a</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> Author b</span><br><span class="line"><span class="keyword">on</span> a.uid <span class="operator">=</span> b.id</span><br><span class="line"><span class="keyword">where</span> DATEDIFF(a.updateTime, NOW())<span class="operator">&lt;=</span><span class="number">0</span> <span class="keyword">and</span> DATEDIFF(a.updateTime, NOW())<span class="operator">&gt;</span><span class="number">-7</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> a.likes</span><br></pre></td></tr></table></figure>
+
+<h1 id="搜索引擎"><a href="#搜索引擎" class="headerlink" title="搜索引擎"></a>搜索引擎</h1><h2 id="InnoDB："><a href="#InnoDB：" class="headerlink" title="InnoDB："></a>InnoDB：</h2><h3 id="优点：提供良好的事务管理，崩溃修复能力和并发控制，3-层即可控制百万级的数据，聚集索引"><a href="#优点：提供良好的事务管理，崩溃修复能力和并发控制，3-层即可控制百万级的数据，聚集索引" class="headerlink" title="优点：提供良好的事务管理，崩溃修复能力和并发控制，3 层即可控制百万级的数据，聚集索引"></a>优点：提供良好的事务管理，崩溃修复能力和并发控制，3 层即可控制百万级的数据，聚集索引</h3><h3 id="缺点：读写能力较差，占用的数据空间大"><a href="#缺点：读写能力较差，占用的数据空间大" class="headerlink" title="缺点：读写能力较差，占用的数据空间大"></a>缺点：读写能力较差，占用的数据空间大</h3><p><img src="/2022/07/08/mysql//image-20220525235957544.png" alt="image-20220525235957544"></p>
+<h2 id="MyISAM："><a href="#MyISAM：" class="headerlink" title="MyISAM："></a>MyISAM：</h2><h3 id="优点：插入速度快，内存占用低，-非聚集索引"><a href="#优点：插入速度快，内存占用低，-非聚集索引" class="headerlink" title="优点：插入速度快，内存占用低， 非聚集索引"></a>优点：插入速度快，内存占用低， 非聚集索引</h3><h3 id="缺点：不支持事务，数据分散存储为三个文件"><a href="#缺点：不支持事务，数据分散存储为三个文件" class="headerlink" title="缺点：不支持事务，数据分散存储为三个文件"></a>缺点：不支持事务，数据分散存储为三个文件</h3><p><img src="/2022/07/08/mysql//image-20220525231552462.png" alt="image-20220525231552462"></p>
+<p><img src="/2022/07/08/mysql//image-20220525231604086.png" alt="image-20220525231604086"></p>
+<h2 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h2><h3 id="存取速度快，利用内存中的数据来建立表，安全性比较低。"><a href="#存取速度快，利用内存中的数据来建立表，安全性比较低。" class="headerlink" title="存取速度快，利用内存中的数据来建立表，安全性比较低。"></a>存取速度快，利用内存中的数据来建立表，安全性比较低。</h3><p><img src="/2022/07/08/mysql//image-20220525231623029.png" alt="image-20220525231623029"></p>
+<p><img src="/2022/07/08/mysql//image-20220525231630286.png" alt="image-20220525231630286"></p>
+<h2 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h2><p>主键索引：唯一、非空</p>
+<p>唯一索引：唯一、可为空</p>
+<p>普通索引：可以重复、为空</p>
+<p>全文索引：</p>
+<p>组合索引：组合</p>
+<h2 id="B-树和-B-树的区别"><a href="#B-树和-B-树的区别" class="headerlink" title="B 树和 B+树的区别"></a>B 树和 B+树的区别</h2><p>B+树只有叶子节点放置数据，而 B 树所有节点都放置数据</p>
+<h2 id="回表"><a href="#回表" class="headerlink" title="回表"></a>回表</h2><p>先去非聚集索引的找到 ID，然后聚集索引查询对应的字段。（先非主键索引，然后主键索引）</p>
+<h2 id="覆盖索引（建立组合索引来实现）"><a href="#覆盖索引（建立组合索引来实现）" class="headerlink" title="覆盖索引（建立组合索引来实现）"></a>覆盖索引（建立组合索引来实现）</h2><p>使用覆盖索引，MySQL 只需要通过索引就可以查找和返回查询所需要的数据，而不必在使用索引处理数据之后再进行回表操作。</p>
+<h2 id="最左匹配原则"><a href="#最左匹配原则" class="headerlink" title="最左匹配原则"></a>最左匹配原则</h2><h1 id="SQL-删除规则"><a href="#SQL-删除规则" class="headerlink" title="SQL 删除规则"></a>SQL 删除规则</h1><p><img src="/2022/07/08/mysql//image-20220526000006280.png" alt="image-20220526000006280"></p>
+<h2 id="cascade-级联删除"><a href="#cascade-级联删除" class="headerlink" title="cascade 级联删除"></a>cascade 级联删除</h2><p>解释：（主表被删除，字表的数据也会删除）</p>
+<p>父表中删除包含主键值的行的操作，该值由子表的现有行中的外键列引用。</p>
+<p>在级联删除中，删除父表中的记录时，同时删除子表中外键引用此主健的记录。</p>
+<p>例子：</p>
+<p>employee 表中有员工的 dept_id 引用 department 表中 dept_id( 同时为 deptartment 主键 )作为外键。</p>
+<p>当 department 表（父表）中一个部门被删除，employee 表（子表）中引用这个部门的 dept_id 作为 dept_id 的记录也自动被删除。</p>
+<h2 id="protect"><a href="#protect" class="headerlink" title="protect"></a>protect</h2><p>不让删除，删除会抛出异常。</p>
+<h2 id="set-null"><a href="#set-null" class="headerlink" title="set_null"></a>set_null</h2><p>删除的时候，外键置为空值。</p>
+<h2 id="set-default"><a href="#set-default" class="headerlink" title="set_default"></a>set_default</h2><p>外键字段置为默认值。</p>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><p>自定义值</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="1-1-Description"><a href="#1-1-Description" class="headerlink" title="1.1 Description"></a>1.1 Description</h3><p>salary</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">| id | name | sex | salary |</span><br><span class="line">|----|------|-----|--------|</span><br><span class="line">| 1  | A    | m   | 2500   |</span><br><span class="line">| 2  | B    | f   | 1500   |</span><br><span class="line">| 3  | C    | m   | 5500   |</span><br><span class="line">| 4  | D    | f   | 500    |</span><br></pre></td></tr></table></figure>
+
+<p>只用一个 SQL 查询，将 sex 字段反转。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">| id | name | sex | salary |</span><br><span class="line">|----|------|-----|--------|</span><br><span class="line">| 1  | A    | f   | 2500   |</span><br><span class="line">| 2  | B    | m   | 1500   |</span><br><span class="line">| 3  | C    | f   | 5500   |</span><br><span class="line">| 4  | D    | m   | 500    |</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>两个相等的数异或的结果为 0，而 0 与任何一个数异或的结果为这个数。</p>
+<p>sex  字段只有两个取值：’f’ 和 ‘m’，并且有以下规律：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#x27;f&#x27; ^ (&#x27;m&#x27; ^ &#x27;f&#x27;) = &#x27;m&#x27; ^ (&#x27;f&#x27; ^ &#x27;f&#x27;) = &#x27;m&#x27;</span><br><span class="line">&#x27;m&#x27; ^ (&#x27;m&#x27; ^ &#x27;f&#x27;) = &#x27;f&#x27; ^ (&#x27;m&#x27; ^ &#x27;m&#x27;) = &#x27;f&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>因此将 sex 字段和 ‘m’ ^ ‘f’ 进行异或操作，最后就能反转 sex 字段。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> salary</span><br><span class="line"><span class="keyword">SET</span> sex <span class="operator">=</span> <span class="type">CHAR</span>(ASCII(sex) <span class="operator">^</span> ASCII(<span class="string">&#x27;m&#x27;</span>) <span class="operator">^</span> ASCII(<span class="string">&#x27;f&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-Description"><a href="#1-2-Description" class="headerlink" title="1.2 Description"></a>1.2 Description</h3><p>邮件地址表：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+----+---------+</span><br><span class="line">| Id | Email   |</span><br><span class="line">+----+---------+</span><br><span class="line">| 1  | john@example.com |</span><br><span class="line">| 2  | bob@example.com |</span><br><span class="line">| 3  | john@example.com |</span><br><span class="line">+----+---------+</span><br></pre></td></tr></table></figure>
+
+<p>删除重复的邮件地址：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+----+------------------+</span><br><span class="line">| Id | Email            |</span><br><span class="line">+----+------------------+</span><br><span class="line">| 1  | john@example.com |</span><br><span class="line">| 2  | bob@example.com  |</span><br><span class="line">+----+------------------+</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><p>只保留相同 Email 中 Id 最小的那一个，然后删除其它的。</p>
+<p>连接查询：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> p1</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Person p1,</span><br><span class="line">    Person p2</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    p1.Email <span class="operator">=</span> p2.Email</span><br><span class="line">    <span class="keyword">AND</span> p1.Id <span class="operator">&gt;</span> p2.Id</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-Description"><a href="#1-3-Description" class="headerlink" title="1.3 Description"></a>1.3 Description</h3><p>Employee 表：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+----+-------+--------+-----------+</span><br><span class="line">| Id | Name  | Salary | ManagerId |</span><br><span class="line">+----+-------+--------+-----------+</span><br><span class="line">| 1  | Joe   | 70000  | 3         |</span><br><span class="line">| 2  | Henry | 80000  | 4         |</span><br><span class="line">| 3  | Sam   | 60000  | NULL      |</span><br><span class="line">| 4  | Max   | 90000  | NULL      |</span><br><span class="line">+----+-------+--------+-----------+</span><br></pre></td></tr></table></figure>
+
+<p>查找薪资大于其经理薪资的员工信息。</p>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    E1.NAME <span class="keyword">AS</span> Employee</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Employee E1</span><br><span class="line">    <span class="keyword">INNER</span> <span class="keyword">JOIN</span> Employee E2</span><br><span class="line">    <span class="keyword">ON</span> E1.ManagerId <span class="operator">=</span> E2.Id</span><br><span class="line">    <span class="keyword">AND</span> E1.Salary <span class="operator">&gt;</span> E2.Salary;</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-Description"><a href="#1-4-Description" class="headerlink" title="1.4 Description"></a>1.4 Description</h3><p>Employee 表：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| Id | Name  | Salary | DepartmentId |</span><br><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| 1  | Joe   | 70000  | 1            |</span><br><span class="line">| 2  | Henry | 80000  | 2            |</span><br><span class="line">| 3  | Sam   | 60000  | 2            |</span><br><span class="line">| 4  | Max   | 90000  | 1            |</span><br><span class="line">+----+-------+--------+--------------+</span><br></pre></td></tr></table></figure>
+
+<p>Department 表：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+----+----------+</span><br><span class="line">| Id | Name     |</span><br><span class="line">+----+----------+</span><br><span class="line">| 1  | IT       |</span><br><span class="line">| 2  | Sales    |</span><br><span class="line">+----+----------+</span><br></pre></td></tr></table></figure>
+
+<p>查找一个 Department 中收入最高者的信息：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">+------------+----------+--------+</span><br><span class="line">| Department | Employee | Salary |</span><br><span class="line">+------------+----------+--------+</span><br><span class="line">| IT         | Max      | 90000  |</span><br><span class="line">| Sales      | Henry    | 80000  |</span><br><span class="line">+------------+----------+--------+</span><br></pre></td></tr></table></figure>
+
+<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><p>创建一个临时表，包含了部门员工的最大薪资。可以对部门进行分组，然后使用 MAX() 汇总函数取得最大薪资。</p>
+<p>之后使用连接找到一个部门中薪资等于临时表中最大薪资的员工。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    D.NAME Department,</span><br><span class="line">    E.NAME Employee,</span><br><span class="line">    E.Salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    Employee E,</span><br><span class="line">    Department D,</span><br><span class="line">    ( <span class="keyword">SELECT</span> DepartmentId, <span class="built_in">MAX</span>( Salary ) Salary </span><br><span class="line">     <span class="keyword">FROM</span> Employee </span><br><span class="line">     <span class="keyword">GROUP</span> <span class="keyword">BY</span> DepartmentId ) M</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    E.DepartmentId <span class="operator">=</span> D.Id</span><br><span class="line">    <span class="keyword">AND</span> E.DepartmentId <span class="operator">=</span> M.DepartmentId</span><br><span class="line">    <span class="keyword">AND</span> E.Salary <span class="operator">=</span> M.Salary;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>sql</tag>
       </tags>
   </entry>
   <entry>
@@ -1031,41 +1013,6 @@
       </tags>
   </entry>
   <entry>
-    <title>1+9r刷机笔记</title>
-    <url>/2022/07/06/%E5%88%B7%E6%9C%BA/</url>
-    <content><![CDATA[<h2 id="准备工作，color-os线刷至氧os"><a href="#准备工作，color-os线刷至氧os" class="headerlink" title="准备工作，color os线刷至氧os"></a>准备工作，color os线刷至氧os</h2><p>教程<br><a href="https://www.hkepc.com/forum/viewthread.php?fid=168&amp;tid=2620340&amp;page=1">https://www.hkepc.com/forum/viewthread.php?fid=168&amp;tid=2620340&amp;page=1</a></p>
-<h2 id="1、解锁-bootloader教程"><a href="#1、解锁-bootloader教程" class="headerlink" title="1、解锁 bootloader教程"></a>1、解锁 bootloader教程</h2><h3 id="1-1-驱动安装（Google-USB、高通驱动）"><a href="#1-1-驱动安装（Google-USB、高通驱动）" class="headerlink" title="1.1 驱动安装（Google USB、高通驱动）"></a>1.1 驱动安装（Google USB、高通驱动）</h3><p><a href="https://www.bilibili.com/video/BV1n64y1u7LE?p=1&amp;share_medium=android_i&amp;share_plat=android&amp;share_source=COPY&amp;share_tag=s_i&amp;timestamp=1644025451&amp;unique_k=Tc4bIVY">https://www.bilibili.com/video/BV1n64y1u7LE?p=1&amp;share_medium=android_i&amp;share_plat=android&amp;share_source=COPY&amp;share_tag=s_i&amp;timestamp=1644025451&amp;unique_k=Tc4bIVY</a></p>
-<h3 id="1-2-adb命令解锁bootloader"><a href="#1-2-adb命令解锁bootloader" class="headerlink" title="1.2 adb命令解锁bootloader"></a>1.2 adb命令解锁bootloader</h3><p>fastboot devices</p>
-<p>fastboot oem unlock</p>
-<h2 id="2、刷入第三方-twrp"><a href="#2、刷入第三方-twrp" class="headerlink" title="2、刷入第三方 twrp"></a>2、刷入第三方 twrp</h2><p><a href="https://www.bilibili.com/video/av841014036?from=search&seid=13682037280247844152">参考链接</a></p>
-<p>首先下载recover.img<br>然后进入bootloader模式，命令行输入,即可刷入，然后进入引导模式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery recovery.img</span><br><span class="line"></span><br><span class="line">fastboot boot recovery.img</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、清除系统数据"><a href="#3、清除系统数据" class="headerlink" title="3、清除系统数据"></a>3、清除系统数据</h2><p><a href="https://unofficialtwrp.com/twrp-3-5-1-root-oneplus-9r/#How_to_Install_twrp_Recovery_on_OnePlus_9R">参考链接</a></p>
-<h3 id="若有问题，刷入以下命令"><a href="#若有问题，刷入以下命令" class="headerlink" title="若有问题，刷入以下命令"></a>若有问题，刷入以下命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery_a twrp.img</span><br><span class="line"></span><br><span class="line">fastboot flash recovery_b twrp.img</span><br></pre></td></tr></table></figure>
-
-<p>清除a&#x2F;b分区</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash vbmeta vbmeta.img</span><br><span class="line">fastboot format userdata</span><br></pre></td></tr></table></figure>
-
-<h2 id="4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，-zip为具体的zip名称"><a href="#4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，-zip为具体的zip名称" class="headerlink" title="4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，*zip为具体的zip名称"></a>4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，*zip为具体的zip名称</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adb devices</span><br><span class="line"></span><br><span class="line">adb push *.zip /sdcard</span><br></pre></td></tr></table></figure>
-
-<h2 id="5、install-选择zip文件安装"><a href="#5、install-选择zip文件安装" class="headerlink" title="5、install 选择zip文件安装"></a>5、install 选择zip文件安装</h2><h2 id="other-way-可以通过adb命令的方式来刷入文件"><a href="#other-way-可以通过adb命令的方式来刷入文件" class="headerlink" title="other way 可以通过adb命令的方式来刷入文件"></a>other way 可以通过adb命令的方式来刷入文件</h2><p><a href="https://www.oneplusbbs.com/thread-4796616-1.html">https://www.oneplusbbs.com/thread-4796616-1.html</a></p>
-<h1 id="刷机方式2"><a href="#刷机方式2" class="headerlink" title="刷机方式2"></a>刷机方式2</h1><h2 id="一键刷机步骤，只需要rom包即可"><a href="#一键刷机步骤，只需要rom包即可" class="headerlink" title="一键刷机步骤，只需要rom包即可"></a>一键刷机步骤，只需要rom包即可</h2><ul>
-<li>前提，先解锁，安装好高通驱动和google usb驱动，驱动直接安装即可</li>
-<li><a href="https://www.cnblogs.com/melons99/p/16307830.html">参考链接</a></li>
-<li>首先准备ROM包，提取里面的的文件</li>
-<li>使用一键刷机工具刷机即可</li>
-</ul>
-<h2 id="救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。"><a href="#救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。" class="headerlink" title="救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。"></a>救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。</h2><h1 id="root权限获取"><a href="#root权限获取" class="headerlink" title="root权限获取"></a>root权限获取</h1><h2 id="首先将安装包提取boot-img"><a href="#首先将安装包提取boot-img" class="headerlink" title="首先将安装包提取boot.img"></a>首先将安装包提取boot.img</h2><p><a href="https://www.daxiaamu.com/5804/">参考链接</a><br><a href="https://yun.daxiaamu.com/files/tool/payload.bin%E8%A7%A3%E5%8C%85%E5%B7%A5%E5%85%B7/payload%20dumper_go_%E5%A4%A7%E4%BE%A0%E9%98%BF%E6%9C%A8%E9%87%8D%E5%88%B6/%E6%8A%8AROM%E6%8B%96%E5%88%B0%E6%88%91%E5%A4%B4%E4%B8%8A.exe?preview">参考链接</a></p>
-<h2 id="利用magisk将boot-img修改为patched-boot-img"><a href="#利用magisk将boot-img修改为patched-boot-img" class="headerlink" title="利用magisk将boot.img修改为patched_boot.img"></a>利用magisk将boot.img修改为patched_boot.img</h2><h2 id="刷入修改后的patched-boot-img"><a href="#刷入修改后的patched-boot-img" class="headerlink" title="刷入修改后的patched_boot.img"></a>刷入修改后的patched_boot.img</h2><p>fastboot flash boot magisk_patched.img</p>
-<h2 id="救砖教程参考链接"><a href="#救砖教程参考链接" class="headerlink" title="救砖教程参考链接"></a>救砖教程参考链接</h2><p><a href="https://www.oneplusbbs.com/forum.php?mod=viewthread&amp;tid=4988971">https://www.oneplusbbs.com/forum.php?mod=viewthread&amp;tid=4988971</a></p>
-<p><a href="https://blog.csdn.net/weixin_39771775/article/details/111112651">https://blog.csdn.net/weixin_39771775/article/details/111112651</a></p>
-]]></content>
-      <tags>
-        <tag>刷机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>操作符</title>
     <url>/2022/05/26/%E4%BD%8D%E8%BF%90%E7%AE%97%E5%BC%82%E6%88%96/</url>
     <content><![CDATA[<h1 id="异或（"><a href="#异或（" class="headerlink" title="异或（^)"></a>异或（^)</h1><h2 id="相同为0，不同为1"><a href="#相同为0，不同为1" class="headerlink" title="相同为0，不同为1"></a>相同为0，不同为1</h2><p>0^0&#x3D;0</p>
@@ -1154,6 +1101,41 @@
 ]]></content>
       <tags>
         <tag>多线程多进程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1+9r刷机笔记</title>
+    <url>/2022/07/06/%E5%88%B7%E6%9C%BA/</url>
+    <content><![CDATA[<h2 id="准备工作，color-os线刷至氧os"><a href="#准备工作，color-os线刷至氧os" class="headerlink" title="准备工作，color os线刷至氧os"></a>准备工作，color os线刷至氧os</h2><p>教程<br><a href="https://www.hkepc.com/forum/viewthread.php?fid=168&amp;tid=2620340&amp;page=1">https://www.hkepc.com/forum/viewthread.php?fid=168&amp;tid=2620340&amp;page=1</a></p>
+<h2 id="1、解锁-bootloader教程"><a href="#1、解锁-bootloader教程" class="headerlink" title="1、解锁 bootloader教程"></a>1、解锁 bootloader教程</h2><h3 id="1-1-驱动安装（Google-USB、高通驱动）"><a href="#1-1-驱动安装（Google-USB、高通驱动）" class="headerlink" title="1.1 驱动安装（Google USB、高通驱动）"></a>1.1 驱动安装（Google USB、高通驱动）</h3><p><a href="https://www.bilibili.com/video/BV1n64y1u7LE?p=1&amp;share_medium=android_i&amp;share_plat=android&amp;share_source=COPY&amp;share_tag=s_i&amp;timestamp=1644025451&amp;unique_k=Tc4bIVY">https://www.bilibili.com/video/BV1n64y1u7LE?p=1&amp;share_medium=android_i&amp;share_plat=android&amp;share_source=COPY&amp;share_tag=s_i&amp;timestamp=1644025451&amp;unique_k=Tc4bIVY</a></p>
+<h3 id="1-2-adb命令解锁bootloader"><a href="#1-2-adb命令解锁bootloader" class="headerlink" title="1.2 adb命令解锁bootloader"></a>1.2 adb命令解锁bootloader</h3><p>fastboot devices</p>
+<p>fastboot oem unlock</p>
+<h2 id="2、刷入第三方-twrp"><a href="#2、刷入第三方-twrp" class="headerlink" title="2、刷入第三方 twrp"></a>2、刷入第三方 twrp</h2><p><a href="https://www.bilibili.com/video/av841014036?from=search&seid=13682037280247844152">参考链接</a></p>
+<p>首先下载recover.img<br>然后进入bootloader模式，命令行输入,即可刷入，然后进入引导模式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery recovery.img</span><br><span class="line"></span><br><span class="line">fastboot boot recovery.img</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、清除系统数据"><a href="#3、清除系统数据" class="headerlink" title="3、清除系统数据"></a>3、清除系统数据</h2><p><a href="https://unofficialtwrp.com/twrp-3-5-1-root-oneplus-9r/#How_to_Install_twrp_Recovery_on_OnePlus_9R">参考链接</a></p>
+<h3 id="若有问题，刷入以下命令"><a href="#若有问题，刷入以下命令" class="headerlink" title="若有问题，刷入以下命令"></a>若有问题，刷入以下命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery_a twrp.img</span><br><span class="line"></span><br><span class="line">fastboot flash recovery_b twrp.img</span><br></pre></td></tr></table></figure>
+
+<p>清除a&#x2F;b分区</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash vbmeta vbmeta.img</span><br><span class="line">fastboot format userdata</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，-zip为具体的zip名称"><a href="#4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，-zip为具体的zip名称" class="headerlink" title="4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，*zip为具体的zip名称"></a>4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，*zip为具体的zip名称</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adb devices</span><br><span class="line"></span><br><span class="line">adb push *.zip /sdcard</span><br></pre></td></tr></table></figure>
+
+<h2 id="5、install-选择zip文件安装"><a href="#5、install-选择zip文件安装" class="headerlink" title="5、install 选择zip文件安装"></a>5、install 选择zip文件安装</h2><h2 id="other-way-可以通过adb命令的方式来刷入文件"><a href="#other-way-可以通过adb命令的方式来刷入文件" class="headerlink" title="other way 可以通过adb命令的方式来刷入文件"></a>other way 可以通过adb命令的方式来刷入文件</h2><p><a href="https://www.oneplusbbs.com/thread-4796616-1.html">https://www.oneplusbbs.com/thread-4796616-1.html</a></p>
+<h1 id="刷机方式2"><a href="#刷机方式2" class="headerlink" title="刷机方式2"></a>刷机方式2</h1><h2 id="一键刷机步骤，只需要rom包即可"><a href="#一键刷机步骤，只需要rom包即可" class="headerlink" title="一键刷机步骤，只需要rom包即可"></a>一键刷机步骤，只需要rom包即可</h2><ul>
+<li>前提，先解锁，安装好高通驱动和google usb驱动，驱动直接安装即可</li>
+<li><a href="https://www.cnblogs.com/melons99/p/16307830.html">参考链接</a></li>
+<li>首先准备ROM包，提取里面的的文件</li>
+<li>使用一键刷机工具刷机即可</li>
+</ul>
+<h2 id="救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。"><a href="#救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。" class="headerlink" title="救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。"></a>救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。</h2><h1 id="root权限获取"><a href="#root权限获取" class="headerlink" title="root权限获取"></a>root权限获取</h1><h2 id="首先将安装包提取boot-img"><a href="#首先将安装包提取boot-img" class="headerlink" title="首先将安装包提取boot.img"></a>首先将安装包提取boot.img</h2><p><a href="https://www.daxiaamu.com/5804/">参考链接</a><br><a href="https://yun.daxiaamu.com/files/tool/payload.bin%E8%A7%A3%E5%8C%85%E5%B7%A5%E5%85%B7/payload%20dumper_go_%E5%A4%A7%E4%BE%A0%E9%98%BF%E6%9C%A8%E9%87%8D%E5%88%B6/%E6%8A%8AROM%E6%8B%96%E5%88%B0%E6%88%91%E5%A4%B4%E4%B8%8A.exe?preview">参考链接</a></p>
+<h2 id="利用magisk将boot-img修改为patched-boot-img"><a href="#利用magisk将boot-img修改为patched-boot-img" class="headerlink" title="利用magisk将boot.img修改为patched_boot.img"></a>利用magisk将boot.img修改为patched_boot.img</h2><h2 id="刷入修改后的patched-boot-img"><a href="#刷入修改后的patched-boot-img" class="headerlink" title="刷入修改后的patched_boot.img"></a>刷入修改后的patched_boot.img</h2><p>fastboot flash boot magisk_patched.img</p>
+<h2 id="救砖教程参考链接"><a href="#救砖教程参考链接" class="headerlink" title="救砖教程参考链接"></a>救砖教程参考链接</h2><p><a href="https://www.oneplusbbs.com/forum.php?mod=viewthread&amp;tid=4988971">https://www.oneplusbbs.com/forum.php?mod=viewthread&amp;tid=4988971</a></p>
+<p><a href="https://blog.csdn.net/weixin_39771775/article/details/111112651">https://blog.csdn.net/weixin_39771775/article/details/111112651</a></p>
+]]></content>
+      <tags>
+        <tag>刷机</tag>
       </tags>
   </entry>
   <entry>
@@ -1267,6 +1249,30 @@
       </tags>
   </entry>
   <entry>
+    <title>订阅链接更换</title>
+    <url>/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2/</url>
+    <content><![CDATA[<h2 id="安卓端-V2rayNG"><a href="#安卓端-V2rayNG" class="headerlink" title="安卓端 V2rayNG"></a>安卓端 V2rayNG</h2><p>1、打开软件，左上角三横点一下，打开订阅分组设置，右上角有个+号，添加配置信息。</p>
+<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058597395.jpg" alt="1667058597395"></p>
+<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058629892.jpg" alt="1667058629892"></p>
+<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058684495.jpg" alt="1667058684495"></p>
+<p>此处<strong>备注</strong>需要随便填一个</p>
+<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058964112.jpg" alt="1667058964112"></p>
+<p>返回主页面，点击<strong>更新订阅</strong>即可。</p>
+<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058732777.jpg" alt="1667058732777"></p>
+<p>成功页面！</p>
+<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058749878.jpg" alt="1667058749878"></p>
+<h2 id="电脑端-winXray"><a href="#电脑端-winXray" class="headerlink" title="电脑端 winXray"></a>电脑端 winXray</h2><p>1、首先复制订阅链接，然后打开软件。依次点击选择配置、订阅、添加订阅。</p>
+<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667059199809.png" alt="1667059199809"></p>
+<p>2、点击更新订阅。</p>
+<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667059354641.png" alt="1667059354641"></p>
+<p>3、选择全局代理或者pac均可</p>
+<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667059450525.png" alt="1667059450525"></p>
+]]></content>
+      <tags>
+        <tag>订阅链接更换</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络</title>
     <url>/2022/07/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<h2 id="TCP-和-UDP-的区别"><a href="#TCP-和-UDP-的区别" class="headerlink" title="TCP 和 UDP 的区别"></a>TCP 和 UDP 的区别</h2><ul>
@@ -1339,30 +1345,6 @@
 ]]></content>
       <tags>
         <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>订阅链接更换</title>
-    <url>/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2/</url>
-    <content><![CDATA[<h2 id="安卓端-V2rayNG"><a href="#安卓端-V2rayNG" class="headerlink" title="安卓端 V2rayNG"></a>安卓端 V2rayNG</h2><p>1、打开软件，左上角三横点一下，打开订阅分组设置，右上角有个+号，添加配置信息。</p>
-<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058597395.jpg" alt="1667058597395"></p>
-<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058629892.jpg" alt="1667058629892"></p>
-<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058684495.jpg" alt="1667058684495"></p>
-<p>此处<strong>备注</strong>需要随便填一个</p>
-<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058964112.jpg" alt="1667058964112"></p>
-<p>返回主页面，点击<strong>更新订阅</strong>即可。</p>
-<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058732777.jpg" alt="1667058732777"></p>
-<p>成功页面！</p>
-<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667058749878.jpg" alt="1667058749878"></p>
-<h2 id="电脑端-winXray"><a href="#电脑端-winXray" class="headerlink" title="电脑端 winXray"></a>电脑端 winXray</h2><p>1、首先复制订阅链接，然后打开软件。依次点击选择配置、订阅、添加订阅。</p>
-<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667059199809.png" alt="1667059199809"></p>
-<p>2、点击更新订阅。</p>
-<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667059354641.png" alt="1667059354641"></p>
-<p>3、选择全局代理或者pac均可</p>
-<p><img src="/2022/10/30/%E8%AE%A2%E9%98%85%E9%93%BE%E6%8E%A5%E6%9B%B4%E6%8D%A2//1667059450525.png" alt="1667059450525"></p>
-]]></content>
-      <tags>
-        <tag>订阅链接更换</tag>
       </tags>
   </entry>
 </search>

@@ -156,63 +156,6 @@
     
     
     <article
-  id="post-choices"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/05/30/choices/"
-    >choices</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/05/30/choices/" class="article-date">
-  <time datetime="2022-05-29T16:09:10.000Z" itemprop="datePublished">2022-05-30</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/django/">django</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gender_choice = [</span><br><span class="line">     (<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">     (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line"> ]</span><br><span class="line"></span><br><span class="line"> gender = models.SmallIntegerField(verbose_name=<span class="string">&#x27;性别&#x27;</span>, choices=gender_choice)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="字段用法"><a href="#字段用法" class="headerlink" title="字段用法"></a>字段用法</h2><p>元组第一个数据的是用来存储在数据库中，第二个数据是用来显示的，取出显示字段的函数为</p>
-<p>get_xxx_display。</p>
-<p>若没有对应的元组，则按存储字段来显示。</p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/choices/" rel="tag">choices</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
   id="post-cookies和session的使用"
   class="article article-type-post"
   itemscope
@@ -1296,6 +1239,96 @@
 </article>
 
     
+    <article
+  id="post-数据库的设计"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/"
+    >数据库设计流程</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/" class="article-date">
+  <time datetime="2022-05-26T03:21:12.000Z" itemprop="datePublished">2022-05-26</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h1><h2 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h2><p>需求分析–&gt; 概念模型设计–&gt;逻辑模型设计–&gt;</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649938446040.png" alt="img"></p>
+<h2 id="ER图设计"><a href="#ER图设计" class="headerlink" title="ER图设计"></a>ER图设计</h2><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993338375.png"></p>
+<h3 id="局部ER模型设计"><a href="#局部ER模型设计" class="headerlink" title="局部ER模型设计"></a>局部ER模型设计</h3><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993355640.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993390245.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993543014.png" alt="img">借阅（<strong>BID,RID</strong>,借出日期，归还日期）</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649993568799.png"></p>
+<p>若转换成如下形式，借阅信息实体必须有主键标识。</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649994147462.png"></p>
+<h2 id="ER图转换成关系模式的步骤"><a href="#ER图转换成关系模式的步骤" class="headerlink" title="ER图转换成关系模式的步骤"></a>ER图转换成关系模式的步骤</h2><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649949136864.png" alt="img"></p>
+<h3 id="一个实体类型转换成关系模式，标识符为主键"><a href="#一个实体类型转换成关系模式，标识符为主键" class="headerlink" title="一个实体类型转换成关系模式，标识符为主键"></a>一个实体类型转换成关系模式，标识符为主键</h3><p>系（<strong>系编号</strong> ，系名，电话）<br>教师 （__教工号__，姓名，性别，职称）<br>课程 （__课程号__，课程名，学分）</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649948416331.png" alt="img"></p>
+<h3 id="实体联系转换方法"><a href="#实体联系转换方法" class="headerlink" title="实体联系转换方法"></a>实体联系转换方法</h3><ul>
+<li>一对一，任意一方添加对方的主键，尽量避免空值</li>
+<li>一对多，n</li>
+<li>n方添加1的主键</li>
+<li>多对多，新增关系模式，主键为（m,n）的联合主键</li>
+</ul>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1649991951493.png"></p>
+<p>系（<strong>系编号</strong> ，系名，电话，___系主任教工号___）<br>教师 （__教工号__，姓名，性别，职称, ___所在系编号____）<br>课程 （__课程号__，课程名，学分，___所在系编号___）<br>任教 (__教工号，课程号__，教材)</p>
+<h1 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h1><p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650004976818.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005066736.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005096666.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005347317.png"></p>
+<p>根据实际情况</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005372799.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650005329341.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650010404036.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650010432950.png"></p>
+<h1 id="范式"><a href="#范式" class="headerlink" title="范式"></a>范式</h1><ul>
+<li>__码__：表中可以唯一确定一个元组的某个属性（或者属性组），如果这样的码有不止一个，那么大家都叫候选码，我们从候选码中挑一个出来做老大，它就叫主码。</li>
+<li>__全码__：如果一个码包含了所有的属性，这个码就是全码。</li>
+<li>__主属性__：一个属性只要在任何一个候选码中出现过，这个属性就是主属性。</li>
+<li>__非主属性__：与上面相反，没有在任何候选码中出现过，这个属性就是非主属性。</li>
+<li>函数依赖</li>
+</ul>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650080153558.png"></p>
+<h2 id="第2范式"><a href="#第2范式" class="headerlink" title="第2范式"></a>第2范式</h2><p>在第1范式的基础上，消除非主属性对码的部分函数依赖，<br>非主属性完全依赖于码。</p>
+<h2 id="第3范式"><a href="#第3范式" class="headerlink" title="第3范式"></a>第3范式</h2><p>在第2范式的基础上，消除非主属性之间的传递函数依赖。</p>
+<h2 id="BC范式"><a href="#BC范式" class="headerlink" title="BC范式"></a>BC范式</h2><p>消除主属性对码的部分依赖和传递依赖。</p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650077443689.png"></p>
+<p><img src="/2022/05/26/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1//1650079553861.png"></p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/" rel="tag">sql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1/" rel="tag">数据库设计</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
   </article>
   
 
@@ -1313,7 +1346,7 @@
     <ul>
       <li>
         Copyrights &copy;
-        2015-2022
+        2015-2023
         <i class="ri-heart-fill heart_icon"></i> Alin Jiong
       </li>
     </ul>
