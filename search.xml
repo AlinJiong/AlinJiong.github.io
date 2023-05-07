@@ -23,22 +23,6 @@
       </tags>
   </entry>
   <entry>
-    <title>choices</title>
-    <url>/2022/05/30/choices/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">gender_choice = [</span><br><span class="line">     (<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">     (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line"> ]</span><br><span class="line"></span><br><span class="line"> gender = models.SmallIntegerField(verbose_name=<span class="string">&#x27;性别&#x27;</span>, choices=gender_choice)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="字段用法"><a href="#字段用法" class="headerlink" title="字段用法"></a>字段用法</h2><p>元组第一个数据的是用来存储在数据库中，第二个数据是用来显示的，取出显示字段的函数为</p>
-<p>get_xxx_display。</p>
-<p>若没有对应的元组，则按存储字段来显示。</p>
-]]></content>
-      <categories>
-        <category>django</category>
-      </categories>
-      <tags>
-        <tag>choices</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>celery</title>
     <url>/2022/05/26/celery/</url>
     <content><![CDATA[<h2 id="celery介绍（分布式消息任务队列）"><a href="#celery介绍（分布式消息任务队列）" class="headerlink" title="celery介绍（分布式消息任务队列）"></a>celery介绍（分布式消息任务队列）</h2><p>Celery 是一款非常简单、灵活、可靠的分布式系统，可用于处理大量消息，并且提供了一整套操作此系统的一系列工具。</p>
@@ -100,6 +84,22 @@
 ]]></content>
       <tags>
         <tag>celery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>choices</title>
+    <url>/2022/05/30/choices/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">gender_choice = [</span><br><span class="line">     (<span class="number">1</span>, <span class="string">&#x27;男&#x27;</span>),</span><br><span class="line">     (<span class="number">2</span>, <span class="string">&#x27;女&#x27;</span>),</span><br><span class="line"> ]</span><br><span class="line"></span><br><span class="line"> gender = models.SmallIntegerField(verbose_name=<span class="string">&#x27;性别&#x27;</span>, choices=gender_choice)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="字段用法"><a href="#字段用法" class="headerlink" title="字段用法"></a>字段用法</h2><p>元组第一个数据的是用来存储在数据库中，第二个数据是用来显示的，取出显示字段的函数为</p>
+<p>get_xxx_display。</p>
+<p>若没有对应的元组，则按存储字段来显示。</p>
+]]></content>
+      <categories>
+        <category>django</category>
+      </categories>
+      <tags>
+        <tag>choices</tag>
       </tags>
   </entry>
   <entry>
@@ -1072,6 +1072,41 @@
       </tags>
   </entry>
   <entry>
+    <title>1+9r刷机笔记</title>
+    <url>/2022/07/06/%E5%88%B7%E6%9C%BA/</url>
+    <content><![CDATA[<h2 id="准备工作，color-os线刷至氧os"><a href="#准备工作，color-os线刷至氧os" class="headerlink" title="准备工作，color os线刷至氧os"></a>准备工作，color os线刷至氧os</h2><p>教程<br><a href="https://www.hkepc.com/forum/viewthread.php?fid=168&amp;tid=2620340&amp;page=1">https://www.hkepc.com/forum/viewthread.php?fid=168&amp;tid=2620340&amp;page=1</a></p>
+<h2 id="1、解锁-bootloader教程"><a href="#1、解锁-bootloader教程" class="headerlink" title="1、解锁 bootloader教程"></a>1、解锁 bootloader教程</h2><h3 id="1-1-驱动安装（Google-USB、高通驱动）"><a href="#1-1-驱动安装（Google-USB、高通驱动）" class="headerlink" title="1.1 驱动安装（Google USB、高通驱动）"></a>1.1 驱动安装（Google USB、高通驱动）</h3><p><a href="https://www.bilibili.com/video/BV1n64y1u7LE?p=1&amp;share_medium=android_i&amp;share_plat=android&amp;share_source=COPY&amp;share_tag=s_i&amp;timestamp=1644025451&amp;unique_k=Tc4bIVY">https://www.bilibili.com/video/BV1n64y1u7LE?p=1&amp;share_medium=android_i&amp;share_plat=android&amp;share_source=COPY&amp;share_tag=s_i&amp;timestamp=1644025451&amp;unique_k=Tc4bIVY</a></p>
+<h3 id="1-2-adb命令解锁bootloader"><a href="#1-2-adb命令解锁bootloader" class="headerlink" title="1.2 adb命令解锁bootloader"></a>1.2 adb命令解锁bootloader</h3><p>fastboot devices</p>
+<p>fastboot oem unlock</p>
+<h2 id="2、刷入第三方-twrp"><a href="#2、刷入第三方-twrp" class="headerlink" title="2、刷入第三方 twrp"></a>2、刷入第三方 twrp</h2><p><a href="https://www.bilibili.com/video/av841014036?from=search&seid=13682037280247844152">参考链接</a></p>
+<p>首先下载recover.img<br>然后进入bootloader模式，命令行输入,即可刷入，然后进入引导模式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery recovery.img</span><br><span class="line"></span><br><span class="line">fastboot boot recovery.img</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、清除系统数据"><a href="#3、清除系统数据" class="headerlink" title="3、清除系统数据"></a>3、清除系统数据</h2><p><a href="https://unofficialtwrp.com/twrp-3-5-1-root-oneplus-9r/#How_to_Install_twrp_Recovery_on_OnePlus_9R">参考链接</a></p>
+<h3 id="若有问题，刷入以下命令"><a href="#若有问题，刷入以下命令" class="headerlink" title="若有问题，刷入以下命令"></a>若有问题，刷入以下命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery_a twrp.img</span><br><span class="line"></span><br><span class="line">fastboot flash recovery_b twrp.img</span><br></pre></td></tr></table></figure>
+
+<p>清除a&#x2F;b分区</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash vbmeta vbmeta.img</span><br><span class="line">fastboot format userdata</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，-zip为具体的zip名称"><a href="#4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，-zip为具体的zip名称" class="headerlink" title="4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，*zip为具体的zip名称"></a>4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，*zip为具体的zip名称</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adb devices</span><br><span class="line"></span><br><span class="line">adb push *.zip /sdcard</span><br></pre></td></tr></table></figure>
+
+<h2 id="5、install-选择zip文件安装"><a href="#5、install-选择zip文件安装" class="headerlink" title="5、install 选择zip文件安装"></a>5、install 选择zip文件安装</h2><h2 id="other-way-可以通过adb命令的方式来刷入文件"><a href="#other-way-可以通过adb命令的方式来刷入文件" class="headerlink" title="other way 可以通过adb命令的方式来刷入文件"></a>other way 可以通过adb命令的方式来刷入文件</h2><p><a href="https://www.oneplusbbs.com/thread-4796616-1.html">https://www.oneplusbbs.com/thread-4796616-1.html</a></p>
+<h1 id="刷机方式2"><a href="#刷机方式2" class="headerlink" title="刷机方式2"></a>刷机方式2</h1><h2 id="一键刷机步骤，只需要rom包即可"><a href="#一键刷机步骤，只需要rom包即可" class="headerlink" title="一键刷机步骤，只需要rom包即可"></a>一键刷机步骤，只需要rom包即可</h2><ul>
+<li>前提，先解锁，安装好高通驱动和google usb驱动，驱动直接安装即可</li>
+<li><a href="https://www.cnblogs.com/melons99/p/16307830.html">参考链接</a></li>
+<li>首先准备ROM包，提取里面的的文件</li>
+<li>使用一键刷机工具刷机即可</li>
+</ul>
+<h2 id="救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。"><a href="#救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。" class="headerlink" title="救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。"></a>救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。</h2><h1 id="root权限获取"><a href="#root权限获取" class="headerlink" title="root权限获取"></a>root权限获取</h1><h2 id="首先将安装包提取boot-img"><a href="#首先将安装包提取boot-img" class="headerlink" title="首先将安装包提取boot.img"></a>首先将安装包提取boot.img</h2><p><a href="https://www.daxiaamu.com/5804/">参考链接</a><br><a href="https://yun.daxiaamu.com/files/tool/payload.bin%E8%A7%A3%E5%8C%85%E5%B7%A5%E5%85%B7/payload%20dumper_go_%E5%A4%A7%E4%BE%A0%E9%98%BF%E6%9C%A8%E9%87%8D%E5%88%B6/%E6%8A%8AROM%E6%8B%96%E5%88%B0%E6%88%91%E5%A4%B4%E4%B8%8A.exe?preview">参考链接</a></p>
+<h2 id="利用magisk将boot-img修改为patched-boot-img"><a href="#利用magisk将boot-img修改为patched-boot-img" class="headerlink" title="利用magisk将boot.img修改为patched_boot.img"></a>利用magisk将boot.img修改为patched_boot.img</h2><h2 id="刷入修改后的patched-boot-img"><a href="#刷入修改后的patched-boot-img" class="headerlink" title="刷入修改后的patched_boot.img"></a>刷入修改后的patched_boot.img</h2><p>fastboot flash boot magisk_patched.img</p>
+<h2 id="救砖教程参考链接"><a href="#救砖教程参考链接" class="headerlink" title="救砖教程参考链接"></a>救砖教程参考链接</h2><p><a href="https://www.oneplusbbs.com/forum.php?mod=viewthread&amp;tid=4988971">https://www.oneplusbbs.com/forum.php?mod=viewthread&amp;tid=4988971</a></p>
+<p><a href="https://blog.csdn.net/weixin_39771775/article/details/111112651">https://blog.csdn.net/weixin_39771775/article/details/111112651</a></p>
+]]></content>
+      <tags>
+        <tag>刷机</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多线程多进程</title>
     <url>/2022/05/26/%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
     <content><![CDATA[<h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><ul>
@@ -1142,41 +1177,6 @@
       </tags>
   </entry>
   <entry>
-    <title>1+9r刷机笔记</title>
-    <url>/2022/07/06/%E5%88%B7%E6%9C%BA/</url>
-    <content><![CDATA[<h2 id="准备工作，color-os线刷至氧os"><a href="#准备工作，color-os线刷至氧os" class="headerlink" title="准备工作，color os线刷至氧os"></a>准备工作，color os线刷至氧os</h2><p>教程<br><a href="https://www.hkepc.com/forum/viewthread.php?fid=168&amp;tid=2620340&amp;page=1">https://www.hkepc.com/forum/viewthread.php?fid=168&amp;tid=2620340&amp;page=1</a></p>
-<h2 id="1、解锁-bootloader教程"><a href="#1、解锁-bootloader教程" class="headerlink" title="1、解锁 bootloader教程"></a>1、解锁 bootloader教程</h2><h3 id="1-1-驱动安装（Google-USB、高通驱动）"><a href="#1-1-驱动安装（Google-USB、高通驱动）" class="headerlink" title="1.1 驱动安装（Google USB、高通驱动）"></a>1.1 驱动安装（Google USB、高通驱动）</h3><p><a href="https://www.bilibili.com/video/BV1n64y1u7LE?p=1&amp;share_medium=android_i&amp;share_plat=android&amp;share_source=COPY&amp;share_tag=s_i&amp;timestamp=1644025451&amp;unique_k=Tc4bIVY">https://www.bilibili.com/video/BV1n64y1u7LE?p=1&amp;share_medium=android_i&amp;share_plat=android&amp;share_source=COPY&amp;share_tag=s_i&amp;timestamp=1644025451&amp;unique_k=Tc4bIVY</a></p>
-<h3 id="1-2-adb命令解锁bootloader"><a href="#1-2-adb命令解锁bootloader" class="headerlink" title="1.2 adb命令解锁bootloader"></a>1.2 adb命令解锁bootloader</h3><p>fastboot devices</p>
-<p>fastboot oem unlock</p>
-<h2 id="2、刷入第三方-twrp"><a href="#2、刷入第三方-twrp" class="headerlink" title="2、刷入第三方 twrp"></a>2、刷入第三方 twrp</h2><p><a href="https://www.bilibili.com/video/av841014036?from=search&seid=13682037280247844152">参考链接</a></p>
-<p>首先下载recover.img<br>然后进入bootloader模式，命令行输入,即可刷入，然后进入引导模式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery recovery.img</span><br><span class="line"></span><br><span class="line">fastboot boot recovery.img</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、清除系统数据"><a href="#3、清除系统数据" class="headerlink" title="3、清除系统数据"></a>3、清除系统数据</h2><p><a href="https://unofficialtwrp.com/twrp-3-5-1-root-oneplus-9r/#How_to_Install_twrp_Recovery_on_OnePlus_9R">参考链接</a></p>
-<h3 id="若有问题，刷入以下命令"><a href="#若有问题，刷入以下命令" class="headerlink" title="若有问题，刷入以下命令"></a>若有问题，刷入以下命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery_a twrp.img</span><br><span class="line"></span><br><span class="line">fastboot flash recovery_b twrp.img</span><br></pre></td></tr></table></figure>
-
-<p>清除a&#x2F;b分区</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">fastboot flash vbmeta vbmeta.img</span><br><span class="line">fastboot format userdata</span><br></pre></td></tr></table></figure>
-
-<h2 id="4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，-zip为具体的zip名称"><a href="#4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，-zip为具体的zip名称" class="headerlink" title="4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，*zip为具体的zip名称"></a>4、清空文件，twrp情况下，进入recovery模式，进行zip文件传输，命令如下，*zip为具体的zip名称</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">adb devices</span><br><span class="line"></span><br><span class="line">adb push *.zip /sdcard</span><br></pre></td></tr></table></figure>
-
-<h2 id="5、install-选择zip文件安装"><a href="#5、install-选择zip文件安装" class="headerlink" title="5、install 选择zip文件安装"></a>5、install 选择zip文件安装</h2><h2 id="other-way-可以通过adb命令的方式来刷入文件"><a href="#other-way-可以通过adb命令的方式来刷入文件" class="headerlink" title="other way 可以通过adb命令的方式来刷入文件"></a>other way 可以通过adb命令的方式来刷入文件</h2><p><a href="https://www.oneplusbbs.com/thread-4796616-1.html">https://www.oneplusbbs.com/thread-4796616-1.html</a></p>
-<h1 id="刷机方式2"><a href="#刷机方式2" class="headerlink" title="刷机方式2"></a>刷机方式2</h1><h2 id="一键刷机步骤，只需要rom包即可"><a href="#一键刷机步骤，只需要rom包即可" class="headerlink" title="一键刷机步骤，只需要rom包即可"></a>一键刷机步骤，只需要rom包即可</h2><ul>
-<li>前提，先解锁，安装好高通驱动和google usb驱动，驱动直接安装即可</li>
-<li><a href="https://www.cnblogs.com/melons99/p/16307830.html">参考链接</a></li>
-<li>首先准备ROM包，提取里面的的文件</li>
-<li>使用一键刷机工具刷机即可</li>
-</ul>
-<h2 id="救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。"><a href="#救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。" class="headerlink" title="救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。"></a>救砖方式，线刷至氧os即可，关机后，上下键按住，进入9008模式。</h2><h1 id="root权限获取"><a href="#root权限获取" class="headerlink" title="root权限获取"></a>root权限获取</h1><h2 id="首先将安装包提取boot-img"><a href="#首先将安装包提取boot-img" class="headerlink" title="首先将安装包提取boot.img"></a>首先将安装包提取boot.img</h2><p><a href="https://www.daxiaamu.com/5804/">参考链接</a><br><a href="https://yun.daxiaamu.com/files/tool/payload.bin%E8%A7%A3%E5%8C%85%E5%B7%A5%E5%85%B7/payload%20dumper_go_%E5%A4%A7%E4%BE%A0%E9%98%BF%E6%9C%A8%E9%87%8D%E5%88%B6/%E6%8A%8AROM%E6%8B%96%E5%88%B0%E6%88%91%E5%A4%B4%E4%B8%8A.exe?preview">参考链接</a></p>
-<h2 id="利用magisk将boot-img修改为patched-boot-img"><a href="#利用magisk将boot-img修改为patched-boot-img" class="headerlink" title="利用magisk将boot.img修改为patched_boot.img"></a>利用magisk将boot.img修改为patched_boot.img</h2><h2 id="刷入修改后的patched-boot-img"><a href="#刷入修改后的patched-boot-img" class="headerlink" title="刷入修改后的patched_boot.img"></a>刷入修改后的patched_boot.img</h2><p>fastboot flash boot magisk_patched.img</p>
-<h2 id="救砖教程参考链接"><a href="#救砖教程参考链接" class="headerlink" title="救砖教程参考链接"></a>救砖教程参考链接</h2><p><a href="https://www.oneplusbbs.com/forum.php?mod=viewthread&amp;tid=4988971">https://www.oneplusbbs.com/forum.php?mod=viewthread&amp;tid=4988971</a></p>
-<p><a href="https://blog.csdn.net/weixin_39771775/article/details/111112651">https://blog.csdn.net/weixin_39771775/article/details/111112651</a></p>
-]]></content>
-      <tags>
-        <tag>刷机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>防范xss攻击</title>
     <url>/2022/07/11/%E5%A6%82%E4%BD%95%E9%98%B2%E8%8C%83xss%E6%94%BB%E5%87%BB/</url>
     <content><![CDATA[<h1 id="xss-攻击分类："><a href="#xss-攻击分类：" class="headerlink" title="xss 攻击分类："></a>xss 攻击分类：</h1><h2 id="存储型："><a href="#存储型：" class="headerlink" title="存储型："></a>存储型：</h2><p>黑客将恶意代码传入数据库，当用户发起请求的时候，数据库返回恶意代码并渲染到前端页面，获取用户的个人信息。</p>
@@ -1193,6 +1193,22 @@
 ]]></content>
       <tags>
         <tag>xss</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ip被封如何搭建代理</title>
+    <url>/2023/05/07/%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<p>如果 ip 被封了，可以采用该方法来重新搭建梯子，就是速度有些慢，原理是套 cdn</p>
+<p>1、在 cloudflare 里面添加 site，获取 Nameserver，<a href="https://jackyangjie.github.io/2021/04/21/cloudflare-freenom%E5%88%9B%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9F%9F%E5%90%8D%E7%BD%91%E7%AB%99/">参考链接</a></p>
+<p>2、设置 v2ray 脚本来实现</p>
+<ul>
+<li>下载 v2ray 脚本。<a href="https://github.com/bannedbook/fanqiang/blob/master/v2ss/%E8%87%AA%E5%BB%BAV2ray%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%80%E6%98%8E%E6%95%99%E7%A8%8B.md">参考链接</a></li>
+<li>配置脚本。<a href="https://github.com/bannedbook/fanqiang/blob/master/v2ss/V2Ray%E4%B9%8BTLS%2BWebSocket%2BNginx%2BCDN%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95.md#%E7%9C%9F%E5%AE%9E%E7%BD%91%E7%AB%99%E5%8A%A0%E8%A3%85v2ray">参考链接</a>注意客户端配置的 address 为服务器的真实域名。</li>
+</ul>
+<p><img src="/2023/05/07/%E6%90%AD%E5%BB%BA%E4%BB%A3%E7%90%86//1683461256579.png" alt="1683461256579"></p>
+]]></content>
+      <tags>
+        <tag>搭建代理</tag>
       </tags>
   </entry>
   <entry>

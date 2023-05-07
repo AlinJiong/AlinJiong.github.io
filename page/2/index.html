@@ -156,6 +156,68 @@
     
     
     <article
+  id="post-Python装饰器"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/30/Python%E8%A3%85%E9%A5%B0%E5%99%A8/"
+    >Python装饰器</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/30/Python%E8%A3%85%E9%A5%B0%E5%99%A8/" class="article-date">
+  <time datetime="2022-05-29T16:09:10.000Z" itemprop="datePublished">2022-05-30</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="property"><a href="#property" class="headerlink" title="@property"></a>@property</h2><p>将方法变成属性使用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">birth</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self._birth</span><br><span class="line"></span><br><span class="line"><span class="meta">    @birth.setter</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">birth</span>(<span class="params">self, value</span>):</span><br><span class="line">        self._birth = value</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">age</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2015</span> - self._birth</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s = Student()</span><br><span class="line">s.birth = <span class="number">1998</span>  <span class="comment"># set_birth</span></span><br><span class="line"><span class="built_in">print</span>(s.birth)  <span class="comment"># get_birth</span></span><br><span class="line"><span class="built_in">print</span>(s.age)</span><br></pre></td></tr></table></figure>
+
+<h2 id="classmethod"><a href="#classmethod" class="headerlink" title="@classmethod"></a>@classmethod</h2><p>classmethod: 无序实例化即可使用，class.func()</p>
+<p>普通：实例化才可使用，A&#x3D;class(), A.func()</p>
+<p>带修饰类方法：<strong>cls</strong>做为方法的<strong>第一个参数</strong>，隐式的将类做为对象，传递给方法，调用时<strong>无须实例化</strong>。</p>
+<p>普通函数方法：self做为第一个参数，隐式的将类实例传递给方法，调用方法时，类必须实例化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">func</span>(<span class="params">self, x, y</span>):</span><br><span class="line">        <span class="keyword">return</span> x * y</span><br><span class="line"></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">cfunc</span>(<span class="params">cls, x, y</span>):</span><br><span class="line">        <span class="keyword">return</span> x * y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="built_in">print</span>(A().func(<span class="number">5</span>, <span class="number">5</span>))</span><br><span class="line">    <span class="built_in">print</span>(A.cfunc(<span class="number">4</span>, <span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="static"><a href="#static" class="headerlink" title="@static"></a>@static</h2><p>仅需要功能，而不需要类的时候使用。不用实例化就可以调用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># staticmethod</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">cal</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line">        <span class="keyword">return</span> x+y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(cal.add(<span class="number">3</span>, <span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="wrap"><a href="#wrap" class="headerlink" title="@wrap"></a>@wrap</h2><p>使用functool.wraps包裹函数，可以避免函数因为装饰器而重名，以及注释啥的发生变化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decorator</span>(<span class="params">func</span>):</span><br><span class="line"><span class="meta">    @functools.wraps(<span class="params">func</span>)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">inner</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        <span class="keyword">return</span> func(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@decorator</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x, y</span>):</span><br><span class="line">    <span class="string">&quot;求和&quot;</span></span><br><span class="line">    <span class="keyword">return</span> x + y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">3</span>, <span class="number">4</span>))</span><br><span class="line"><span class="built_in">print</span>(add.__name__)</span><br><span class="line"><span class="built_in">print</span>(add.__doc__)</span><br></pre></td></tr></table></figure>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python%E8%A3%85%E9%A5%B0%E5%99%A8/" rel="tag">Python装饰器</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-choices"
   class="article article-type-post"
   itemscope
@@ -1176,106 +1238,6 @@
 <h4 id="1-2-5-serializers-嵌套"><a href="#1-2-5-serializers-嵌套" class="headerlink" title="1.2.5 serializers 嵌套"></a>1.2.5 serializers 嵌套</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CreateNewsTopicModelSerializer</span>(serializers.Serializer):</span><br><span class="line">    key = serializers.CharField()</span><br><span class="line">    cos_path = serializers.CharField()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CreateNewsModelSerializer</span>(serializers.ModelSerializer):</span><br><span class="line">    imageList = CreateNewsTopicModelSerializer(many=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Meta</span>:</span><br><span class="line">        model = models.News</span><br><span class="line">        exclude = [<span class="string">&#x27;user&#x27;</span>, <span class="string">&#x27;viewer_count&#x27;</span>, <span class="string">&#x27;comment_count&#x27;</span>,<span class="string">&quot;favor_count&quot;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">create</span>(<span class="params">self, validated_data</span>):</span><br><span class="line">        <span class="comment"># 把imageList切走</span></span><br><span class="line">        image_list = validated_data.pop(<span class="string">&#x27;imageList&#x27;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 创建New表中的数据</span></span><br><span class="line">        news_object = models.News.objects.create(**validated_data)</span><br><span class="line"></span><br><span class="line">        data_list = models.NewsDetail.objects.bulk_create(</span><br><span class="line">            [models.NewsDetail(**info, news=news_object) <span class="keyword">for</span> info <span class="keyword">in</span> image_list]</span><br><span class="line">        )</span><br><span class="line">        news_object.imageList = data_list</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> news_object.topic:</span><br><span class="line">            news_object.topic.count += <span class="number">1</span></span><br><span class="line">            news_object.save()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> news_object</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">NewsView</span>(<span class="title class_ inherited__">CreateAPIView</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    发布动态</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    serializer_class = CreateNewsModelSerializer</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">perform_create</span>(<span class="params">self, serializer</span>):</span><br><span class="line">        <span class="comment"># 只能保存：News表中的数据（）</span></span><br><span class="line">        <span class="comment"># 调用serializer对象的save（先调用create）</span></span><br><span class="line">        new_object = serializer.save(user_id=<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> new_object</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><img src="/2022/05/26/rest_framework%E5%9B%9E%E9%A1%BE//1651713380867.png" alt="1651713380867"></p>
- 
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest-framework/" rel="tag">rest_framework</a></li></ul>
-
-    </footer>
-  </div>
-
-   
-    
-</article>
-
-    
-    <article
-  id="post-rest_framework规范"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2022/05/26/rest_framework%E8%A7%84%E8%8C%83/"
-    >rest_framework 规范</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2022/05/26/rest_framework%E8%A7%84%E8%8C%83/" class="article-date">
-  <time datetime="2022-05-26T03:51:22.000Z" itemprop="datePublished">2022-05-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/django/">django</a> / <a class="article-category-link" href="/categories/django/rest-framework/">rest_framework</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <p>rest_framework 规范</p>
-<ul>
-<li><p>尽量使用https协议而不是http，保障数据安全</p>
-</li>
-<li><p>尽量将api部署在专用域名下，如果api没有进一步扩展，可以放在主域名下。</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://api.example.com/">https://api.example.com/</a></li>
-<li><a target="_blank" rel="noopener" href="https://example.com/api/">https://example.com/api/</a></li>
-</ul>
-</li>
-<li><p>将api版本放入路径中</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://example.com/api/v1/">https://example.com/api/v1/</a></li>
-</ul>
-</li>
-<li><p>路径中，尽量使用资源对应的名词，而不是动词</p>
-</li>
-<li><p>请求方式区分不同的操作，get&#x2F;post&#x2F;put(patch)&#x2F;detelt&#x2F;head&#x2F;options</p>
-</li>
-<li><p>api应该提供参数，过滤返回的数据</p>
-</li>
-<li><p>返回数据中带状态码</p>
-<ul>
-<li>200 操作成功</li>
-<li>201 create 创建&#x2F;修改数据成功</li>
-<li>301 永久重定向</li>
-<li>302 临时重定向</li>
-<li>400 用户请求有误</li>
-<li>403 Forbidden用户被禁止访问</li>
-<li>404 Not Found 找不到请求的网页</li>
-<li>500 Internal server error 服务器内部错误</li>
-</ul>
-</li>
-<li><p>错误处理，状态码是4xx是，应返回错误信息</p>
-</li>
-<li><p>返回信息中添加链接，让用户可以不查看文档就可以知道下一步做什么</p>
-</li>
-<li><p>返回结果符合规范</p>
-<ul>
-<li>GET &#x2F;source 返回资源对象列表（数组）</li>
-<li>GET &#x2F;source&#x2F;num 返回单个资源对象</li>
-<li>POST 返回新生成的资源对象</li>
-<li>PUT &#x2F;source&#x2F;num 返回完整的资源对象</li>
-<li>PATCH &#x2F;source&#x2F;num 返回完整的资源对象</li>
-<li>DELETE &#x2F;source&#x2F;num 返回空文档</li>
-</ul>
-</li>
-</ul>
  
       <!-- reward -->
       

@@ -156,6 +156,106 @@
     
     
     <article
+  id="post-rest_framework规范"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/26/rest_framework%E8%A7%84%E8%8C%83/"
+    >rest_framework 规范</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/26/rest_framework%E8%A7%84%E8%8C%83/" class="article-date">
+  <time datetime="2022-05-26T03:51:22.000Z" itemprop="datePublished">2022-05-26</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/django/">django</a> / <a class="article-category-link" href="/categories/django/rest-framework/">rest_framework</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>rest_framework 规范</p>
+<ul>
+<li><p>尽量使用https协议而不是http，保障数据安全</p>
+</li>
+<li><p>尽量将api部署在专用域名下，如果api没有进一步扩展，可以放在主域名下。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://api.example.com/">https://api.example.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://example.com/api/">https://example.com/api/</a></li>
+</ul>
+</li>
+<li><p>将api版本放入路径中</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://example.com/api/v1/">https://example.com/api/v1/</a></li>
+</ul>
+</li>
+<li><p>路径中，尽量使用资源对应的名词，而不是动词</p>
+</li>
+<li><p>请求方式区分不同的操作，get&#x2F;post&#x2F;put(patch)&#x2F;detelt&#x2F;head&#x2F;options</p>
+</li>
+<li><p>api应该提供参数，过滤返回的数据</p>
+</li>
+<li><p>返回数据中带状态码</p>
+<ul>
+<li>200 操作成功</li>
+<li>201 create 创建&#x2F;修改数据成功</li>
+<li>301 永久重定向</li>
+<li>302 临时重定向</li>
+<li>400 用户请求有误</li>
+<li>403 Forbidden用户被禁止访问</li>
+<li>404 Not Found 找不到请求的网页</li>
+<li>500 Internal server error 服务器内部错误</li>
+</ul>
+</li>
+<li><p>错误处理，状态码是4xx是，应返回错误信息</p>
+</li>
+<li><p>返回信息中添加链接，让用户可以不查看文档就可以知道下一步做什么</p>
+</li>
+<li><p>返回结果符合规范</p>
+<ul>
+<li>GET &#x2F;source 返回资源对象列表（数组）</li>
+<li>GET &#x2F;source&#x2F;num 返回单个资源对象</li>
+<li>POST 返回新生成的资源对象</li>
+<li>PUT &#x2F;source&#x2F;num 返回完整的资源对象</li>
+<li>PATCH &#x2F;source&#x2F;num 返回完整的资源对象</li>
+<li>DELETE &#x2F;source&#x2F;num 返回空文档</li>
+</ul>
+</li>
+</ul>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest-framework/" rel="tag">rest_framework</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
   id="post-数据库的设计"
   class="article article-type-post"
   itemscope
